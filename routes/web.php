@@ -23,9 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/test', function () {
-    return view('test');
-});
+Route::get('/home', function () { return view('home');})->name('home');
 
 Route::resource('/companies', CompaniesController::class);
 Route::get('/vacatures/{category}', [VacanciesController::class, 'index'])->name('vacancies.index');
