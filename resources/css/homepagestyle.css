@@ -1,0 +1,93 @@
+/* Algemene instellingen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9fafb;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 932px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Introductie sectie */
+.introductie {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.introductie h1 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.stappen div {
+    font-size: 1rem;
+    color: #555;
+    margin: 8px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #d8608f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #be4d7b;
+}
+
+/* Partners sectie */
+.partners {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.partners h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.partner-logos p {
+    font-size: 1rem;
+    color: #555;
+    margin: 20px 0;
+}
+
+/* Succesverhaal sectie */
+.succesverhaal {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.succesverhaal h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.succesverhaal p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
