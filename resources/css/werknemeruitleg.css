@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Lichte achtergrondkleur */
+    color: #333; /* Neutrale tekstkleur */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #222;
+    margin: 20px 16px 10px;
+}
+
+p {
+    font-size: 1em;
+    margin: 16px;
+    color: #555;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Ronde hoeken zoals in wireframe */
+    margin: 20px auto;
+}
+
+a.backarrow {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #222;
+    margin: 16px;
+    display: inline-block;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff; /* Witte achtergrond voor het centrale gedeelte */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    border-radius: 10px; /* Ronde hoeken */
+    padding: 20px;
+}
+
+.button {
+    display: block;
+    max-width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    color: #fff;
+    background-color: #c61b94; /* Knalkleur zoals in het plaatje */
+    border-radius: 8px; /* Afgeronde hoeken */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #a01478; /* Donkere kleur voor hover-effect */
+}
+
