@@ -1,3 +1,157 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Navbar styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8fef8; /* Light background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* Required for dropdown positioning */
+}
+
+/* Logo Styling */
+.logo img {
+    height: 50px;
+}
+
+/* Burger Menu Styling */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-bar {
+    width: 30px;
+    height: 5px;
+    background-color: #2b392b; /* Dark green color */
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+/* Dropdown Menu Styling */
+.nav-options {
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    right: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-options a {
+    text-decoration: none;
+    color: #2b392b;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-options a:hover {
+    background-color: #f8fef8;
+}
+
+/* Active State */
+.nav-options.active {
+    display: flex;
+}
+
+main {
+    min-height: 80vh;
+}
+
+footer {
+    background-color: #2b392b; /* Donkergroene achtergrondkleur */
+    color: #f5e317; /* Goudgele kleur voor titels */
+    font-family: Arial, sans-serif;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* Verdeel de kolommen gelijkmatig */
+    flex-wrap: wrap; /* Zorgt ervoor dat het netjes breekt op kleine schermen */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Styling voor de secties in de footer */
+footer div {
+    flex: 1; /* Verdeel de ruimte gelijk */
+    margin: 10px;
+}
+
+footer div h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f5e317; /* Goudgele kleur voor koppen */
+}
+
+footer div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer div ul li {
+    margin-bottom: 5px;
+}
+
+footer div ul li a {
+    text-decoration: none;
+    color: #d7d7d7; /* Lichte grijstint voor links */
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+footer div ul li a:hover {
+    color: #ffffff; /* Witte kleur bij hover */
+}
+
+/* Sociale media sectie */
+footer .social-media {
+    display: flex;
+    gap: 15px; /* Ruimte tussen de iconen */
+}
+
+footer .social-media a {
+    text-decoration: none;
+    color: #f5e317; /* Goudgele kleur voor iconen */
+    font-size: 1.4rem;
+}
+
+/* Styling voor het logo */
+footer .logo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Lijn de tekst en het logo uit aan de linkerkant */
+}
+
+footer .logo span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #f5e317; /* Goudgele kleur voor het logo-tekst */
+    margin-bottom: 5px;
+}
+
+footer .logo img {
+    max-height: 50px;
+    margin-top: 5px;
+}
+
