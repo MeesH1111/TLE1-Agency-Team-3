@@ -133,6 +133,26 @@ footer .social-media a {
     font-size: 0.9rem;
 }
 
+.choice {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.choice .introductie {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.choice .btn {
+    flex: 1;
+    padding: 12px 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Algemene instellingen */
 body {
