@@ -130,6 +130,10 @@ footer .social-media {
     gap: 10px; /* Ruimte tussen de iconen */
 }
 
+footer .social-media ul {
+    list-style: none;
+}
+
 footer .social-media a {
     text-decoration: none;
     color: #d7d7d7;

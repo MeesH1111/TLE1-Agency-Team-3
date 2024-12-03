@@ -61,10 +61,8 @@
     <div>
         <h4>Volg ons op</h4>
         <div class="social-media">
-            <ul>
-                <a href="#" class="social-link">Linkedin</a>
-                <a href="#" class="social-link">Facebook</a>
-            </ul>
+            <a href="#" class="social-link">Linkedin</a>
+            <a href="#" class="social-link">Facebook</a>
         </div>
     </div>
 </footer>
