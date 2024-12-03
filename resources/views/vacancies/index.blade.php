@@ -10,5 +10,7 @@
 </head>
 <body>
 <h1 id="vacancyTitle">Vacatures</h1>
+<p class="{{$category}}">{{$category}}</p>
+<a href="{{ route('categories.index') }}">Banaan</a>
 </body>
 </html>
