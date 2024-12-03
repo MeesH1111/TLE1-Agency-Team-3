@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanciesController;
@@ -9,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/categorieën', [CategoryController::class, 'index'])->name('categories.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -25,7 +28,12 @@ Route::get('/test', function () {
 });
 
 Route::resource('/companies', CompaniesController::class);
-Route::resource('/vacancies', VacanciesController::class);
+Route::get('/vacatures/{category}', [VacanciesController::class, 'index'])->name('vacancies.index');
+Route::get('/vacatures/create', [VacanciesController::class, 'create'])->name('vacancies.create');
+Route::post('/vactures', [VacanciesController::class, 'store'])->name('vacancies.store');
+Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->name('vacancies.edit');
+Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update');
+Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
 Route::resource('/waitlist', WaitList::class);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
