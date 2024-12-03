@@ -7,5 +7,6 @@
     <x-slot name="css">
 
     </x-slot>
+
 </x-base-layout>
 

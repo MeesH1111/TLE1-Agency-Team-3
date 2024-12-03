@@ -13,6 +13,7 @@ Route::get('/', function () {
 
 Route::get('/categorieën', [CategoryController::class, 'index'])->name('categories.index');
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -23,7 +24,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/home', function () { return view('home');})->name('home');
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
 
 Route::resource('/companies', CompaniesController::class);
 Route::get('/vacatures/{category}', [VacanciesController::class, 'index'])->name('vacancies.index');
