@@ -28,6 +28,10 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
 
 Route::resource('/companies', CompaniesController::class);
 Route::get('/vacatures/{category}', [VacanciesController::class, 'index'])->name('vacancies.index');
