@@ -10,9 +10,10 @@ class VacanciesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, string $category)
     {
-        return view('vacancies.index');
+
+        return view('vacancies.index', compact('category'));
     }
 
     /**
