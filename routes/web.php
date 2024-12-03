@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VacanciesController;
+use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,5 +23,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/test', function () {
     return view('test');
 });
+
+Route::resource('/companies', CompaniesController::class);
+Route::resource('/vacancies', VacanciesController::class);
+Route::resource('/waitlist', WaitList::class);
 
 require __DIR__.'/auth.php';
