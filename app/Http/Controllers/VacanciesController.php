@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
 class VacanciesController extends Controller
@@ -9,9 +10,10 @@ class VacanciesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, string $category)
     {
-        //
+        dd($category);
+        return view('vacancies.index');
     }
 
     /**
@@ -19,7 +21,7 @@ class VacanciesController extends Controller
      */
     public function create()
     {
-        //
+        return view('vacancies.create');
     }
 
     /**
@@ -27,7 +29,20 @@ class VacanciesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['title' => 'required']);
+
+        $vacancy = new Vacancy();
+        $vacancy->role = $request->input('role');
+        $vacancy->salary = $request->input('salary');
+        $vacancy->hours = $request->input('hours');
+        $vacancy->location = $request->input('location');
+        $vacancy->type = $request->input('type');
+        $vacancy->requirements = $request->input('requirements');
+        $vacancy->description = $request->input('description');
+        $vacancy->save();
+
+        return redirect()->route('vacancies.create');
+
     }
 
     /**
