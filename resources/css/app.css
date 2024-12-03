@@ -126,32 +126,13 @@ footer div ul li a:hover {
 /* Sociale media sectie */
 footer .social-media {
     display: flex;
-    gap: 15px; /* Ruimte tussen de iconen */
+    flex-direction: column;
+    gap: 10px; /* Ruimte tussen de iconen */
 }
 
 footer .social-media a {
     text-decoration: none;
-    color: #f5e317; /* Goudgele kleur voor iconen */
-    font-size: 1.4rem;
-}
-
-/* Styling voor het logo */
-footer .logo {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Lijn de tekst en het logo uit aan de linkerkant */
-}
-
-footer .logo span {
+    color: #d7d7d7;
     font-size: 0.9rem;
-    font-weight: bold;
-    color: #f5e317; /* Goudgele kleur voor het logo-tekst */
-    margin-bottom: 5px;
-}
-
-footer .logo img {
-    max-height: 50px;
-    margin-top: 5px;
 }
 

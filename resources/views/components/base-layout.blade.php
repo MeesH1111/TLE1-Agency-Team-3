@@ -5,9 +5,10 @@
     <meta name="viewport"
           content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ $css }}
     @vite('resources/css/app.css')
     @vite('resources/js/main.js')
-    <title>#</title>
+    <title>{{ $title ?? 'Default Title' }}</title>
 </head>
 
 <body>
@@ -60,13 +61,10 @@
     <div>
         <h4>Volg ons op</h4>
         <div class="social-media">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-        </div>
-        <div class="logo">
-            <span>Open Hiring®</span>
-            {{--            <img src="open-hiring-logo.png" alt="Open Hiring Logo">--}}
+            <ul>
+                <a href="#" class="social-link">Linkedin</a>
+                <a href="#" class="social-link">Facebook</a>
+            </ul>
         </div>
     </div>
 </footer>
