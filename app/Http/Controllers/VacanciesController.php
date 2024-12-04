@@ -12,8 +12,8 @@ class VacanciesController extends Controller
      */
     public function index(Request $request, string $category)
     {
-        dd($category);
-        return view('vacancies.index');
+
+        return view('vacancies.index', compact('category'));
     }
 
     /**
