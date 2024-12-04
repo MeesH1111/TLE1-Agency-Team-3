@@ -19,7 +19,7 @@
             <img src="https://www.openhiring.nl/assets/images/logo/logo-oh.png" alt="Open Hiring Logo">
         </a>
     </div>
-    <button class="menu" id="burger-menu" aria-expanded="false" aria-controls="nav-options">
+    <button class="menu" id="burger-menu" aria-label="Drop down menu" aria-controls="nav-options">
         <div class="menu-bar"></div>
         <div class="menu-bar"></div>
         <div class="menu-bar"></div>
