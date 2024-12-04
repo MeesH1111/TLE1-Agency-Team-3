@@ -36,7 +36,7 @@
                     <li>Type: {{ $vacancy->type}} </li>
                     <li>Benodigdheden: {{ $vacancy->requirements}} </li>
                     <li>Beschrijving: {{ $vacancy->description}} </li>
-                    <a href="{{route('vacancies.show', [$id => $vacancy->id])}}">Zie details</a>
+                    <a href="{{route('vacancies.show', ['id' => $vacancy->id])}}">Zie details</a>
                 @endforeach
             </ul>
         </div>
