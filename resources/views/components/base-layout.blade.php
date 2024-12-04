@@ -25,9 +25,9 @@
         <div class="menu-bar"></div>
     </button>
     <div class="nav-options" id="nav-options">
-        <a href="/">Home</a>
-        <a href="over-ons">Over Ons</a>
-        <a href="profile">Profile</a>
+        <a href="/" aria-label="Home">Home</a>
+        <a href="over-ons" aria-label="Over-ons">Over Ons</a>
+        <a href="profile" aria-label="Profiel pagina">Profile</a>
     </div>
 </nav>
 
