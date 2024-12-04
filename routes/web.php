@@ -7,7 +7,7 @@ use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/categorieën', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categorieen', [CategoryController::class, 'index'])->name('categories.index');
 
 
 Route::get('/dashboard', function () {
@@ -30,7 +30,7 @@ Route::get('/test', function () {
 
 Route::get('/success-nico', function () {
     return view('success-story');
-})->name('success-Nico');
+})->name('success-nico');
 
 
 Route::resource('/companies', CompaniesController::class);

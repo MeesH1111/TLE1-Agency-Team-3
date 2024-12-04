@@ -34,7 +34,8 @@
                 zien, je bent compleet anoniem. Dit is nodig om je een geautomatiseerde email te sturen als je je
                 inschrijft voor een vacature.
             </p>
-            <a class="btn" href="" id="uitlegbtn" aria-label="Dit is een knop. klik hier om een account aan te maken">Account
+            <a class="btn" href="{{ route('register') }}" id="uitlegbtn"
+               aria-label="Dit is een knop. klik hier om een account aan te maken">Account
                 aanmaken</a>
         </div>
 
@@ -72,7 +73,8 @@
                          alt="Nico die buiten in een rolstoel zit">
                 </div>
             </div>
-            <a class="btn" href="" aria-label="Dit is een knop. Klik hier om het verhaal van Nico te bekijken">Bekijk
+            <a class="btn" href="{{route('success-nico')}}"
+               aria-label="Dit is een knop. Klik hier om het verhaal van Nico te bekijken">Bekijk
                 verhaal</a>
 
 
