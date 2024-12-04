@@ -41,7 +41,7 @@ Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->n
 Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update');
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
 Route::resource('/wachtlijst', WaitList::class);
-Route::get('/vacatures/{id}', [VacanciesController::class, 'show'])->name('vacancies.show');
+Route::get('/vacature/details/{id}', [VacanciesController::class, 'show'])->name('vacancies.show');
 
 
 Route::get('/werknemer', function () {
