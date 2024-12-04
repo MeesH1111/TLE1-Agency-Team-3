@@ -1,15 +1,10 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanciesController;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/categorieën', [CategoryController::class, 'index'])->name('categories.index');
 
@@ -24,7 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->name('home');
 
@@ -32,10 +27,9 @@ Route::get('/test', function () {
     return view('test');
 })->name('test');
 
-Route::get('/success-Nico', function () {
+Route::get('/success-nico', function () {
     return view('success-story');
 })->name('success-Nico');
-
 
 
 Route::resource('/companies', CompaniesController::class);
@@ -47,4 +41,12 @@ Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
 Route::resource('/waitlist', WaitList::class);
 
-require __DIR__ . '/auth.php';
+Route::get('/werknemer', function () {
+    return view('werknemer-uitleg');
+});
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+require __DIR__.'/auth.php';
