@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanciesController;
+use App\Http\Controllers\CategoryController;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 
@@ -49,4 +50,4 @@ Route::get('/test', function () {
     return view('test');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
