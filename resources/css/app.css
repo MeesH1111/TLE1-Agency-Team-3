@@ -154,6 +154,10 @@ footer .social-media a {
     align-items: center;
 }
 
+#uitlegbtn {
+    margin-left: 1em;
+}
+
 /* Algemene instellingen */
 body {
     font-family: Arial, sans-serif;
@@ -258,7 +262,8 @@ body {
 .werknemertekst {
     font-size: 1em;
     margin: 16px;
-    color: #555;
+    color: black;
+
 }
 
 .uitlegimg {

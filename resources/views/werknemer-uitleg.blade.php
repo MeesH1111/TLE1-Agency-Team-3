@@ -13,10 +13,10 @@
             <h2 class="title">Hoe het werkt als werkzoekende</h2>
             <img class="uitlegimg" src="/images/werknemeruitlegimage1.png" alt="twee werknemers in de bouw">
 
-            <p class="werknemertekst">Lorem ipsum odor amet, consectetuer adipiscing elit.
-                Cursus risus habitasse est imperdiet ante ultrices pharetra tortor.
-                Condimentum sagittis aliquet penatibus eros montes.
-                Urna montes eleifend libero quam ligula consectetur tortor hac.
+            <p class="werknemertekst">Met Open Hiring heeft iedereen een eerlijke kans op een baan. Wie wil én kan
+                werken, kan zó aan de slag. Zonder sollicitatiegesprek, zonder brief, zonder vragen. Met één druk op de
+                knop. Open Hiring draait namelijk niet om diploma’s, maar om mensen. Niet om praatjes, maar om
+                aanpakken.
             </p>
         </div>
 
@@ -24,23 +24,38 @@
             <h2 class="title">Maak een account</h2>
             <img class="uitlegimg" src="/images/werknemeruitlegimage2.png" alt="">
             <p class="werknemertekst">
-                Lorem ipsum odor amet, consectetuer adipiscing elit.
-                Cursus risus habitasse est imperdiet ante ultrices pharetra tortor.
-                Condimentum sagittis aliquet penatibus eros montes.
-                Urna montes eleifend libero quam ligula consectetur tortor hac.
+                Het maken van account is niet nodig om vacatures te bekijken. Kijk gerust rond naar alle beschikbare
+                vacatures en zie of er iets voor jou tussen zit.
             </p>
-            <a class="btn" href="">Account aanmaken</a>
+            <p class="werknemertekst">
+                <strong>Voor het inschrijven op een vacature heb je wel een
+                    account nodig.</strong> Je moet je naam, email en wachtwoord invoeren. Maar alle werkgevers kunnen
+                hier niks van
+                zien, je bent compleet anoniem. Dit is nodig om je een geautomatiseerde email te sturen als je je
+                inschrijft voor een vacature.
+            </p>
+            <a class="btn" href="" id="uitlegbtn" aria-label="Dit is een knop. klik hier om een account aan te maken">Account
+                aanmaken</a>
         </div>
 
         <div class="containerinfo">
             <h2 class="title">Zoek een vacature</h2>
             <p class="werknemertekst">
-                Lorem ipsum odor amet, consectetuer adipiscing elit.
-                Cursus risus habitasse est imperdiet ante ultrices pharetra tortor.
-                Condimentum sagittis aliquet penatibus eros montes.
-                Urna montes eleifend libero quam ligula consectetur tortor hac.
+                Het bekijken van vacatures is dus gewoon te doen zonder een account. Alle vacatures zijn ingedeeld in
+                verschillende categorieën. Kies een categorie waar jij geintereseerd in bent en zie alle vacatures in
+                die categorie.
             </p>
-            <a class="btn" href="">Zoek vacatures</a>
+            <p class="werknemertekst">
+                Zie jij een vacature die je leuk lijkt? Klik dan op die vacature voor een overzicht met
+                meer informatie over die vacature.
+            </p>
+            <p class="werknemertekst">
+                Zie je het zitten om hier te komen werken, dan kan je je inschrijven
+                op de vacature. Je krijgt dan een geautomatiseerde uitnodigings email met alle informatie over hoe het
+                verloopt en waar je moet zijn.
+            </p>
+            <a class="btn" href="" aria-label="Dit is een knop. Klik hier om vacatures te zoeken" id="uitlegbtn">Zoek
+                vacatures</a>
         </div>
 
         <div class="storycointaner">
@@ -57,7 +72,8 @@
                          alt="Nico die buiten in een rolstoel zit">
                 </div>
             </div>
-            <a class="btn" href="">Bekijk verhaal</a>
+            <a class="btn" href="" aria-label="Dit is een knop. Klik hier om het verhaal van Nico te bekijken">Bekijk
+                verhaal</a>
 
 
         </div>
