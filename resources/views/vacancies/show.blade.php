@@ -11,6 +11,7 @@
 
     <h1 class="text-2xl font-bold">{{ $vacancy->role }}</h1>
 
+    <p>Bedrijf: {{$vacancy->company->name}}</p>
     <p>Salaris: {{ $vacancy->salary }}</p>
     <p>Uren: {{ $vacancy->hours }}</p>
     <p>Locatie: {{ $vacancy->location }}</p>

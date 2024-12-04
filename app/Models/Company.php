@@ -16,8 +16,8 @@ class Company extends Model
         return $this->belongsToMany(User::class);
     }
 
-//    public function vacancies(): HasMany
-//    {
-//        return $this->hasMany(Vacancy::class, 'companies_id');
-//    }
+    public function vacancies(): HasMany
+    {
+        return $this->hasMany(Vacancy::class);
+    }
 }
