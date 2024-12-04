@@ -149,7 +149,6 @@ body {
     max-width: 430px;
     margin: 0 auto;
     padding: 20px;
-    height: 932px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -228,3 +227,111 @@ body {
     color: #555;
     margin-bottom: 20px;
 }
+
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #222;
+    margin: 20px 16px 10px;
+}
+
+.werknemertekst {
+    font-size: 1em;
+    margin: 16px;
+    color: #555;
+}
+
+.uitlegimg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Ronde hoeken zoals in wireframe */
+    margin: 20px auto;
+}
+
+.backarrow {
+    border: solid black;
+    border-width: 0 0.1em 0.1em 0;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff; /* Witte achtergrond voor het centrale gedeelte */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    border-radius: 10px; /* Ronde hoeken */
+    padding: 20px;
+}
+
+.containerinfo {
+    margin-bottom: 3em;
+}
+
+.button {
+    display: block;
+    max-width: 200px;
+    margin: 1em 1em;
+    padding: 1em 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    color: #fff;
+    background-color: #c61b94; /* Knalkleur zoals in het plaatje */
+    border-radius: 8px; /* Afgeronde hoeken */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #a01478; /* Donkere kleur voor hover-effect */
+}
+
+.storycointaner {
+    max-width: 23em;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: #D9D9D9; /* Witte achtergrond */
+    border-radius: 1em; /* Afgeronde hoeken */
+    text-align: center;
+}
+
+.storyinformatie {
+    display: flex;
+    justify-content: center;
+}
+
+.storytitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #222; /* Donkere kleur voor de titel */
+    margin-bottom: 10px;
+}
+
+.storyp {
+    margin-top: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 12em;
+}
+
+.storyimg {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.storyinfo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -1.5em;
+}
+
