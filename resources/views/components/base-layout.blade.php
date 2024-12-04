@@ -19,15 +19,15 @@
             <img src="https://www.openhiring.nl/assets/images/logo/logo-oh.png" alt="Open Hiring Logo">
         </a>
     </div>
-    <button class="menu" id="burger-menu" aria-expanded="false" aria-controls="nav-options">
+    <button class="menu" id="burger-menu" aria-label="Drop down menu" aria-controls="nav-options">
         <div class="menu-bar"></div>
         <div class="menu-bar"></div>
         <div class="menu-bar"></div>
     </button>
     <div class="nav-options" id="nav-options">
-        <a href="/">Home</a>
-        <a href="{{ route('vacancies.index') }}">Vacatures</a>
-        <a href="">Profile</a>
+        <a href="/" aria-label="Home">Home</a>
+        <a href="over-ons" aria-label="Over-ons">Over Ons</a>
+        <a href="profile" aria-label="Profiel pagina">Profile</a>
     </div>
 </nav>
 
