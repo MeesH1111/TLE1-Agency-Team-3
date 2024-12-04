@@ -10,9 +10,9 @@
     <h1 id="categoryTitle">Categorieën</h1>
     <div id="categoryList">
         @foreach($categories as $category)
-            <a href=" {{ route('vacancies.index',$category->category_name ) }}" id="{{$category->color}}"
+            <a href=" {{ route('vacancies.index',$category->id ) }}" id="{{$category->color}}"
                class="categoryCard">
-                <h2>{{$category->category_name}}</h2>
+                <h2>{{$category->name}}</h2>
             </a>
         @endforeach
     </div>

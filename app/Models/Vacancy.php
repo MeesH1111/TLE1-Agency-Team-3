@@ -20,4 +20,9 @@ class Vacancy extends Model
         return $this->hasMany(User::class);
     }
 
+    public function categories(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
+
 }

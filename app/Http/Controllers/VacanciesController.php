@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vacancy;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class VacanciesController extends Controller
@@ -13,7 +14,14 @@ class VacanciesController extends Controller
     public function index(Request $request, string $category)
     {
 
-        return view('vacancies.index', compact('category'));
+        $categoryModel = Category::where('id', $category)->first();
+
+        if(!$categoryModel) {
+            abort(404, 'Category not found');
+        }
+
+        return view('vacancies.index', ['category' => $categoryModel->name,
+            'vacancies' => $categoryModel->vacancies]);
     }
 
     /**
@@ -48,9 +56,11 @@ class VacanciesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+       $vacancy = Vacancy::findOrFail($id);
+
+        return view('vacancies.show', compact('vacancy') );
     }
 
     /**
