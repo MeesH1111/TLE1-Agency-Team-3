@@ -33,7 +33,7 @@ Route::get('/success-nico', function () {
 })->name('success-nico');
 
 
-Route::resource('/bedrijven', CompaniesController::class);
+//Route::resource('/bedrijven', CompaniesController::class);
 Route::get('/vacatures/{category?}', [VacanciesController::class, 'index'])->name('vacancies.index');
 Route::get('/vacatures/create', [VacanciesController::class, 'create'])->name('vacancies.create');
 Route::post('/vacatures', [VacanciesController::class, 'store'])->name('vacancies.store');
