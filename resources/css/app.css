@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f8fef8; /* Light background */
+    background-color: #F5FEFD; /* Light background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     position: relative; /* Required for dropdown positioning */
 }

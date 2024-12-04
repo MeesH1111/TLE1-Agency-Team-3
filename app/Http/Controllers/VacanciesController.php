@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vacancy;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class VacanciesController extends Controller
@@ -12,8 +13,16 @@ class VacanciesController extends Controller
      */
     public function index(Request $request, string $category)
     {
+//        dd($category);
+        $categoryModel = Category::where('name', $category)->first();
 
-        return view('vacancies.index', compact('category'));
+        if(!$categoryModel) {
+            abort(404, 'Category not found');
+        }
+
+//        return view('vacancies.index', compact('category'));
+        return view('vacancies.index', ['category' => $categoryModel->name,
+            'vacancies' => $categoryModel->vacancies]);
     }
 
     /**

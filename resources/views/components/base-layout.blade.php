@@ -26,8 +26,8 @@
     </button>
     <div class="nav-options" id="nav-options">
         <a href="/">Home</a>
-        <a href="over-ons">Over Ons</a>
-        <a href="profile">Profile</a>
+        <a href="{{ route('vacancies.index') }}">Vacatures</a>
+        <a href="">Profile</a>
     </div>
 </nav>
 

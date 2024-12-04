@@ -33,13 +33,13 @@ Route::get('/home', function () {
 })->name('home');
 
 
-Route::resource('/companies', CompaniesController::class);
-Route::get('/vacatures/{category}', [VacanciesController::class, 'index'])->name('vacancies.index');
+Route::resource('/bedrijven', CompaniesController::class);
+Route::get('/vacatures/{category?}', [VacanciesController::class, 'index'])->name('vacancies.index');
 Route::get('/vacatures/create', [VacanciesController::class, 'create'])->name('vacancies.create');
-Route::post('/vactures', [VacanciesController::class, 'store'])->name('vacancies.store');
+Route::post('/vacatures', [VacanciesController::class, 'store'])->name('vacancies.store');
 Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->name('vacancies.edit');
 Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update');
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
-Route::resource('/waitlist', WaitList::class);
+Route::resource('/wachtlijst', WaitList::class);
 
 require __DIR__ . '/auth.php';
