@@ -11,20 +11,34 @@
     <h1 id="vacancyTitle">Vacatures</h1>
     <nav>
         <a class="Supermarkten" id="green" href="{{route('vacancies.index', ['category' => 'Supermarkten'])}}">Supermarkten,</a>
-        <a class="HorecaCatering" id="red" href="{{route('vacancies.index', ['category' => 'HorecaCatering'])}}">Horeca & Catering,</a>
-        <a class="LogistiekTransport" id="blue" href="{{route('vacancies.index', ['category' => 'LogistiekTransport'])}}">Logistiek & Transport,</a>
-        <a class="Schoonmaak" id="white" href="{{route('vacancies.index', ['category' => 'Schoonmaak'])}}">Schoonmaak,</a>
-        <a class="BouwTechniek" id="orange" href="{{route('vacancies.index', ['category' => 'BouwTechniek'])}}">Bouw & Techniek,</a>
-        <a class="ZorgWelzijn" id="blue1" href="{{route('vacancies.index', ['category' => 'ZorgWelzijn'])}}">Zorg & Welzijn,</a>
+        <a class="HorecaCatering" id="red" href="{{route('vacancies.index', ['category' => 'HorecaCatering'])}}">Horeca
+            & Catering,</a>
+        <a class="LogistiekTransport" id="blue"
+           href="{{route('vacancies.index', ['category' => 'LogistiekTransport'])}}">Logistiek & Transport,</a>
+        <a class="Schoonmaak" id="white"
+           href="{{route('vacancies.index', ['category' => 'Schoonmaak'])}}">Schoonmaak,</a>
+        <a class="BouwTechniek" id="orange" href="{{route('vacancies.index', ['category' => 'BouwTechniek'])}}">Bouw &
+            Techniek,</a>
+        <a class="ZorgWelzijn" id="blue1" href="{{route('vacancies.index', ['category' => 'ZorgWelzijn'])}}">Zorg &
+            Welzijn,</a>
         <a class="Toerisme" id="yellow" href="{{route('vacancies.index', ['category' => 'Toerisme'])}}">Toerisme,</a>
         <a class="Scholen" id="blue2" href="{{route('vacancies.index', ['category' => 'Scholen'])}}">Scholen,</a>
-        <a class="Evenementen" id="red1" href="{{route('vacancies.index', ['category' => 'Evenementen'])}}">Evenementen & Entertainment,</a>
+        <a class="Evenementen" id="red1" href="{{route('vacancies.index', ['category' => 'Evenementen'])}}">Evenementen
+            & Entertainment,</a>
         <a class="Industrie" id="grey" href="{{route('vacancies.index', ['category' => 'Industrie'])}}">Industrie</a>
 
     </nav>
-{{--    <h2 class="{{$category}}">Categorie: {{$category}}</h2>--}}
-{{--    <a href="{{ route('categories.index') }}">Banaan</a>--}}
+    {{--    <h2 class="{{$category}}">Categorie: {{$category}}</h2>--}}
+    {{--    <a href="{{ route('categories.index') }}">Banaan</a>--}}
 
+    <form method="get" action="{{route('vacancies.search')}}">
+        @csrf
+        <label for="category"></label>
+        <input type="hidden" name="category" id="category" value="{{$categoryId}}">
+        <label for="search"></label>
+        <input type="text" name="search" id="search" placeholder="Zoek specifiek"
+               value="{{ request()->input('searchToken') ?  request()->input('searchToken') : ''  }}">
+    </form>
     @if($vacancies->isNotEmpty())
         <div>
             <ul>

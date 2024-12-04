@@ -16,12 +16,21 @@ class VacanciesController extends Controller
 
         $categoryModel = Category::where('id', $category)->first();
 
-        if(!$categoryModel) {
+        if (!$categoryModel) {
             abort(404, 'Category not found');
         }
-
         return view('vacancies.index', ['category' => $categoryModel->name,
-            'vacancies' => $categoryModel->vacancies]);
+            'vacancies' => $categoryModel->vacancies, 'categoryId' => $category]);
+    }
+
+    public function search(Request $request)
+    {
+//        $category = Category::where('name', $request->category)->get();
+        $search = $request->search;
+
+        $vacancies = Vacancy::whereAny(['role', 'location', 'type', 'salary', 'hours'], 'LIKE', "%$search%")->where('category_id', $request->category)->get();
+        dd($vacancies);
+        return view('vacancies.index', compact('vacancies'));
     }
 
     /**
@@ -58,9 +67,9 @@ class VacanciesController extends Controller
      */
     public function show($id)
     {
-       $vacancy = Vacancy::findOrFail($id);
+        $vacancy = Vacancy::findOrFail($id);
 
-        return view('vacancies.show', compact('vacancy') );
+        return view('vacancies.show', compact('vacancy'));
     }
 
     /**

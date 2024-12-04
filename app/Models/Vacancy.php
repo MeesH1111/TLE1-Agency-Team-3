@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Vacancy extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['role', 'salary', 'hours', 'location', 'type', 'requirements', 'description', 'category_id'];
+
+
     public function vacancies(): BelongsTo
     {
         return $this->belongsTo(Company::class);
