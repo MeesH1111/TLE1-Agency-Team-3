@@ -14,7 +14,7 @@ class VacanciesController extends Controller
     public function index(Request $request, string $category)
     {
 
-        $categoryModel = Category::where('name', $category)->first();
+        $categoryModel = Category::where('id', $category)->first();
 
         if(!$categoryModel) {
             abort(404, 'Category not found');
