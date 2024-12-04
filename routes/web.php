@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanciesController;
+use App\Http\Controllers\CategoryController;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/categorieën', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categorieen', [CategoryController::class, 'index'])->name('categories.index');
 
 
 Route::get('/dashboard', function () {
@@ -29,7 +30,7 @@ Route::get('/test', function () {
 
 Route::get('/success-nico', function () {
     return view('success-story');
-})->name('success-Nico');
+})->name('success-nico');
 
 
 Route::resource('/companies', CompaniesController::class);
@@ -49,4 +50,4 @@ Route::get('/test', function () {
     return view('test');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
