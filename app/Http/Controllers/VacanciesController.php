@@ -13,14 +13,13 @@ class VacanciesController extends Controller
      */
     public function index(Request $request, string $category)
     {
-//        dd($category);
+
         $categoryModel = Category::where('name', $category)->first();
 
         if(!$categoryModel) {
             abort(404, 'Category not found');
         }
 
-//        return view('vacancies.index', compact('category'));
         return view('vacancies.index', ['category' => $categoryModel->name,
             'vacancies' => $categoryModel->vacancies]);
     }
@@ -57,9 +56,11 @@ class VacanciesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+       $vacancy = Vacancy::findOrFail($id);
+
+        return view('vacancies.show', compact('vacancy') );
     }
 
     /**
