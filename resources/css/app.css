@@ -169,7 +169,6 @@ body {
     max-width: 430px;
     margin: 0 auto;
     padding: 20px;
-    height: 932px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
