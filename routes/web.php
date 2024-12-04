@@ -7,10 +7,6 @@ use App\Http\Controllers\VacanciesController;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/categorieën', [CategoryController::class, 'index'])->name('categories.index');
 
 
@@ -24,18 +20,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/success-Nico', function () {
+Route::get('/success-nico', function () {
     return view('success-story');
 })->name('success-Nico');
-
 
 
 Route::resource('/companies', CompaniesController::class);
