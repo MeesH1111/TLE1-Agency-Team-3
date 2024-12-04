@@ -4,22 +4,32 @@
     </x-slot:title>
 
     <x-slot name="css">
-        @vite('resources/css/success-story.css')
+        @vite('resources/css/succes.css')
     </x-slot>
 
     <div class="container">
         <section class="story">
             <h1>Van Doorzetter naar Inspiratie</h1>
             <p>
-                Nico, een jonge man met een brede glimlach en een ongekende vastberadenheid, droomde ervan om zijn leven onafhankelijk te leiden en een carrière op te bouwen. Hoewel hij in een rolstoel zat vanwege een aangeboren aandoening, liet hij zich daar nooit door tegenhouden. Hij wilde bewijzen dat hij, net als iedereen, waardevolle vaardigheden en talenten had om bij te dragen aan de maatschappij.
+                Nico is een jonge man met een grote glimlach en veel doorzettingsvermogen. Hij zit in een rolstoel door een aandoening waarmee hij is geboren. Maar Nico heeft grote dromen: hij wil zijn eigen leven leiden en een leuke baan hebben. Hij weet zeker dat hij net zoveel kan als anderen en dat hij waardevolle talenten heeft.
             </p>
             <p>
-                Toch was het vinden van een baan geen gemakkelijke reis. Nico solliciteerde maandenlang bij talloze bedrijven, maar liep steeds tegen afwijzingen aan. Elke afwijzing voelde als een klap, maar Nico bleef hoopvol: “Mijn kans komt,” zei hij altijd tegen zichzelf.
+                Het vinden van werk was moeilijk. Nico stuurde maandenlang brieven naar bedrijven, maar hij werd steeds afgewezen. Dat was niet makkelijk, maar Nico bleef hoopvol. “Mijn kans komt,” zei hij steeds tegen zichzelf.
             </p>
             <p>
-                Die kans kwam dankzij Open Hiring. Nico meldde zich aan bij SVH en werd binnen enkele dagen uitgenodigd. Zijn positieve instelling en vastberadenheid spraken de manager direct aan. Kort daarna kreeg Nico het verlossende nieuws: hij was aangenomen!
+                Toen hoorde Nico over <strong>Open Hiring</strong>. Bij Open Hiring krijg je meteen een baan als je je aanmeldt, zonder een ingewikkeld sollicitatiegesprek of gesprekken met managers. Nico meldde zich aan bij SVH. Al snel kreeg hij goed nieuws: hij mocht beginnen!
             </p>
-            <img src="'image/eduard.png" alt="Blije man in een rolstoel.">
+            <p>
+                De eerste werkdag was spannend, maar Nico voelde zich al snel thuis. Zijn collega's waren vriendelijk en behulpzaam, en Nico merkte dat hij echt iets kon bijdragen. Hij kreeg taken die hij leuk vond en waarin hij goed was. Met elke dag groeide zijn zelfvertrouwen.
+            </p>
+            <p>
+                Inmiddels is Nico een waardevol lid van het team. Hij helpt zijn collega's met zijn positieve instelling en harde werk. “Door Open Hiring kreeg ik een kans, en nu kan ik laten zien wat ik waard ben,” zegt hij trots.
+            </p>
+            <p>
+                Nico’s verhaal laat zien dat iedereen met de juiste kansen kan groeien en succes kan behalen. Hij hoopt dat meer mensen zoals hij de mogelijkheid krijgen om hun talenten te laten zien en hun dromen waar te maken.
+            </p>
+            <img src="image/eduard.png" alt="Blije man in een rolstoel.">
         </section>
     </div>
+
 </x-base-layout>

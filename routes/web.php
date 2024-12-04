@@ -32,9 +32,9 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/success-story', function () {
+Route::get('/success-Nico', function () {
     return view('success-story');
-})->name('success-story');
+})->name('success-Nico');
 
 
 
