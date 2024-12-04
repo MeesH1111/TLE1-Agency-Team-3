@@ -28,9 +28,9 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
 
 Route::get('/success-Nico', function () {
     return view('success-story');
