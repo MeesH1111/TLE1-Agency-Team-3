@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanciesController;
 use App\Models\WaitList;
@@ -43,4 +41,12 @@ Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
 Route::resource('/waitlist', WaitList::class);
 
-require __DIR__ . '/auth.php';
+Route::get('/werknemer', function () {
+    return view('werknemer-uitleg');
+});
+
+Route::get('/test', function () {
+    return view('test');
+});
+
+require __DIR__.'/auth.php';
