@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+    background-image: url('/img/Base-Template (1).jpg');
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+}
+
+#categoryTitle {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1.7rem 2rem 1rem 2rem;
+    background: #f5fefd;
+    max-width: 70vw;
+    border-radius: 1rem 0 1rem 1rem;
+    border-bottom: black .2rem solid;
+}
+
+#categoryList {
+    justify-self: center;
+    display: grid;
+    gap: 1rem;
+    width: 90%;
+    grid-template-columns:repeat(2, 1fr);
+    margin-top: 4rem;
+}
+
+.categoryCard {
+    opacity: 95%;
+    display: flex;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    max-width: 12rem;
+    height: 6rem;
+    border-top: black .2rem solid;
+    border-right: black .2rem solid;
+    align-items: center;
+    justify-content: center;
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.categoryCard:hover {
+    opacity: 100;
+    transform: scale(1.05);
+}
+
+.categoryCard h2 {
+    color: #ffffff;
+    display: flex;
+    margin-top: .3rem;
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+}
+
+/* cardsColoring */
+#red {
+    background-color: #A63A3A;
+}
+
+#purple {
+    background-color: #AF4BA8;
+}
+
+#blue {
+    background-color: #49759C;
+}
+
+#green {
+    background-color: #4E7E47;
+}
+
+#orange {
+    background-color: #9B6D3B;
+}
+
+#blue1 {
+    background-color: #4F7282;
+}
+
+#yellow {
+    background-color: #8D7325;
+}
+
+#blue2 {
+    background-color: #547B87;
+}
+
+#red1 {
+    background-color: #8C4343;
+}
+
+#grey {
+    background-color: #757575;
+}
+
+
+
+

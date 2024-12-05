@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+main {
+    background-image: url('/img/Base-Template (1).jpg');
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+}
+
+/* Style specifically scoped to the "vacancy" page */
+body.vacancy-style {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: white; /* Base color for gaps */
+    position: relative;
+    overflow: auto;
+}
+
+body.vacancy-style h1#vacancyTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    justify-content: center;
+    color: #2E342A;
+    margin-bottom: 20px;
+}
+
+body.vacancy-style nav.vacancyNav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1;
+}
+
+body.vacancy-style div ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+    z-index: 1;
+}
+
+body.vacancy-style div ul li {
+    font-size: 1.2rem;
+    color: #2E342A;
+    margin-bottom: 10px;
+}
+
+body.vacancy-style div ul a {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    color: #2E342A;
+    transition: color 0.3s ease;
+}
+
+body.vacancy-style div ul a:hover {
+    color: #aa0160;
+}
+
+body.vacancy-style h3 {
+    font-size: 1.5rem;
+    color: #2E342A;
+    text-align: center;
+    z-index: 1;
+}
+
+
+
+body.vacancy-style .Supermarkten {
+    color: #00e600;
+}
+
+body.vacancy-style .HorecaCatering {
+    color: #A63A3A;
+}
+
+body.vacancy-style .LogistiekTransport {
+    color: #49759C;
+}
+
+body.vacancy-style .Schoonmaak {
+    color: #AF4BA8;
+}
+
+body.vacancy-style .BouwTechniek {
+    color: #9B6D3B;
+}
+
+body.vacancy-style .ZorgWelzijn {
+    color: #4F7282;
+}
+
+body.vacancy-style .Toerisme {
+    color: #8D7325;
+}
+
+body.vacancy-style .Scholen {
+    color: #547B87;
+}
+
+body.vacancy-style .Evenementen {
+    color: #8C4343;
+}
+
+body.vacancy-style .Industrie {
+    color: #757575;
+}
+

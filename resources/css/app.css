@@ -1,0 +1,434 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #F5FEFD; /* Light background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* Required for dropdown positioning */
+}
+
+/* Logo Styling */
+.logo img {
+    height: 50px;
+}
+
+/* Burger Menu Styling */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-bar {
+    width: 30px;
+    height: 5px;
+    background-color: #2b392b; /* Dark green color */
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+/* Dropdown Menu Styling */
+.nav-options {
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    right: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-options a {
+    text-decoration: none;
+    color: #2b392b;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-options a:hover {
+    background-color: #f8fef8;
+}
+
+/* Active State */
+.nav-options.active {
+    display: flex;
+}
+
+main {
+    min-height: 80vh;
+}
+
+footer {
+    background-color: #2b392b; /* Donkergroene achtergrondkleur */
+    color: #f5e317; /* Goudgele kleur voor titels */
+    font-family: Arial, sans-serif;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* Verdeel de kolommen gelijkmatig */
+    flex-wrap: wrap; /* Zorgt ervoor dat het netjes breekt op kleine schermen */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Styling voor de secties in de footer */
+footer div {
+    flex: 1; /* Verdeel de ruimte gelijk */
+    margin: 10px;
+}
+
+footer div h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f5e317; /* Goudgele kleur voor koppen */
+}
+
+footer div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer div ul li {
+    margin-bottom: 5px;
+}
+
+footer div ul li a {
+    text-decoration: none;
+    color: #d7d7d7; /* Lichte grijstint voor links */
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+footer div ul li a:hover {
+    color: #ffffff; /* Witte kleur bij hover */
+}
+
+/* Sociale media sectie */
+footer .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Ruimte tussen de iconen */
+}
+
+footer .social-media ul {
+    list-style: none;
+}
+
+footer .social-media a {
+    text-decoration: none;
+    color: #d7d7d7;
+    font-size: 0.9rem;
+}
+
+.choice {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.choice .introductie {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.choice .btn {
+    flex: 1;
+    padding: 12px 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#uitlegbtn {
+    margin-left: 1em;
+}
+
+/* Algemene instellingen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9fafb;
+}
+
+/* Container instellingen */
+.container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Introductie sectie */
+.introductie {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.introductie h1 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.stappen div {
+    font-size: 1rem;
+    color: #555;
+    margin: 8px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #d8608f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #be4d7b;
+}
+
+/* Partners sectie */
+.partners {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.partners h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.partner-logos p {
+    font-size: 1rem;
+    color: #555;
+    margin: 20px 0;
+}
+
+/* Succesverhaal sectie */
+.succesverhaal {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.succesverhaal h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.succesverhaal p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #222;
+    margin: 20px 16px 10px;
+}
+
+.werknemertekst {
+    font-size: 1em;
+    margin: 16px;
+    color: black;
+
+}
+
+.uitlegimg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Ronde hoeken zoals in wireframe */
+    margin: 20px auto;
+}
+
+.backarrow {
+    border: solid black;
+    border-width: 0 0.1em 0.1em 0;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff; /* Witte achtergrond voor het centrale gedeelte */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    border-radius: 10px; /* Ronde hoeken */
+    padding: 20px;
+}
+
+.containerinfo {
+    margin-bottom: 3em;
+}
+
+.button {
+    display: block;
+    max-width: 200px;
+    margin: 1em 1em;
+    padding: 1em 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    color: #fff;
+    background-color: #c61b94; /* Knalkleur zoals in het plaatje */
+    border-radius: 8px; /* Afgeronde hoeken */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #a01478; /* Donkere kleur voor hover-effect */
+}
+
+.storycointaner {
+    max-width: 23em;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: #D9D9D9; /* Witte achtergrond */
+    border-radius: 1em; /* Afgeronde hoeken */
+    text-align: center;
+}
+
+.storyinformatie {
+    display: flex;
+    justify-content: center;
+}
+
+.storytitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #222; /* Donkere kleur voor de titel */
+    margin-bottom: 10px;
+}
+
+.storyp {
+    margin-top: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 12em;
+}
+
+.storyimg {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.storyinfo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -1.5em;
+}
+
+/* Partners sectie */
+.partners {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.partner-logos {
+    display: flex; /* Zorgt ervoor dat logo's naast elkaar staan */
+    justify-content: center; /* Centraal uitlijnen van logo's */
+    align-items: center; /* Verticaal uitlijnen */
+    gap: 20px; /* Ruimte tussen de logo's */
+    flex-wrap: wrap; /* Logo's verplaatsen naar een nieuwe regel op kleinere schermen */
+}
+
+.partner-logos img {
+    width: 150px; /* Uniforme breedte voor alle logo's */
+    height: auto; /* Zorgt ervoor dat de proporties behouden blijven */
+    object-fit: contain; /* Logo's netjes binnen het frame */
+    border-radius: 5px; /* Optioneel: afgeronde hoeken voor de logo's */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+}
+
+/* Succesverhaal sectie */
+.succesverhaal {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex; /* Maakt het mogelijk om tekst en afbeelding naast elkaar te plaatsen */
+    align-items: center; /* Horizontale uitlijning */
+    justify-content: space-between; /* Ruimte tussen tekst en afbeelding */
+    flex-wrap: wrap; /* Layout breekt op kleinere schermen */
+}
+
+.succesverhaal h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.succesverhaal p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 300px; /* Zorgt ervoor dat tekst niet te breed wordt */
+    flex: 1; /* Tekst neemt ruimte in */
+}
+
+.succesverhaal img {
+    max-width: 200px; /* Beperk de maximale breedte van de afbeelding */
+    height: auto; /* Houd de proporties intact */
+    margin-left: 20px; /* Ruimte tussen tekst en afbeelding */
+    flex-shrink: 0; /* Voorkomt dat de afbeelding kleiner wordt bij weinig ruimte */
+    border-radius: 8px; /* Ronde hoeken zoals in wireframe */
+}
+
+
+@media (max-width: 768px) {
+    .partner-logos {
+        flex-direction: column; /* Stapel logo's onder elkaar op kleine schermen */
+        gap: 15px;
+    }
+
+    .succesverhaal {
+        flex-direction: column; /* Plaats afbeelding en tekst onder elkaar */
+        align-items: center; /* Centreer inhoud */
+        text-align: center;
+    }
+
+    .succesverhaal img {
+        margin: 20px 0; /* Ruimte boven en onder de afbeelding */
+    }
+}
