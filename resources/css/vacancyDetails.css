@@ -55,6 +55,7 @@ main {
 
 .bold-p {
     font-weight: bold;
+    margin: 0;
 }
 
 /* Beschrijving */
