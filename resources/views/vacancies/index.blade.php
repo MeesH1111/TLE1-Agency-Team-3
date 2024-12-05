@@ -12,28 +12,9 @@
     <body class="vacancy-style">
 
     <h1 id="vacancyTitle">Vacatures</h1>
-    <nav class="vacancyNav">
-        <a class="Supermarkten" id="green" href="{{route('vacancies.index', ['category' => '1'])}}">Supermarkten,</a>
-        <a class="HorecaCatering" id="red" href="{{route('vacancies.index', ['category' => '2'])}}">Horeca
-            & Catering,</a>
-        <a class="LogistiekTransport" id="blue"
-           href="{{route('vacancies.index', ['category' => '3'])}}">Logistiek & Transport,</a>
-        <a class="Schoonmaak" id="white"
-           href="{{route('vacancies.index', ['category' => '4'])}}">Schoonmaak,</a>
-        <a class="BouwTechniek" id="orange" href="{{route('vacancies.index', ['category' => '5'])}}">Bouw &
-            Techniek,</a>
-        <a class="ZorgWelzijn" id="blue1" href="{{route('vacancies.index', ['category' => '6'])}}">Zorg &
-            Welzijn,</a>
-        <a class="Toerisme" id="yellow" href="{{route('vacancies.index', ['category' => '7'])}}">Toerisme,</a>
-        <a class="Scholen" id="blue2" href="{{route('vacancies.index', ['category' => '8'])}}">Scholen,</a>
-        <a class="Evenementen" id="red1" href="{{route('vacancies.index', ['category' => '9'])}}">Evenementen
-            & Entertainment,</a>
-        <a class="Industrie" id="grey" href="{{route('vacancies.index', ['category' => '10'])}}">Industrie</a>
 
-    </nav>
+    <a href="{{ route('categories.index') }}" class="backarrow"></a>
 
-    {{--    <h2 class="{{$category}}">Categorie: {{$category}}</h2>--}}
-    {{--    <a href="{{ route('categories.index') }}">Banaan</a>--}}
 
     <form method="get" action="{{route('vacancies.search')}}">
         @csrf

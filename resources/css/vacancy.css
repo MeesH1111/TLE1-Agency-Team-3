@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.backarrow {
+    border: solid black;
+    border-width: 0 0.1em 0.1em 0;
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
 
 main {
     background-image: url('/img/Base-Template (1).jpg');
@@ -67,7 +79,6 @@ body.vacancy-style h3 {
     text-align: center;
     z-index: 1;
 }
-
 
 
 body.vacancy-style .Supermarkten {
