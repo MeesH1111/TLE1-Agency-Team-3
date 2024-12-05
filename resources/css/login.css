@@ -1,0 +1,116 @@
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Lichtgrijze achtergrond */
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto; /* Centraal uitlijnen met marge */
+    padding: 20px;
+    background-color: #ffffff; /* Witte achtergrond voor container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+    border-radius: 8px; /* Ronde hoeken */
+}
+
+/* Cirkelafbeelding */
+.circle-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Zorg voor een ronde afbeelding */
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Titel */
+h1 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Formulier */
+.login-form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.input-group input {
+    width: calc(100% - 20px); /* Volledige breedte met padding correctie */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd; /* Lichte grijze rand */
+    border-radius: 5px; /* Ronde hoeken */
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #a5007d; /* Magenta kleur bij focus */
+    box-shadow: 0 0 5px rgba(165, 0, 125, 0.3);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 10px);
+    cursor: pointer;
+    color: #aaa;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.remember-me input {
+    margin-right: 10px;
+}
+
+.login-button {
+    background-color: #a5007d; /* Magenta */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #82005f; /* Donkerder magenta */
+}
+
+/* Registreren link */
+.register-link {
+    color: #a5007d; /* Magenta */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}

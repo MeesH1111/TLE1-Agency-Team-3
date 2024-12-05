@@ -28,7 +28,7 @@
             <p>
                 Nico’s verhaal laat zien dat iedereen met de juiste kansen kan groeien en succes kan behalen. Hij hoopt dat meer mensen zoals hij de mogelijkheid krijgen om hun talenten te laten zien en hun dromen waar te maken.
             </p>
-            <img src="image/eduard.png" alt="Blije man in een rolstoel.">
+            <img src="/images/werknemeruitlegimage3.png" alt="Blije man in een rolstoel.">
         </section>
     </div>
 

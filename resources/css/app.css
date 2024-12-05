@@ -360,3 +360,75 @@ body {
     margin-bottom: -1.5em;
 }
 
+/* Partners sectie */
+.partners {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.partner-logos {
+    display: flex; /* Zorgt ervoor dat logo's naast elkaar staan */
+    justify-content: center; /* Centraal uitlijnen van logo's */
+    align-items: center; /* Verticaal uitlijnen */
+    gap: 20px; /* Ruimte tussen de logo's */
+    flex-wrap: wrap; /* Logo's verplaatsen naar een nieuwe regel op kleinere schermen */
+}
+
+.partner-logos img {
+    width: 150px; /* Uniforme breedte voor alle logo's */
+    height: auto; /* Zorgt ervoor dat de proporties behouden blijven */
+    object-fit: contain; /* Logo's netjes binnen het frame */
+    border-radius: 5px; /* Optioneel: afgeronde hoeken voor de logo's */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+}
+
+/* Succesverhaal sectie */
+.succesverhaal {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex; /* Maakt het mogelijk om tekst en afbeelding naast elkaar te plaatsen */
+    align-items: center; /* Horizontale uitlijning */
+    justify-content: space-between; /* Ruimte tussen tekst en afbeelding */
+    flex-wrap: wrap; /* Layout breekt op kleinere schermen */
+}
+
+.succesverhaal h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.succesverhaal p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 300px; /* Zorgt ervoor dat tekst niet te breed wordt */
+    flex: 1; /* Tekst neemt ruimte in */
+}
+
+.succesverhaal img {
+    max-width: 200px; /* Beperk de maximale breedte van de afbeelding */
+    height: auto; /* Houd de proporties intact */
+    margin-left: 20px; /* Ruimte tussen tekst en afbeelding */
+    flex-shrink: 0; /* Voorkomt dat de afbeelding kleiner wordt bij weinig ruimte */
+    border-radius: 8px; /* Ronde hoeken zoals in wireframe */
+}
+
+
+@media (max-width: 768px) {
+    .partner-logos {
+        flex-direction: column; /* Stapel logo's onder elkaar op kleine schermen */
+        gap: 15px;
+    }
+
+    .succesverhaal {
+        flex-direction: column; /* Plaats afbeelding en tekst onder elkaar */
+        align-items: center; /* Centreer inhoud */
+        text-align: center;
+    }
+
+    .succesverhaal img {
+        margin: 20px 0; /* Ruimte boven en onder de afbeelding */
+    }
+}
