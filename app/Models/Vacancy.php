@@ -14,8 +14,6 @@ class Vacancy extends Model
     protected $fillable = ['role', 'salary', 'hours', 'location', 'type', 'requirements', 'description', 'category_id'];
 
 
-    public function vacancies(): BelongsTo
-
     public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class);
