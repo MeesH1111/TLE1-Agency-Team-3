@@ -25,12 +25,11 @@ class VacanciesController extends Controller
 
     public function search(Request $request)
     {
-//        $category = Category::where('name', $request->category)->get();
         $search = $request->search;
-
+        $category = $request->category;
         $vacancies = Vacancy::whereAny(['role', 'location', 'type', 'salary', 'hours'], 'LIKE', "%$search%")->where('category_id', $request->category)->get();
-        dd($vacancies);
-        return view('vacancies.index', compact('vacancies'));
+
+        return view('vacancies.index', compact('vacancies', 'category'));
     }
 
     /**

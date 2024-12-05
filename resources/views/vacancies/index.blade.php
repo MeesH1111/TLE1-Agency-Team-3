@@ -35,6 +35,8 @@
         @csrf
         <label for="category"></label>
         <input type="hidden" name="category" id="category" value="{{$categoryId}}">
+        <label for="categoryName"></label>
+        <input type="hidden" name="category" id="category" value="{{$categoryId}}">
         <label for="search"></label>
         <input type="text" name="search" id="search" placeholder="Zoek specifiek"
                value="{{ request()->input('searchToken') ?  request()->input('searchToken') : ''  }}">
