@@ -34,6 +34,7 @@ class VacanciesController extends Controller
         return view('vacancies.index', compact('vacancies', 'category'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      */

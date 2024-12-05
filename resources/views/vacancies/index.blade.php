@@ -8,8 +8,11 @@
         @vite('resources/css/app.css')
         @vite('resources/css/vacancy.css')
     </x-slot>
+
+    <body class="vacancy-style">
+
     <h1 id="vacancyTitle">Vacatures</h1>
-    <nav>
+    <nav class="vacancyNav">
         <a class="Supermarkten" id="green" href="{{route('vacancies.index', ['category' => '1'])}}">Supermarkten,</a>
         <a class="HorecaCatering" id="red" href="{{route('vacancies.index', ['category' => '2'])}}">Horeca
             & Catering,</a>
@@ -60,6 +63,7 @@
     @else
         <h3>No vacancies available in this category.</h3>
     @endif
+    </body>
 </x-base-layout>
 
 
