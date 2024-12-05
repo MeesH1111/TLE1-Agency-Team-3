@@ -9,6 +9,7 @@
 
     <div class="container">
         <section class="story">
+            <a href="{{ route('home') }}" class="backarrow"></a>
             <h1>Van Doorzetter naar Inspiratie</h1>
             <p>
                 Nico is een jonge man met een grote glimlach en veel doorzettingsvermogen. Hij zit in een rolstoel door een aandoening waarmee hij is geboren. Maar Nico heeft grote dromen: hij wil zijn eigen leven leiden en een leuke baan hebben. Hij weet zeker dat hij net zoveel kan als anderen en dat hij waardevolle talenten heeft.
