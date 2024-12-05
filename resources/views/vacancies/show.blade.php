@@ -17,15 +17,15 @@
     </div>
     <div class="vacancy-divider-main">
         <div class="vacancy-info">
-            <div><p><span>Salaris:</span></p>
+            <div><p class="bold-p">Salaris:</p>
                 <p>{{ $vacancy->salary }} per maand</p></div>
-            <div><p><span>Uren:</span></p>
+            <div><p class="bold-p">Uren:</p>
                 <p>{{ $vacancy->hours }} per week</p></div>
-            <div><p><span>Locatie:</span></p>
+            <div><p class="bold-p">Locatie:</p>
                 <p>{{ $vacancy->location }}</p></div>
-            <div><p><span>Type:</span></p>
+            <div><p class="bold-p">Type:</p>
                 <p>{{ $vacancy->type }}</p></div>
-            <div><p><span>Benodigdheden:</span></p>
+            <div><p class="bold-p">Benodigdheden:</p>
                 <p>{{ $vacancy->requirements }}</p></div>
         </div>
         <div class="vacancy-description">

@@ -46,7 +46,7 @@ Route::get('/vacature/details/{id}', [VacanciesController::class, 'show'])->name
 
 Route::get('/werknemer', function () {
     return view('werknemer-uitleg');
-});
+})->name('werknemer-uitleg');
 
 Route::get('/test', function () {
     return view('test');
