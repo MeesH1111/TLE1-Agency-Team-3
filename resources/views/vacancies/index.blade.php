@@ -26,16 +26,16 @@
                value="{{ request()->input('searchToken') ?  request()->input('searchToken') : ''  }}">
     </form>
     @if($vacancies->isNotEmpty())
-        <div>
+        <div class="vacancy-list">
+            @foreach ($vacancies as $vacancy)
             <ul>
-                @foreach ($vacancies as $vacancy)
                     <li>Rol: {{ $vacancy->role}} </li>
                     <li>Type: {{ $vacancy->type}} </li>
                     <li>Salaris: €{{ $vacancy->salary}} per maand</li>
                     <li>Uren: {{ $vacancy->hours}} per week </li>
                     <a href="{{route('vacancies.show', ['id' => $vacancy->id])}}">Zie details</a>
-                @endforeach
             </ul>
+            @endforeach
         </div>
 
     @else
