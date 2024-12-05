@@ -15,6 +15,7 @@
     -webkit-transform: rotate(135deg);
 }
 
+
 main {
     background-image: url('/img/Base-Template (1).jpg');
     background-size: cover; /* Ensures the image covers the entire element */
@@ -30,14 +31,23 @@ body.vacancy-style {
     background-color: white; /* Base color for gaps */
     position: relative;
     overflow: auto;
+
+
 }
 
 body.vacancy-style h1#vacancyTitle {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
     font-size: 2rem;
     font-weight: bold;
-    justify-content: center;
-    color: #2E342A;
-    margin-bottom: 20px;
+    padding: 1.7rem 2rem 1rem 2rem;
+    background: #f5fefd;
+    max-width: 70vw;
+    border-radius: 1rem 0 1rem 1rem;
+    border-bottom: black .2rem solid;
 }
 
 body.vacancy-style nav.vacancyNav {
@@ -55,6 +65,15 @@ body.vacancy-style div ul {
     max-width: 800px;
     z-index: 1;
 }
+
+.vacancy-list{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
 
 body.vacancy-style div ul li {
     font-size: 1.2rem;
@@ -78,6 +97,13 @@ body.vacancy-style h3 {
     color: #2E342A;
     text-align: center;
     z-index: 1;
+}
+
+body.vacancy-style form{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
 }
 
 
