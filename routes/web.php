@@ -54,4 +54,8 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/over-ons', function () {
+    return view('over-ons');
+});
+
 require __DIR__ . '/auth.php';
