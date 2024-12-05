@@ -15,6 +15,8 @@ class Vacancy extends Model
 
 
     public function vacancies(): BelongsTo
+
+    public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class);
     }

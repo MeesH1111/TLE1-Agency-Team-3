@@ -16,9 +16,10 @@ class VacanciesController extends Controller
 
         $categoryModel = Category::where('id', $category)->first();
 
-        if (!$categoryModel) {
+        if(!$categoryModel) {
             abort(404, 'Category not found');
         }
+
         return view('vacancies.index', ['category' => $categoryModel->name,
             'vacancies' => $categoryModel->vacancies, 'categoryId' => $category]);
     }
@@ -67,7 +68,6 @@ class VacanciesController extends Controller
     public function show($id)
     {
         $vacancy = Vacancy::findOrFail($id);
-
         return view('vacancies.show', compact('vacancy'));
     }
 
