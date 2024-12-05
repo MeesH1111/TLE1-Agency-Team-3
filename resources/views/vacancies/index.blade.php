@@ -30,12 +30,9 @@
             <ul>
                 @foreach ($vacancies as $vacancy)
                     <li>Rol: {{ $vacancy->role}} </li>
-                    <li>Salaris: €{{ $vacancy->salary}} </li>
-                    <li>Uren: {{ $vacancy->hours}} </li>
-                    <li>Locatie: {{ $vacancy->location}} </li>
                     <li>Type: {{ $vacancy->type}} </li>
-                    <li>Benodigdheden: {{ $vacancy->requirements}} </li>
-                    <li>Beschrijving: {{ $vacancy->description}} </li>
+                    <li>Salaris: €{{ $vacancy->salary}} per maand</li>
+                    <li>Uren: {{ $vacancy->hours}} per week </li>
                     <a href="{{route('vacancies.show', ['id' => $vacancy->id])}}">Zie details</a>
                 @endforeach
             </ul>
