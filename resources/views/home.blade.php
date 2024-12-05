@@ -18,7 +18,7 @@
             <a href="#" class="btn">Meer weten?</a>
             <div class="choice">
                 <section class="introductie">
-                    <a href="#" class="btn">Ik zoek werk</a>
+                    <a href="{{ route('werknemer-uitleg') }}" class="btn">Ik zoek werk</a>
                     <a href="#" class="btn">Ik ben werkgever</a>
                 </section>
             </div>
