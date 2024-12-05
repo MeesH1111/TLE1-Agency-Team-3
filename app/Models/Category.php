@@ -11,15 +11,14 @@ class Category extends Model
 {
 
 
-
     public function vacancies(): HasMany
     {
         return $this->hasMany(Vacancy::class);
     }
+
     protected $fillable = [
         'category_name',
         'color'];
-
 
 
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanciesController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompaniesController;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 
@@ -33,20 +34,21 @@ Route::get('/success-nico', function () {
 })->name('success-nico');
 
 
-Route::resource('/bedrijven', CompaniesController::class);
+//Route::resource('/bedrijven', CompaniesController::class);
 Route::get('/vacatures/{category?}', [VacanciesController::class, 'index'])->name('vacancies.index');
 Route::get('/vacatures/create', [VacanciesController::class, 'create'])->name('vacancies.create');
 Route::post('/vacatures', [VacanciesController::class, 'store'])->name('vacancies.store');
+Route::get('/search', [VacanciesController::class, 'search'])->name('vacancies.search');
 Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->name('vacancies.edit');
 Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update');
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
 Route::resource('/wachtlijst', WaitList::class);
-Route::get('/vacatures/{id}', [VacanciesController::class, 'show'])->name('vacancies.show');
+Route::get('/vacature/details/{id}', [VacanciesController::class, 'show'])->name('vacancies.show');
 
 
 Route::get('/werknemer', function () {
     return view('werknemer-uitleg');
-});
+})->name('werknemer-uitleg');
 
 Route::get('/test', function () {
     return view('test');

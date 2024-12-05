@@ -21,6 +21,27 @@
         </div>
 
         <div class="containerinfo">
+            <h2 class="title">Zoek een vacature</h2>
+            <p class="werknemertekst">
+                Het bekijken van vacatures is dus gewoon te doen zonder een account. Alle vacatures zijn ingedeeld in
+                verschillende categorieën. Kies een categorie waar jij geintereseerd in bent en zie alle vacatures in
+                die categorie.
+            </p>
+            <p class="werknemertekst">
+                Zie jij een vacature die je leuk lijkt? Klik dan op die vacature voor een overzicht met
+                meer informatie over die vacature.
+            </p>
+            <p class="werknemertekst">
+                Zie je het zitten om hier te komen werken, dan kan je je inschrijven
+                op de vacature. Je krijgt dan een geautomatiseerde uitnodigings email met alle informatie over hoe het
+                verloopt en waar je moet zijn.
+            </p>
+            <a class="btn" href="{{route('categories.index')}}"
+               aria-label="Dit is een knop. Klik hier om vacatures te zoeken" id="uitlegbtn">Zoek
+                vacatures</a>
+        </div>
+
+        <div class="containerinfo">
             <h2 class="title">Maak een account</h2>
             <img class="uitlegimg" src="/images/werknemeruitlegimage2.png" alt="">
             <p class="werknemertekst">
@@ -37,26 +58,6 @@
             <a class="btn" href="{{ route('register') }}" id="uitlegbtn"
                aria-label="Dit is een knop. klik hier om een account aan te maken">Account
                 aanmaken</a>
-        </div>
-
-        <div class="containerinfo">
-            <h2 class="title">Zoek een vacature</h2>
-            <p class="werknemertekst">
-                Het bekijken van vacatures is dus gewoon te doen zonder een account. Alle vacatures zijn ingedeeld in
-                verschillende categorieën. Kies een categorie waar jij geintereseerd in bent en zie alle vacatures in
-                die categorie.
-            </p>
-            <p class="werknemertekst">
-                Zie jij een vacature die je leuk lijkt? Klik dan op die vacature voor een overzicht met
-                meer informatie over die vacature.
-            </p>
-            <p class="werknemertekst">
-                Zie je het zitten om hier te komen werken, dan kan je je inschrijven
-                op de vacature. Je krijgt dan een geautomatiseerde uitnodigings email met alle informatie over hoe het
-                verloopt en waar je moet zijn.
-            </p>
-            <a class="btn" href="" aria-label="Dit is een knop. Klik hier om vacatures te zoeken" id="uitlegbtn">Zoek
-                vacatures</a>
         </div>
 
         <div class="storycointaner">

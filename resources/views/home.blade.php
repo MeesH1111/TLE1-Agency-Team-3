@@ -18,21 +18,20 @@
             <a href="#" class="btn">Meer weten?</a>
             <div class="choice">
                 <section class="introductie">
-                    <a href="#" class="btn">Ik zoek werk</a>
+                    <a href="{{ route('werknemer-uitleg') }}" class="btn">Ik zoek werk</a>
                     <a href="#" class="btn">Ik ben werkgever</a>
                 </section>
             </div>
         </section>
 
 
-
         <section class="partners">
             <h2>Onze lokale bedrijven voor jou!</h2>
             <div class="partner-logos">
-                <img src="image/fitshe.png" alt="Logo van bedrijf fitshe">
-                <img src="image/krekerij.png" alt="Logo van bedrijf krekerij">
-                <img src="image/svh.png" alt="Logo van bedrijf SVH">
-                <img src="image/toettoetfood.png" alt="Logo van bedrijf toet toet food">
+                <img src="/image/fitshe.png" alt="Logo van bedrijf fitshe">
+                <img src="/image/krekerij.png" alt="Logo van bedrijf krekerij">
+                <img src="/image/svh.png" alt="Logo van bedrijf SVH">
+                <img src="/image/toettoetfood.png" alt="Logo van bedrijf toet toet food">
             </div>
         </section>
 
@@ -40,8 +39,8 @@
         <section class="succesverhaal">
             <h2>Van doorzetter naar inspiratie</h2>
             <p>Na een lange zoektocht naar werk vond Nico, door Open Hiring, een kans bij SVH.</p>
-            <img src="image/eduard.png" alt="Blije man in een rolstoel.">
-            <a href="#" class="btn">Bekijk het verhaal</a>
+            <img src="images/werknemeruitlegimage3.png" alt="Blije man in een rolstoel.">
+            <a href="{{ route('success-nico') }}" class="btn">Bekijk het verhaal</a>
         </section>
     </div>
 </x-base-layout>
