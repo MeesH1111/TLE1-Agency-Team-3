@@ -15,10 +15,10 @@
                 <div>Jij bepaalt of je het kunt</div>
                 <div>Snel aan de slag, met normaal contract</div>
             </div>
-            <a href="{{ route('over-ons') }}" class="btn">Meer weten?</a>
+            <a href="{{ route('werknemer-uitleg') }}" class="btn">Meer weten?</a>
             <div class="choice">
                 <section class="introductie">
-                    <a href="{{ route('werknemer-uitleg') }}" class="btn">Ik zoek werk</a>
+                    <a href="{{ route('categories.index') }}" class="btn">Ik zoek werk</a>
                     <a href="#" class="btn">Ik ben werkgever</a>
                 </section>
             </div>

@@ -18,6 +18,8 @@
                 knop. Open Hiring draait namelijk niet om diploma’s, maar om mensen. Niet om praatjes, maar om
                 aanpakken.
             </p>
+            <a class="btn" href="{{route('over-ons')}}"
+               aria-label="Dit is een knop. Klik hier om meer over ons te weten te komen" id="uitlegbtn">Over ons</a>
         </div>
 
         <div class="containerinfo">
