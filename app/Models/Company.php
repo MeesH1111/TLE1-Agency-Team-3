@@ -9,9 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Company extends Model
 {
-    use HasFactory;
-
-    public function companies(): BelongsToMany
+    
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
     }

@@ -1,0 +1,83 @@
+header {
+    font-size: 28px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 1rem;
+}
+
+.create-form-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.beschrijving-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.beschrijving-div input {
+    height: 8rem;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.image-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.create-form-div input[type="text"] {
+    border: 1px black solid;
+    border-radius: 5px;
+    height: 2rem;
+}
+
+.create-form input::placeholder {
+    font-style: italic;
+    line-height: 1;
+    vertical-align: top;
+}
+
+.aanmaak-button {
+    background-color: #D03E76;
+    padding: 0.3rem 1rem;
+    width: 30vw;
+    border-radius: 5px;
+    color: white
+}
+
+.create-form a {
+    padding: 0.3rem 1rem;
+    width: 30vw;
+    background-color: #757575;;
+    text-align: center;
+    border-radius: 5px;
+    color: white
+}
+
+.create-form a:hover {
+    background-color: #636363;;
+}
+
+.button-div {
+
+}
+
+input[type="file"] {
+    width: 96px;
+    border-radius: 2px;
+}
+
+
+
+
+
