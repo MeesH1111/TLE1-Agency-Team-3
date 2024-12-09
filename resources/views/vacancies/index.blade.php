@@ -12,7 +12,7 @@
     <body class="vacancy-style">
 
     <h1 id="vacancyTitle">Vacatures</h1>
-
+    <h2 id="vacancyUnderTitle" class="{{$categoryModel->color}}">{{ $categoryModel->name }}</h2>
     <a href="{{ route('categories.index') }}" class="backarrow"></a>
 
 
@@ -25,22 +25,25 @@
         <input type="text" name="search" id="search" placeholder="Zoek specifiek"
                value="{{ request()->input('searchToken') ?  request()->input('searchToken') : ''  }}">
     </form>
-    @if($vacancies->isNotEmpty())
-        <div class="vacancy-list">
-            @foreach ($vacancies as $vacancy)
-            <ul>
-                    <li>Rol: {{ $vacancy->role}} </li>
-                    <li>Type: {{ $vacancy->type}} </li>
-                    <li>Salaris: €{{ $vacancy->salary}} per maand</li>
-                    <li>Uren: {{ $vacancy->hours}} per week </li>
-                    <a href="{{route('vacancies.show', ['id' => $vacancy->id])}}">Zie details</a>
-            </ul>
-            @endforeach
-        </div>
-
+    <div id="GriekseY" class="{{$categoryModel->color}}">
+        @if($vacancies->isNotEmpty())
+            <div id="vacancy-list">
+                @foreach ($vacancies as $vacancy)
+                    <ul>
+                        <li>Rol: {{ $vacancy->role}} </li>
+                        <li>Type: {{ $vacancy->type}} </li>
+                        <li>Salaris: €{{ $vacancy->salary}} per maand</li>
+                        <li>Uren: {{ $vacancy->hours}} per week</li>
+                        <a href="{{route('vacancies.show', ['id' => $vacancy->id])}}">Zie details</a>
+                    </ul>
+                @endforeach
+            </div>
+    </div>
     @else
         <h3>No vacancies available in this category.</h3>
     @endif
+
+
     </body>
 </x-base-layout>
 
