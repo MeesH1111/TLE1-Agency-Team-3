@@ -13,7 +13,7 @@
 
     <h1 id="vacancyTitle">Vacatures</h1>
     <h2 id="vacancyUnderTitle" class="{{$categoryModel->color}}">{{ $categoryModel->name }}</h2>
-    <div id="grieks">
+    <div id="back">
         <a href="{{ route('categories.index') }}" class="backarrow"></a>
         <p>Terug naar categorieën</p>
     </div>
