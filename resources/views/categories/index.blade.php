@@ -7,7 +7,8 @@
     <x-slot name="css">
         @vite('resources/css/categories.css', 'resources/js/app.js')
     </x-slot>
-    <h1 id="categoryTitle">Categorieën</h1>
+    <h1 id="categoryTitle">Vacatures</h1>
+    <h2 id="categoryUnderTitle">Filter op categorieën</h2>
     <div id="categoryList">
         @foreach($categories as $category)
             <a href=" {{ route('vacancies.index',$category->id ) }}" id="{{$category->color}}"
