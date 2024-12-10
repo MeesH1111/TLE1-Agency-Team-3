@@ -12,7 +12,7 @@ class WaitlistController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -28,7 +28,22 @@ class WaitlistController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect()->route('home');
+        $waitlistItems = $request->vacancyId;
+        $userId = $request->user()->id;
+        $allWaitlistItemsPerUser = Waitlist::where('user_id', $userId)->where('vacancy_id', $waitlistItems)->get();
+
+        if (count($allWaitlistItemsPerUser) === 0) {
+            $waitlistItem = new Waitlist();
+            $waitlistItem->vacancy_id = $waitlistItems;
+            $waitlistItem->user_id = $userId;
+            $waitlistItem->save();
+            return redirect()->route('vacancies.show', ['id' => $waitlistItems]);
+        } else {
+            return redirect()->route('categories.index');
+
+        }
+
+
     }
 
     /**
