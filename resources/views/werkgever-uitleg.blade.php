@@ -64,7 +64,7 @@
                          alt="Nico die buiten in een rolstoel zit">
                 </div>
             </div>
-            <a class="btn" href="{{route('success-nico')}}"
+            <a class="btn" href="{{route('success-tanja')}}"
                aria-label="Dit is een knop. Klik hier om het verhaal van Nico te bekijken">Bekijk
                 verhaal</a>
 
