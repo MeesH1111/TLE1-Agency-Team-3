@@ -47,9 +47,14 @@
     color: #555;
 }
 
+.contact-button {
+
+}
+
 .contact-button .btn {
     display: inline-block;
     padding: 12px 24px;
+    margin-right: 20px;
     background-color: #d8608f;
     color: white;
     text-decoration: none;
