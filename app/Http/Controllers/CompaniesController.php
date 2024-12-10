@@ -31,9 +31,9 @@ class CompaniesController extends Controller
         // Validate the incoming data
         $request->validate([
             'title' => 'required|string|max:255',
-            'location' => 'nullable|string|max:255',
+            'location' => 'required|string|max:255',
             'contact' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'nullable|string',
         ]);
 

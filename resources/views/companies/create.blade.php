@@ -6,6 +6,7 @@
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
         @vite('resources/css/companies.css')
+        @vite('resources/js/companies.js')
     </x-slot>
     <header>
         <h1>Bedrijf aanmaken</h1>
@@ -15,28 +16,62 @@
         @csrf
         <div class="create-form-div">
             <label for="title">Bedrijfsnaam:</label>
-            <input type="text" id="title" name="title" placeholder="Naam bedrijf...">
+            <div class="error-div">
+                <input type="text" id="title" name="title" placeholder="Naam bedrijf..."
+                       value="{{old('title')}}">
+                @error('title')
+                <span class="error-popup">{{ $message }}</span>
+                @enderror
+            </div>
         </div>
+
+
         <div class="create-form-div">
             <label for="location">Locatie:</label>
-            <input type="text" id="location" name="location" placeholder="Locatie bedrijf...">
+            <div class="error-div">
+                <input type="text" id="location" name="location" placeholder="Locatie bedrijf...">
+                @error('location')
+                <span class="error-popup">{{ $message }}</span>
+                @enderror
+            </div>
         </div>
+
         <div class="create-form-div">
             <label for="contact">Contact:</label>
-            <input type="text" id="contact" name="contact" placeholder="Telefoonnummer...">
+            <div class="error-div">
+                <input type="text" id="contact" name="contact" placeholder="Telefoonnummer...">
+                @error('contact')
+                <span class="error-popup">{{ $message }}</span>
+                @enderror
+            </div>
         </div>
+
         <div class="image-div">
             <label for="image" class="custom-file-upload">Logo:</label>
-            <input type="file" id="image" name="image" class="custom-file-input">
+            <div class="error-div">
+                <input type="file" id="image" name="image" class="custom-file-input">
+                @error('image')
+                <span class="error-popup">{{ $message }}</span>
+                @enderror
+            </div>
         </div>
+
         <div class="beschrijving-div">
             <label for="description">Beschrijving:</label>
-            <input type="text" id="description" name="description" placeholder="Beschrijf hier het bedrijf...">
+            <div class="error-div">
+            <textarea type="text" id="description" name="description"
+                      placeholder="Beschrijf hier het bedrijf..."></textarea>
+                @error('description')
+                <span class="error-popup">{{ $message }}</span>
+                @enderror
+            </div>
         </div>
+
         <div class="create-form-div">
             <a href="#">Terug</a>
             <button class="aanmaak-button" type="submit">Aanmaken</button>
         </div>
+
     </form>
 
 </x-base-layout>

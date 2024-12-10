@@ -47,6 +47,16 @@ header {
     vertical-align: top;
 }
 
+#description {
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 6rem;
+}
+
+.create-form textarea::placeholder {
+    font-style: italic;
+}
+
 .aanmaak-button {
     background-color: #D03E76;
     padding: 0.3rem 1rem;
@@ -77,7 +87,19 @@ input[type="file"] {
     border-radius: 2px;
 }
 
+.error-div {
+    display: flex;
+    flex-direction: column;
+}
 
+.error-div span {
+    color: #b00707;
+}
+
+.image-div .error-div {
+    display: flex;
+    align-items: flex-end;
+}
 
 
 
