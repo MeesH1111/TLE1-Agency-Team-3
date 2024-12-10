@@ -18,7 +18,7 @@
             <label for="title">Bedrijfsnaam:</label>
             <div class="error-div">
                 <input type="text" id="title" name="title" placeholder="Naam bedrijf..."
-                       value="{{old('title')}}">
+                       value="{{old('title')}}" aria-label="Bedrijfsnaam invoer veld">
                 @error('title')
                 <span class="error-popup">{{ $message }}</span>
                 @enderror
