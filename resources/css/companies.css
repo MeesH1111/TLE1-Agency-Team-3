@@ -83,7 +83,7 @@ header {
 }
 
 input[type="file"] {
-    width: 96px;
+    width: 170px;
     border-radius: 2px;
 }
 
@@ -100,6 +100,64 @@ input[type="file"] {
     display: flex;
     align-items: flex-end;
 }
+
+.show-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 1.7rem;
+}
+
+.show-header h1 {
+    font-size: 2rem;
+}
+
+.show-header p {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.show-header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+}
+
+.header-img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.show-main {
+
+}
+
+.show-main article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    margin: 0 1rem 1rem 1rem;
+    padding: 0 1rem;
+}
+
+.show-main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.show-main article div {
+    height: auto;
+    width: 90vw;
+}
+
+.show-main p {
+    font-size: 1rem;
+}
+
+
 
 
 

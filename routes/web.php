@@ -46,7 +46,7 @@ Route::resource('/wachtlijst', WaitList::class);
 Route::get('/vacature/details/{id}', [VacanciesController::class, 'show'])->name('vacancies.show');
 
 Route::get('/bedrijven/details/{company}', [CompaniesController::class, 'show'])->name('companies.show');
-Route::get('/bedrijven/create', [CompaniesController::class, 'create'])->name('companies.create');
+Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
 Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
 
 Route::get('/werknemer', function () {
