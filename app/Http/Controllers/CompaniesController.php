@@ -32,10 +32,15 @@ class CompaniesController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'location' => 'required|string|max:255',
-            'contact' => 'nullable|string|max:255',
+            'contact' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'nullable|string',
-        ]);
+        ], [
+            'title.required' => 'Vul een bedrijfsnaam in',
+            'location.required' => 'Vul een geldige locatie in',
+            'image' => 'Upload een geldige afbeelding',
+            'contact' => 'Vul een contact adress in',
+        ]);;
 
         // Create a new Company instance
         $company = new Company;
