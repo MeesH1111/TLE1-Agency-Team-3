@@ -30,8 +30,13 @@ Route::get('/test', function () {
 })->name('test');
 
 Route::get('/success-nico', function () {
-    return view('success-story');
+    return view('success-story-werknemer');
 })->name('success-nico');
+
+Route::get('/success-tanja', function () {
+    return view('success-story-werkgever');
+})->name('success-tanja');
+
 
 
 //Route::resource('/bedrijven', CompaniesController::class);
