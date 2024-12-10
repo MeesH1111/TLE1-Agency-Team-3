@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Vacancy;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -14,22 +15,32 @@ class VacanciesController extends Controller
     public function index(Request $request, string $category)
     {
 
-        $categoryModel = Category::where('id', $category)->first();
+        $categoryModel = Category::find($category);
+        //->first();
 
         if (!$categoryModel) {
             abort(404, 'Category not found');
         }
 
-        return view('vacancies.index', ['category' => $category,
-            'vacancies' => $categoryModel->vacancies, 'categoryId' => $category]);
+        return view('vacancies.index', [
+            'category' => $categoryModel,
+            'vacancies' => $categoryModel->vacancies,
+            'categoryId' => $category]);
     }
 
     public function search(Request $request)
     {
-        $search = $request->search;
-        $category = $request->category;
+        $search = $request->input('search');
+        $category = $request->input('category');
 
-        $vacancies = Vacancy::whereAny(['role', 'location', 'type', 'salary', 'hours'], 'LIKE', "%$search%")->where('category_id', $request->category)->get();
+        $vacancies = Vacancy::where('category_id', $category)
+            ->where(function ($query) use ($search) {
+                $query->where('role', 'LIKE', "%{$search}%")
+                    ->orwhere('location', 'LIKE', "%{$search}%")
+                    ->orWhere('type', 'LIKE', "%{$search}%")
+                    ->orWhere('salary', 'LIKE', "%{$search}%")
+                    ->orWhere('hours', 'LIKE', "%{$search}%");
+            })->get();
 
         return view('vacancies.index', compact('vacancies', 'category'));
     }
@@ -40,7 +51,10 @@ class VacanciesController extends Controller
      */
     public function create()
     {
-        return view('vacancies.create');
+        $categories = Category::all();
+        $companies = Company::all();
+
+        return view('vacancies.create', compact('categories', 'companies'));
     }
 
     /**
@@ -48,19 +62,29 @@ class VacanciesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['title' => 'required']);
+        $request->validate([
+            'title' => 'required',
+            'salary' => 'required',
+            'hours' => 'required',
+            'location' => 'required',
+            'type' => 'required',
+            'requirements' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
+            'company_id' => 'required',
+        ]);
 
-        $vacancy = new Vacancy();
-        $vacancy->role = $request->input('role');
-        $vacancy->salary = $request->input('salary');
-        $vacancy->hours = $request->input('hours');
-        $vacancy->location = $request->input('location');
-        $vacancy->type = $request->input('type');
-        $vacancy->requirements = $request->input('requirements');
-        $vacancy->description = $request->input('description');
+        $vacancy = new Vacancy($request->all());
+//        $vacancy->role = $request->input('role');
+//        $vacancy->salary = $request->input('salary');
+//        $vacancy->hours = $request->input('hours');
+//        $vacancy->location = $request->input('location');
+//        $vacancy->type = $request->input('type');
+//        $vacancy->requirements = $request->input('requirements');
+//        $vacancy->description = $request->input('description');
         $vacancy->save();
 
-        return redirect()->route('vacancies.create');
+        return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy created!');
 
     }
 
@@ -78,7 +102,11 @@ class VacanciesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $vacancy = Vacancy::findOrFail($id);
+        $categories = Category::all();
+        $companies = Company::all();
+
+        return view('vacancies.edit',compact('vacancy', 'categories', 'companies'));
     }
 
     /**
@@ -86,7 +114,21 @@ class VacanciesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $vacancy = Vacancy::findOrfail($id);
+        $request->validate([
+            'role' => 'required|string|max:255',
+            'salary' => 'required|numeric|min:0',
+            'hours' => 'required|string|max:255',
+            'location' => 'required|string|max:255',
+            'type' => 'required|string|in:full-time,part-time,side-job',
+            'requirements' => 'required|string',
+            'description' => 'required|string',
+            'category_id' => 'required|exists:categories,id',
+            'company_id' => 'required|exists:companies,id',
+        ]);
+        $vacancy->update($request->all());
+
+        return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy updated!');
     }
 
     /**
@@ -94,6 +136,9 @@ class VacanciesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $vacancy = Vacancy::findOrFail($id);
+        $vacancy->delete();
+
+        return redirect()->back()->with('success', 'Vacancy deleted!');
     }
 }
