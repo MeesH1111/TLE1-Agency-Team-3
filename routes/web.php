@@ -53,6 +53,10 @@ Route::get('/werknemer', function () {
     return view('werknemer-uitleg');
 })->name('werknemer-uitleg');
 
+Route::get('/werkgever', function () {
+    return view('werkgever-uitleg');
+})->name('werkgever-uitleg');
+
 Route::get('/test', function () {
     return view('test');
 });
