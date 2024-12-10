@@ -30,7 +30,7 @@
         @if($vacancies->isNotEmpty())
             <div id="vacancy-list">
                 @foreach ($vacancies as $vacancy)
-                    <ul>
+                    <ul id="vacancy-ul">
                         <li id="function">Functie: <span class="functionSpan">{{ $vacancy->role}}</span></li>
                         <li>Locatie: {{ $vacancy->company->name}}</li>
                         <li id="wage">Salaris: €{{ $vacancy->salary}} per maand</li>
