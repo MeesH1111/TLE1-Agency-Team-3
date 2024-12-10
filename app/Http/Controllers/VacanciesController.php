@@ -16,16 +16,15 @@ class VacanciesController extends Controller
     {
 
         $categoryModel = Category::find($category);
-        //->first();
 
         if (!$categoryModel) {
             abort(404, 'Category not found');
         }
 
         return view('vacancies.index', [
-            'category' => $categoryModel,
+            'categoryModel' => $categoryModel,
             'vacancies' => $categoryModel->vacancies,
-            'categoryId' => $category]);
+            'category' => $categoryModel->id]);
     }
 
     public function search(Request $request)
