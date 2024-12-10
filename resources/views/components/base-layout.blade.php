@@ -15,7 +15,7 @@
 
 <nav class="navbar">
     <div class="logo">
-        <a href="/" aria-label="Home-logo">
+        <a href="/" aria-label="Naar home">
             <img src="https://www.openhiring.nl/assets/images/logo/logo-oh.png" alt="Open Hiring Logo">
         </a>
     </div>
