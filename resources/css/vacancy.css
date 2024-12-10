@@ -12,30 +12,13 @@
     margin-top: 1em;
     margin-bottom: 1em;
     transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
 }
 
-
-main {
-    background-image: url('/img/Base-Template (1).jpg');
-    background-size: cover; /* Ensures the image covers the entire element */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center; /* Centers the image */
-}
 
 /* Style specifically scoped to the "vacancy" page */
-body.vacancy-style {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-color: white; /* Base color for gaps */
-    position: relative;
-    overflow: auto;
 
 
-}
-
-body.vacancy-style h1#vacancyTitle {
+#vacancyTitle {
     display: flex;
     flex-direction: row;
     justify-self: center;
@@ -43,107 +26,184 @@ body.vacancy-style h1#vacancyTitle {
     align-items: center;
     font-size: 2rem;
     font-weight: bold;
-    padding: 1.7rem 2rem 1rem 2rem;
+    padding: 1.7rem 2rem 0 2rem;
     background: #f5fefd;
     max-width: 70vw;
-    border-radius: 1rem 0 1rem 1rem;
-    border-bottom: black .2rem solid;
+    border-radius: 0 0 1rem 1rem;
+    border-bottom: black .5rem solid;
 }
 
-body.vacancy-style nav.vacancyNav {
+#vacancyUnderTitle {
+    display: flex;
+    color: #f5fefd;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .2rem .65rem .5rem .65rem;
+    max-width: 70vw;
+    border-radius: 0 0 1rem 1rem;
+}
+
+nav.vacancyNav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    z-index: 1;
 }
 
-body.vacancy-style div ul {
+#vacancy-ul {
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 800px;
-    z-index: 1;
+    margin: 1.5rem 2rem 1.5rem 2rem;
+    min-width: 65vw;
+    max-width: 65vw;
+    background-color: #2E342A;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 1rem;
 }
 
-.vacancy-list{
+#vacancy-list {
+    margin-top: 1rem;
+    min-width: 75vw;
+    max-width: 75vw;
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
-    row-gap: 1rem;
+    row-gap: 0;
+    border-radius: 1rem;
+    background: #f5fefd;
+
 }
 
-
-body.vacancy-style div ul li {
-    font-size: 1.2rem;
+#back {
+    background-color: #f5fefd;
     color: #2E342A;
-    margin-bottom: 10px;
+
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    max-width: 75vw;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
 }
 
-body.vacancy-style div ul a {
+#back p {
+    font-size: .8rem;
+    color: #000000;
+    text-align: center;
+}
+
+#cardsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    border-radius: 1rem;
+    min-width: 83vw;
+    max-width: 83vw;
+    padding: 0 1rem 1rem 1rem;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+#vacancy-ul li {
+    font-size: 1rem;
+    color: #f5fefd;
+
+}
+
+#vacancy-ul a {
+    display: flex;
+    justify-content: center;
+    border-radius: .6rem;
+    margin-top: .5rem;
     font-size: 1.2rem;
-    text-decoration: underline;
-    color: #2E342A;
+    color: #f5fefd;
     transition: color 0.3s ease;
+    background-color: rgba(170, 1, 96, 0.71);
+    max-width: 8rem;
+
+
 }
 
-body.vacancy-style div ul a:hover {
+#vacancy-ul a:hover {
     color: #aa0160;
+    background-color: #F5FEFD;
 }
 
-body.vacancy-style h3 {
+#function {
+    font-size: larger;
+}
+
+.functionSpan {
+    text-decoration: underline solid #e2ecc8;
+
+}
+
+#wage {
+    font-size: larger;
+    color: #faec02;
+}
+
+h3 {
     font-size: 1.5rem;
     color: #2E342A;
     text-align: center;
-    z-index: 1;
+
 }
 
-body.vacancy-style form{
+form {
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
+
 }
 
 
-body.vacancy-style .Supermarkten {
-    color: #00e600;
+.red {
+    background-color: #A63A3A;
 }
 
-body.vacancy-style .HorecaCatering {
-    color: #A63A3A;
+.purple {
+    background-color: #AF4BA8;
 }
 
-body.vacancy-style .LogistiekTransport {
-    color: #49759C;
+.blue {
+    background-color: #49759C;
 }
 
-body.vacancy-style .Schoonmaak {
-    color: #AF4BA8;
+.green {
+    background-color: #4E7E47;
 }
 
-body.vacancy-style .BouwTechniek {
-    color: #9B6D3B;
+.orange {
+    background-color: #9B6D3B;
 }
 
-body.vacancy-style .ZorgWelzijn {
-    color: #4F7282;
+.blue1 {
+    background-color: #4F7282;
 }
 
-body.vacancy-style .Toerisme {
-    color: #8D7325;
+.yellow {
+    background-color: #8D7325;
 }
 
-body.vacancy-style .Scholen {
-    color: #547B87;
+.blue2 {
+    background-color: #547B87;
 }
 
-body.vacancy-style .Evenementen {
-    color: #8C4343;
+.red1 {
+    background-color: #8C4343;
 }
 
-body.vacancy-style .Industrie {
-    color: #757575;
+.grey {
+    background-color: #757575;
 }
+
+
 

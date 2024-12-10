@@ -30,6 +30,7 @@
                 Nico’s verhaal laat zien dat iedereen met de juiste kansen kan groeien en succes kan behalen. Hij hoopt dat meer mensen zoals hij de mogelijkheid krijgen om hun talenten te laten zien en hun dromen waar te maken.
             </p>
             <img src="/images/werknemeruitlegimage3.png" alt="Blije man in een rolstoel.">
+            <a href="{{ route('categories.index') }}" class="btn" id="story-button-nico" aria-label="Knop om naar de categorieën van vacatures te gaan">Vacatures</a>
         </section>
     </div>
 

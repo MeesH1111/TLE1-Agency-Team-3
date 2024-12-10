@@ -34,7 +34,13 @@
     </div>
     <div class="vacancy-buttons">
         <a href="{{ route('vacancies.index', $vacancy->category_id)}}" class="back" aria-label="Terug naar Vacatures">Terug</a>
-        <a href="#" class="apply" aria-label="Reageer op deze vacature">Reageer</a>
+        <form action="{{ route('waitlist.store') }}" method="post">
+            @csrf
+            <label for="vacancyId"></label>
+            <input type="hidden" id="vacancyId" name="vacancyId" value="{{$vacancy->id}}">
+            <button type="submit" class="apply" aria-label="Reageer op deze vacature">Reageer</button>
+        </form>
+
     </div>
 
 </x-base-layout>

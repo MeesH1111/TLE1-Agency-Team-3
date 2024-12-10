@@ -12,35 +12,40 @@
     <body class="vacancy-style">
 
     <h1 id="vacancyTitle">Vacatures</h1>
-
-    <a href="{{ route('categories.index') }}" class="backarrow"></a>
-
-
+    <h2 id="vacancyUnderTitle" class="{{$categoryModel->color}}">{{ $categoryModel->name }}</h2>
+    <div id="back">
+        <a href="{{ route('categories.index') }}" class="backarrow"></a>
+        <p>Terug naar categorieën</p>
+    </div>
     <form method="get" action="{{route('vacancies.search')}}">
         @csrf
         <label for="category"></label>
         <input type="hidden" name="category" id="category" value="{{$category}}">
 
         <label for="search"></label>
-        <input type="text" name="search" id="search" placeholder="Zoek specifiek"
+        <input type="text" name="search" id="search" class="groen" placeholder="Zoek specifiek"
                value="{{ request()->input('searchToken') ?  request()->input('searchToken') : ''  }}">
     </form>
-    @if($vacancies->isNotEmpty())
-        <div class="vacancy-list">
-            @foreach ($vacancies as $vacancy)
-            <ul>
-                    <li>Rol: {{ $vacancy->role}} </li>
-                    <li>Type: {{ $vacancy->type}} </li>
-                    <li>Salaris: €{{ $vacancy->salary}} per maand</li>
-                    <li>Uren: {{ $vacancy->hours}} per week </li>
-                    <a href="{{route('vacancies.show', ['id' => $vacancy->id])}}">Zie details</a>
-            </ul>
-            @endforeach
-        </div>
-
+    <div id="cardsContainer" class="{{$categoryModel->color}}">
+        @if($vacancies->isNotEmpty())
+            <div id="vacancy-list">
+                @foreach ($vacancies as $vacancy)
+                    <ul id="vacancy-ul">
+                        <li id="function">Functie: <span class="functionSpan">{{ $vacancy->role}}</span></li>
+                        <li>Locatie: {{ $vacancy->company->name}}</li>
+                        <li id="wage">Salaris: €{{ $vacancy->salary}} per maand</li>
+                        <li>Aantal uren per week: {{ $vacancy->hours}}</li>
+                        <a class="ulA{{$categoryModel->color}}"
+                           href="{{route('vacancies.show', ['id' => $vacancy->id])}}">Zie Meer !</a>
+                    </ul>
+                @endforeach
+            </div>
+    </div>
     @else
         <h3>No vacancies available in this category.</h3>
     @endif
+
+
     </body>
 </x-base-layout>
 

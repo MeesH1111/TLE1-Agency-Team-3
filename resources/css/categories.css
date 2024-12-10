@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
-    background-image: url('/img/Base-Template (1).jpg');
-    background-size: cover; /* Ensures the image covers the entire element */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center; /* Centers the image */
-}
 
 #categoryTitle {
     display: flex;
@@ -15,11 +9,24 @@ main {
     justify-content: center;
     font-size: 2rem;
     font-weight: bold;
-    padding: 1.7rem 2rem 1rem 2rem;
+    padding: 1.7rem 2rem .1rem 2rem;
     background: #f5fefd;
     max-width: 70vw;
     border-radius: 1rem 0 1rem 1rem;
-    border-bottom: black .2rem solid;
+    border-bottom: black .5rem solid;
+}
+
+#categoryUnderTitle {
+    display: flex;
+    color: #f5fefd;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .2rem .65rem .5rem .65rem;
+    background: #000000;
+    max-width: 70vw;
+    border-radius: 0 0 1rem 1rem;
 }
 
 #categoryList {
