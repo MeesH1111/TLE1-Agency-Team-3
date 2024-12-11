@@ -72,7 +72,6 @@ class VacanciesController extends Controller
         $vacancy->description = $request->input('description');
         $vacancy->category_id = $request->input('category_id');
         $vacancy->company_id = $request->company_id;
-        //dd($vacancy->company_id);
         $vacancy->save();
 
         return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy created!');
@@ -118,7 +117,7 @@ class VacanciesController extends Controller
 //            'company_id' => 'required|exists:companies,id',
 //        ]);
         $vacancy->update($request->all());
-        //dd($vacancy);
+
 
         return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy updated!');
     }

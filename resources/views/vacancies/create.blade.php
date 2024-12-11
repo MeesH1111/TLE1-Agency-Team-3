@@ -18,7 +18,7 @@
             <input type="hidden" id="company_id" name="company_id" value="2">
         </div>
 
-        <button type="submit" class="btn">Naar preview</button>
+        <button type="submit" class="btn" aria-label="Knop voor naar de preview van uw vacature.">Naar preview</button>
     </form>
 
 </x-base-layout>

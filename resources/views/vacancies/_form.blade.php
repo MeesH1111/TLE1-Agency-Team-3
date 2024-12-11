@@ -39,11 +39,11 @@
 </div>
 
 <div>
-    <label for="requirements" id="requirements" class="form-label">Benodigheden</label>
+    <label for="requirements" id="requirements" class="form-label">Benodigdheden</label>
     <textarea id="requirements" name="requirements" class="form-input" rows="5" required>{{old('requirements', $vacancy->requirements ?? '')}}</textarea>
 </div>
 
 <div>
-    <label for="description" id="description" class="form-label">Bescrijving</label>
+    <label for="description" id="description" class="form-label">Beschrijving</label>
     <textarea id="description" name="description" class="form-input" rows="5" required>{{old('description', $vacancy->description ?? '')}}</textarea>
 </div>

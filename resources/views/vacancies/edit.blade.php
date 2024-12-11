@@ -18,7 +18,7 @@
             <input type="hidden" id="company_id" name="company_id" value="2">
         </div>
 
-        <button type="submit" class="btn">Vacature aanpassen</button>
+        <button type="submit" class="btn" aria-label="Knop voor het aanpassen van uw vacature.">Vacature aanpassen</button>
     </form>
 
 
