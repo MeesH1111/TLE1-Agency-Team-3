@@ -32,17 +32,17 @@ class WaitlistController extends Controller
         $userId = $request->user()->id;
         $allWaitlistItemsPerUser = Waitlist::where('user_id', $userId)->where('vacancy_id', $waitlistItems)->get();
 
-        if (count($allWaitlistItemsPerUser) === 0) {
+        if (count($allWaitlistItemsPerUser) === 0 && $userId) {
             $waitlistItem = new Waitlist();
             $waitlistItem->vacancy_id = $waitlistItems;
             $waitlistItem->user_id = $userId;
             $waitlistItem->save();
-            return redirect()->route('vacancies.show', ['id' => $waitlistItems]);
-        } else {
-            return redirect()->route('categories.index');
-
+            return view('waitlist.success');
+        } else if (!$userId) {
+            return view('waitlist.login');
+        } else if (count($allWaitlistItemsPerUser) !== 0) {
+            return view('waitlist.already-registered');
         }
-
 
     }
 
@@ -76,5 +76,20 @@ class WaitlistController extends Controller
     public function destroy(Waitlist $waitlist)
     {
         //
+    }
+
+    public function succes()
+    {
+        return view('waitlist.success');
+    }
+
+    public function login()
+    {
+        return view('waitlist.login');
+    }
+
+    public function alreadyregistered()
+    {
+        return view('waitlist.already-registered');
     }
 }

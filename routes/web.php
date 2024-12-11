@@ -63,6 +63,9 @@ Route::get('/werkgever', function () {
 
 Route::post('/wachtlijst/opslaan', [WaitListController::class, 'store'])->name('waitlist.store');
 Route::get('/wachtlijst', [WaitListController::class, 'index'])->name('waitlist.index');
+Route::get('/wachtlijst/succes', [waitListController::class, 'succes'])->name('waitlist.succes');
+Route::get('/wachtlijst/login-vereist', [waitListController::class, 'login'])->name('waitlist.login');
+Route::get('/wachtlijst/al-gesolliciteerd', [waitListController::class, 'alreadyregistered'])->name('waitlist.alreadyregistered');
 Route::get('/test', function () {
     return view('test');
 });
