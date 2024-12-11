@@ -1,49 +1,95 @@
-<div>
-    <label for="role" class="form-label">Job title</label>
-    <input type="text" id="role" name="role" class="form-input" value="{{old('role', $vacancy->role ?? '')}}" required>
+<div class="form-div-input">
+    <label for="role" class="form-label">Vacature titel</label>
+    <div class="form-error">
+        <input type="text" id="role" name="role" placeholder="Vul hier de baan titel..." class="form-input" value="{{old('role', $vacancy->role ?? '')}}" required title="Het veld is leeg. Vul de rol van de medewerker in alstublieft">
+        @error('role')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+    </div>
 </div>
 
-<div>
+<div class="form-div-input">
     <label for="salary" class="form-label">Salaris</label>
-    <input type="number" id="salary" name="salary" class="form-input" value="{{old('salary', $vacancy->salary ?? '')}}" required>
+    <div class="form-error">
+        <input type="number" id="salary" name="salary" placeholder="Vul hier de salaris in..." class="form-input" value="{{old('salary', $vacancy->salary ?? '')}}" required>
+        @error('salary')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+    </div>
 </div>
 
-<div>
+<div class="form-div-input">
     <label for="hours" id="hours" class="form-label">Aantal uren per week</label>
-    <input type="text" id="hours" name="hours" class="form-input" value="{{old('hours', $vacancy->hours ?? '')}}" required>
+    <div class="form-error">
+        <input type="number" id="hours" name="hours" placeholder="Vul hier het aantal uren in..." class="form-input" value="{{old('hours', $vacancy->hours ?? '')}}" required>
+        @error('hours')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+    </div>
 </div>
 
-<div>
+<div class="form-div-input">
     <label for="location" id="location" class="form-label">Adres</label>
-    <input type="text" id="location" name="location" class="form-input" value="{{old('location', $vacancy->location ?? '')}}" required>
+    <div class="form-error">
+        <input type="text" id="location" name="location" placeholder="Vul hier de adres in..." class="form-input" value="{{old('location', $vacancy->location ?? '')}}" required>
+        @error('location')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+    </div>
 </div>
 
-<div>
+<div class="form-div-select">
     <label for="type" id="type" class="form-label">Baan type</label>
-    <select name="type" id="type" class="form-select">
-        <option value="full_time" {{old('type', $vacancy->type ?? '') == 'full_time' ? 'selected' : ''}}>Full time</option>
-        <option value="part_time" {{old('type', $vacancy->type ?? '') == 'part_time' ? 'selected' : ''}}>Part time</option>
-        <option value="side_job" {{old('type', $vacancy->type ?? '') == 'side_job' ? 'selected' : ''}}>Bij baan</option>
-    </select>
+    <div class="form-error">
+        <select name="type" id="type"  class="form-select">
+            <option value="full_time" {{old('type', $vacancy->type ?? '') == 'full_time' ? 'selected' : ''}}>Full time</option>
+            <option value="part_time" {{old('type', $vacancy->type ?? '') == 'part_time' ? 'selected' : ''}}>Part time</option>
+            <option value="side_job" {{old('type', $vacancy->type ?? '') == 'side_job' ? 'selected' : ''}}>Bij baan</option>
+        </select>
+
+        @error('type')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+
+    </div>
+
 </div>
 
-<div>
+<div class="form-div-select">
     <label for="category_id" class="form-label">Categorie</label>
-    <select name="category_id" id="category_id" class="form-select" required>
-        @foreach($categories as $category)
-            <option value="{{$category->id}}" {{old('category_id', $vacancy->category_id ?? '') == $category->id ? 'selected' : ''}}>
-                {{$category->name}}
-            </option>
-        @endforeach
-    </select>
+    <div class="form-error">
+        <select name="category_id" id="category_id" class="form-select" required>
+            @foreach($categories as $category)
+                <option value="{{$category->id}}" {{old('category_id', $vacancy->category_id ?? '') == $category->id ? 'selected' : ''}}>
+                    {{$category->name}}
+                </option>
+            @endforeach
+        </select>
+
+        @error('category_id')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+
+    </div>
+
 </div>
 
-<div>
-    <label for="requirements" id="requirements" class="form-label">Benodigdheden</label>
-    <textarea id="requirements" name="requirements" class="form-input" rows="5" required>{{old('requirements', $vacancy->requirements ?? '')}}</textarea>
+<div class="form-div-area">
+    <label for="requirements" class="form-label">Benodigdheden</label>
+    <div class="form-error">
+        <textarea id="requirements" name="requirements" placeholder="Vul hier de bijbehorende benodigdheden in..." class="form-textarea" rows="5" required>{{old('requirements', $vacancy->requirements ?? '')}}</textarea>
+        @error('requirements')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+    </div>
 </div>
 
-<div>
-    <label for="description" id="description" class="form-label">Beschrijving</label>
-    <textarea id="description" name="description" class="form-input" rows="5" required>{{old('description', $vacancy->description ?? '')}}</textarea>
+<div class="form-div-area">
+    <label for="description" class="form-label">Beschrijving</label>
+    <div class="form-error">
+        <textarea id="description" name="description" placeholder="Beschrijf hier de vacature..." class="form-textarea" rows="5" required>{{old('description', $vacancy->description ?? '')}}</textarea>
+        @error('description')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+    </div>
 </div>

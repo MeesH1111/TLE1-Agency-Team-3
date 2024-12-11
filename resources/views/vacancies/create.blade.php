@@ -5,20 +5,21 @@
     </x-slot:title>
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
-        @vite('resources/css/app.css')
-        @vite('resources/css/vacancy.css')
+        @vite('resources/css/vacanciesCreate.css')
     </x-slot>
 
-    <form action="{{route('vacancies.store')}}" method="POST">
+    <form action="{{route('vacancies.store')}}" method="POST" class="vacancies-form">
         @csrf
         @include('vacancies._form', ['vacancy' => null, 'categories' => $categories, 'companies' => $companies])
 
-        <div>
+        <div class="form-div">
             <label for="company_id" class="form-label"></label>
             <input type="hidden" id="company_id" name="company_id" value="2">
         </div>
 
-        <button type="submit" class="btn" aria-label="Knop voor naar de preview van uw vacature.">Naar preview</button>
+        <div class="form-div-btn">
+            <button type="submit" class="btn" aria-label="Knop voor naar de preview van uw vacature.">Naar preview</button>
+        </div>
     </form>
 
 </x-base-layout>

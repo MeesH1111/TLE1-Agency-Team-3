@@ -1,0 +1,90 @@
+header {
+    font-size: 28px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.vacancies-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    gap: 1rem;
+}
+
+.form-div-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.form-div-area {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+}
+
+.form-div-area input {
+    height: 8rem;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.form-div-input input[type="text"], .form-div-input input[type="number"] {
+    border: 1px black solid;
+    border-radius: 5px;
+    height: 2rem;
+}
+
+.vacancies-form input::placeholder {
+    font-style: italic;
+}
+
+#requirements, #description {
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 6rem;
+    width: 100%;
+}
+
+.vacancies-form textarea::placeholder {
+    font-style: italic;
+}
+
+.form-div-select {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    align-items: center;
+
+}
+
+.btn {
+    background-color: #D03E76;
+    padding: 0.3rem 1rem;
+    width: 30vw;
+    border-radius: 5px;
+    color: white
+}
+
+.form-error {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-error span {
+    color: #b00707;
+}
+
+.form-error {
+    display: flex;
+    align-items: flex-end;
+}
+
+.form-div-select select {
+    border: 1px black solid;
+    border-radius: 5px;
+    height: 2.5rem;
+}

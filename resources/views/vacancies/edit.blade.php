@@ -5,10 +5,11 @@
     </x-slot:title>
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
+        @vite('resources/css/vacanciesCreate.css')
 
     </x-slot>
 
-    <form action="{{route('vacancies.update', $vacancy->id)}}" method="POST">
+    <form action="{{route('vacancies.update', $vacancy->id)}}" method="POST" class="vacancies-form">
         @csrf
         @method('PUT')
 
@@ -18,7 +19,10 @@
             <input type="hidden" id="company_id" name="company_id" value="2">
         </div>
 
-        <button type="submit" class="btn" aria-label="Knop voor het aanpassen van uw vacature.">Vacature aanpassen</button>
+        <div class="form-div-btn">
+
+            <button type="submit" class="btn" aria-label="Knop voor het aanpassen van uw vacature.">Vacature aanpassen</button>
+        </div>
     </form>
 
 

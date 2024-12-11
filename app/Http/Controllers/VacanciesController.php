@@ -62,6 +62,27 @@ class VacanciesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+           'role' => 'required|string|max:255',
+           'salary' => 'required|numeric|min:0',
+           'hours' => 'required|numeric|min:0',
+           'location' => 'required|string|max:255',
+           'type' => 'required|string|max:255',
+           'requirements' => 'required|string|max:255',
+           'description' => 'required|string|max:255',
+           'category_id' => 'required|exists:categories,id',
+           'company_id' => 'required|exists:companies,id',
+        ], [
+           'role.required' => 'Vul de baan titel in.',
+           'salary.required' => 'Vul de salaris in',
+           'hours.required' => 'vul het aantal uren in.',
+           'location.required' => 'Vul het adres in.',
+           'type.required' => 'Kies het baan type.',
+           'requirements.required' => 'Vul de benodigdheden in. Als er geen zijn, vul dan "niks" in.',
+           'description.required' => 'Vul de beschrijving van de baan in.',
+            'category_id.required' => 'Kies het bijbehorende categorie.',
+        ]);
+
         $vacancy = new Vacancy;
         $vacancy->role = $request->input('role');
         $vacancy->salary = $request->input('salary');
