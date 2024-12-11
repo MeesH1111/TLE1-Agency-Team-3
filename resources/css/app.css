@@ -299,6 +299,10 @@ body {
     margin-bottom: 3em;
 }
 
+.containerinfo .btn {
+    margin: -0.2em;
+}
+
 .button {
     display: block;
     max-width: 200px;
@@ -325,6 +329,20 @@ body {
     background-color: #D9D9D9; /* Witte achtergrond */
     border-radius: 1em; /* Afgeronde hoeken */
     text-align: center;
+}
+
+.storycointaner2 {
+    max-width: 23em;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: #D9D9D9; /* Witte achtergrond */
+    border-radius: 1em; /* Afgeronde hoeken */
+    text-align: center;
+    height: 27em;
+}
+
+.storycointaner2 .btn {
+    margin: 3em;
 }
 
 .storyinformatie {

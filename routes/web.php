@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanciesController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompaniesController;
+use App\Http\Controllers\WaitListController;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -34,8 +35,12 @@ Route::get('/test', function () {
 })->name('test');
 
 Route::get('/success-nico', function () {
-    return view('success-story');
+    return view('success-story-werknemer');
 })->name('success-nico');
+
+Route::get('/success-tanja', function () {
+    return view('success-story-werkgever');
+})->name('success-tanja');
 
 
 //Route::resource('/bedrijven', CompaniesController::class);
@@ -46,14 +51,22 @@ Route::get('/search', [VacanciesController::class, 'search'])->name('vacancies.s
 Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->name('vacancies.edit');
 Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update');
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
-Route::resource('/wachtlijst', WaitList::class);
 Route::get('/vacature/details/{id}', [VacanciesController::class, 'show'])->name('vacancies.show');
 
+Route::get('/bedrijven/details/{company}', [CompaniesController::class, 'show'])->name('companies.show');
+Route::get('/bedrijven/create', [CompaniesController::class, 'create'])->name('companies.create');
+Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
 
 Route::get('/werknemer', function () {
     return view('werknemer-uitleg');
 })->name('werknemer-uitleg');
 
+Route::get('/werkgever', function () {
+    return view('werkgever-uitleg');
+})->name('werkgever-uitleg');
+
+Route::post('/wachtlijst/opslaan', [WaitListController::class, 'store'])->name('waitlist.store');
+Route::get('/wachtlijst', [WaitListController::class, 'index'])->name('waitlist.index');
 Route::get('/test', function () {
     return view('test');
 });

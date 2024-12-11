@@ -57,6 +57,14 @@ body {
     transition: background-color 0.3s;
 }
 
+#story-button {
+    margin-left: 5.5em;
+}
+
+#story-button-nico {
+    margin-left: 7em;
+}
+
 .btn:hover {
     background-color: #ffcc00;
 }
