@@ -15,7 +15,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/categorieen', [CategoryController::class, 'index'])->name('categories.index');
 
-Route::get('/bedrijven/details/{company}', [CompaniesController::class, 'show'])->name('companies.show');
 Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
 Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
 
@@ -53,7 +52,7 @@ Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
 Route::get('/vacature/details/{id}/{company?}', [VacanciesController::class, 'show'])->name('vacancies.show');
 
-Route::get('/bedrijven/details/{company}/{offset?}', [CompaniesController::class, 'show'])->name('companies.show');
+
 Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
 Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
 Route::get('/bedrijven/details/{company}/{offset?}', [CompaniesController::class, 'show'])

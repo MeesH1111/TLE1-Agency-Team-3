@@ -30,7 +30,7 @@
 {{--            <p>Jouw IP-adres: {{ $ip }}</p>--}}
             <div class="partner-logos">
                 @foreach ($partnerImages as $image)
-                    <a href="{{ route('companies.show', ['company' => $image['id']]) }}">
+                    <a href="{{ route('bedrijven.next', ['company' => $image['id'], 'offset' => 0]) }}">
                         <img src="{{ asset($image['path']) }}" alt="{{ $image['alt'] }}">
                     </a>
                 @endforeach
