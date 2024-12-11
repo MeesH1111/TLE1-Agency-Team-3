@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Waitlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WaitlistController extends Controller
 {
@@ -28,19 +29,23 @@ class WaitlistController extends Controller
      */
     public function store(Request $request)
     {
-        $waitlistItems = $request->vacancyId;
-        $userId = $request->user()->id;
-        $allWaitlistItemsPerUser = Waitlist::where('user_id', $userId)->where('vacancy_id', $waitlistItems)->get();
+        if (!Auth::check()) {
+            return view('waitlist.login');
+        }
 
-        if (count($allWaitlistItemsPerUser) === 0 && $userId) {
+        $waitlistItems = $request->vacancyId;
+        $userId = Auth::id();
+        $allWaitlistItemsPerUser  = Waitlist::where('user_id', $userId)
+            ->where('vacancy_id', $waitlistItems)
+            ->get();
+
+        if (count($allWaitlistItemsPerUser ) === 0) {
             $waitlistItem = new Waitlist();
             $waitlistItem->vacancy_id = $waitlistItems;
             $waitlistItem->user_id = $userId;
             $waitlistItem->save();
             return view('waitlist.success');
-        } else if (!$userId) {
-            return view('waitlist.login');
-        } else if (count($allWaitlistItemsPerUser) !== 0) {
+        } else {
             return view('waitlist.already-registered');
         }
 
