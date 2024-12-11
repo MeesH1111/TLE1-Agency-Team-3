@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Waitlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WaitlistController extends Controller
 {
@@ -28,21 +29,25 @@ class WaitlistController extends Controller
      */
     public function store(Request $request)
     {
-        $waitlistItems = $request->vacancyId;
-        $userId = $request->user()->id;
-        $allWaitlistItemsPerUser = Waitlist::where('user_id', $userId)->where('vacancy_id', $waitlistItems)->get();
+        if (!Auth::check()) {
+            return view('waitlist.login');
+        }
 
-        if (count($allWaitlistItemsPerUser) === 0) {
+        $waitlistItems = $request->vacancyId;
+        $userId = Auth::id();
+        $allWaitlistItemsPerUser  = Waitlist::where('user_id', $userId)
+            ->where('vacancy_id', $waitlistItems)
+            ->get();
+
+        if (count($allWaitlistItemsPerUser ) === 0) {
             $waitlistItem = new Waitlist();
             $waitlistItem->vacancy_id = $waitlistItems;
             $waitlistItem->user_id = $userId;
             $waitlistItem->save();
-            return redirect()->route('vacancies.show', ['id' => $waitlistItems]);
+            return view('waitlist.success');
         } else {
-            return redirect()->route('categories.index');
-
+            return view('waitlist.already-registered');
         }
-
 
     }
 
@@ -76,5 +81,20 @@ class WaitlistController extends Controller
     public function destroy(Waitlist $waitlist)
     {
         //
+    }
+
+    public function succes()
+    {
+        return view('waitlist.success');
+    }
+
+    public function login()
+    {
+        return view('waitlist.login');
+    }
+
+    public function alreadyregistered()
+    {
+        return view('waitlist.already-registered');
     }
 }
