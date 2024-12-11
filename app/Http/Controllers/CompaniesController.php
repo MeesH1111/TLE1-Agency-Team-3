@@ -69,7 +69,7 @@ class CompaniesController extends Controller
      */
     public function show(string $id, $offset)
     {
-
+        
         $totalVacatures = Vacancy::where('company_id', $id)->count();
 
         if ($totalVacatures > 0) {

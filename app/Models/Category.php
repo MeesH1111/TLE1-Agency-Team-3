@@ -13,7 +13,7 @@ class Category extends Model
 
     public function vacancies(): HasMany
     {
-        return $this->hasMany(Vacancy::class);
+        return $this->hasMany(Vacancy::class, 'category_id');
     }
 
     protected $fillable = [

@@ -5,16 +5,17 @@
     </x-slot:title>
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
+        @vite('resources/css/app.css')
         @vite('resources/css/vacancyDetails.css')
     </x-slot>
 
-    <div class="vacancy-header">
-        <img src="" alt="{{ $vacancy->company->name }} Logo">
-        <div class="vacancy-divider-head">
-            <h1>{{ $vacancy->company->name }}</h1>
-            <h2>{{ $vacancy->role }}</h2>
-        </div>
-    </div>
+    <h1 class="vacancy-comp-tit">{{ $vacancy->company->name }}</h1>
+    <h2 id="vacancy-tit" class="{{ $category->color }}">Vacature</h2>
+
+    <img src="{{ asset('storage/' . $vacancy->company->image) }}" alt="{{$vacancy->company->name}} Logo"
+         class="vacancy-header-img">
+
+
     <div class="vacancy-divider-main">
         <div class="vacancy-info">
             <div><p class="bold-p">Salaris:</p>
@@ -29,7 +30,8 @@
                 <p>{{ $vacancy->requirements }}</p></div>
         </div>
         <div class="vacancy-description">
-            {{ $vacancy->description }}
+            <p class="bold-p">Benodigdheden:</p>
+            <p>{{ $vacancy->description }}</p>
         </div>
     </div>
     <div class="vacancy-buttons">

@@ -69,13 +69,13 @@ class VacanciesController extends Controller
     public function show($id, $company = null)
     {
         $vacancy = Vacancy::findOrFail($id);
-
+        $category = Category::where('id', $vacancy->category_id)->first();
         if ($company) {
             $companyId = Company::findOrFail($company);
         } else {
             $companyId = null;
         }
-        return view('vacancies.show', compact('vacancy', 'companyId'));
+        return view('vacancies.show', compact('vacancy', 'companyId', 'category'));
     }
 
     /**
