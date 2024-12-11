@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vacancy;
 use App\Models\Category;
+use App\Models\WaitList;
 use Illuminate\Http\Request;
 
 class VacanciesController extends Controller
@@ -13,8 +14,11 @@ class VacanciesController extends Controller
      */
     public function index(Request $request, string $category)
     {
-        $vacancies = Vacancy::where('category_id', $category)->get();
+        $vacancies = Vacancy::where('category_id', $category)
+            ->withCount('waitLists') // This will add a wait_lists_count attribute to each vacancy
+            ->get();
         $categoryModel = Category::where('id', $category)->first();
+
         if (!$categoryModel) {
             abort(404, 'Category not found');
         }
@@ -68,7 +72,10 @@ class VacanciesController extends Controller
     public function show($id)
     {
         $vacancy = Vacancy::findOrFail($id);
-        return view('vacancies.show', compact('vacancy'));
+        $category = Category::where('id', $vacancy->category_id)->first();
+        $waitingCount = WaitList::where('vacancy_id', $id)->count();
+
+        return view('vacancies.show', compact('vacancy', 'waitingCount', 'category'));
     }
 
     /**

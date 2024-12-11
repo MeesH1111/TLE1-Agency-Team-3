@@ -29,4 +29,9 @@ class Vacancy extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function waitLists(): HasMany
+    {
+        return $this->hasMany(WaitList::class, 'vacancy_id');
+    }
+
 }

@@ -27,6 +27,15 @@
                 <p>{{ $vacancy->type }}</p></div>
             <div><p class="bold-p">Benodigdheden:</p>
                 <p>{{ $vacancy->requirements }}</p></div>
+            <div>
+                <p class="bold-p">Werkveld:</p>
+                <p>{{ $category->name }}</p>
+            </div>
+            <div>
+                <p class="bold-p">Wachtrij:</p>
+                <p>{{ $waitingCount }}</p>
+            </div>
+
         </div>
         <div class="vacancy-description">
             {{ $vacancy->description }}

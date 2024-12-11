@@ -9,8 +9,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class WaitList extends Model
 {
     use HasFactory;
-    public function list(): HasMany
+
+    public function vacancy(): HasMany
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Vacancy::class, 'vacancy_id');
     }
 }
