@@ -6,7 +6,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompaniesController;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/categorieen', [CategoryController::class, 'index'])->name('categories.index');
 
@@ -21,9 +25,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
 Route::get('/test', function () {
     return view('test');
