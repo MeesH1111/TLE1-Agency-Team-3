@@ -51,11 +51,14 @@ Route::get('/search', [VacanciesController::class, 'search'])->name('vacancies.s
 Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->name('vacancies.edit');
 Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update');
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
-Route::get('/vacature/details/{id}', [VacanciesController::class, 'show'])->name('vacancies.show');
+Route::get('/vacature/details/{id}/{company?}', [VacanciesController::class, 'show'])->name('vacancies.show');
 
-Route::get('/bedrijven/details/{company}', [CompaniesController::class, 'show'])->name('companies.show');
-Route::get('/bedrijven/create', [CompaniesController::class, 'create'])->name('companies.create');
+Route::get('/bedrijven/details/{company}/{offset?}', [CompaniesController::class, 'show'])->name('companies.show');
+Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
 Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
+Route::get('/bedrijven/details/{company}/{offset?}', [CompaniesController::class, 'show'])
+    ->name('bedrijven.next');
+
 
 Route::get('/werknemer', function () {
     return view('werknemer-uitleg');

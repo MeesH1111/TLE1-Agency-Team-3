@@ -33,7 +33,14 @@
         </div>
     </div>
     <div class="vacancy-buttons">
-        <a href="{{ route('vacancies.index', $vacancy->category_id)}}" class="back" aria-label="Terug naar Vacatures">Terug</a>
+        @if($companyId)
+            <a href="{{ route('bedrijven.next', $companyId)}}/0" class="back"
+               aria-label="Terug naar Vacatures">Terug</a>
+        @else
+            <a href="{{ route('vacancies.index', $vacancy->category_id)}}" class="back"
+               aria-label="Terug naar Vacatures">Terug</a>
+        @endif
+
         <form action="{{ route('waitlist.store') }}" method="post">
             @csrf
             <label for="vacancyId"></label>
