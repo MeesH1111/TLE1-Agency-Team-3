@@ -18,7 +18,9 @@
         </div>
 
         <div class="form-div-btn">
-            <button type="submit" class="btn" aria-label="Knop voor naar de preview van uw vacature.">Naar preview</button>
+            <a href="#">Terug</a>
+            <button type="submit" class="btn" aria-label="Knop voor naar de preview van uw vacature.">Naar preview
+            </button>
         </div>
     </form>
 
