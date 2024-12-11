@@ -18,15 +18,16 @@
     <main class="show-main">
         <article class="vacatures-article">
             <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset - 1]) }}"
-               class="previousarrow"></a>
+               class="previousarrow" aria-label="Vorige vacature tonen"></a>
             @if($vacature)
                 <div class="vacature-card">
                     <p>{{ $vacature->role }}</p>
                     <p>€{{ $vacature->salary }}</p>
-                    <p>{{ $vacature->hours }} Uur</p>
+                    <p>{{ $vacature->hours }} Uur per week</p>
                     <p>{{ $vacature->location }}</p>
 
-                    <a href="{{route('vacancies.show', $vacature->id)}}" class="btn">
+                    <a href="{{route('vacancies.show', $vacature->id)}}" class="btn"
+                       aria-label="Zie meer over deze vacature">
                         Zie meer!
                     </a>
                 </div>
@@ -34,7 +35,7 @@
                 Geen vacatures
             @endif
             <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset + 1]) }}"
-               class="frontarrow"></a>
+               class="frontarrow" aria-label="Volgende vacature tonen"></a>
         </article>
 
 
