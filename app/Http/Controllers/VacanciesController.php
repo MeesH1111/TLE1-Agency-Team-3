@@ -52,6 +52,7 @@ class VacanciesController extends Controller
     {
         $categories = Category::all();
         $companies = Company::all();
+        //dd($companies);
 
         return view('vacancies.create', compact('categories', 'companies'));
     }
@@ -61,18 +62,6 @@ class VacanciesController extends Controller
      */
     public function store(Request $request)
     {
-//        $request->validate([
-//            'title' => 'required',
-//            'salary' => 'required',
-//            'hours' => 'required',
-//            'location' => 'required',
-//            'type' => 'required',
-//            'requirements' => 'required',
-//            'description' => 'required',
-//            'category_id' => 'required',
-//            'company_id' => 'required',
-//        ]);
-
         $vacancy = new Vacancy;
         $vacancy->role = $request->input('role');
         $vacancy->salary = $request->input('salary');
@@ -82,7 +71,8 @@ class VacanciesController extends Controller
         $vacancy->requirements = $request->input('requirements');
         $vacancy->description = $request->input('description');
         $vacancy->category_id = $request->input('category_id');
-        $vacancy->company_id = $request->input('company_id');
+        $vacancy->company_id = $request->company_id;
+        //dd($vacancy->company_id);
         $vacancy->save();
 
         return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy created!');
@@ -116,18 +106,19 @@ class VacanciesController extends Controller
     public function update(Request $request, string $id)
     {
         $vacancy = Vacancy::findOrfail($id);
-        $request->validate([
-            'role' => 'required|string|max:255',
-            'salary' => 'required|numeric|min:0',
-            'hours' => 'required|string|max:255',
-            'location' => 'required|string|max:255',
-            'type' => 'required|string|in:full-time,part-time,side-job',
-            'requirements' => 'required|string',
-            'description' => 'required|string',
-            'category_id' => 'required|exists:categories,id',
-            'company_id' => 'required|exists:companies,id',
-        ]);
+//        $request->validate([
+//            'role' => 'required|string|max:255',
+//            'salary' => 'required|numeric|min:0',
+//            'hours' => 'required|string|max:255',
+//            'location' => 'required|string|max:255',
+//            'type' => 'required|string|in:full-time,part-time,side-job',
+//            'requirements' => 'required|string',
+//            'description' => 'required|string',
+//            'category_id' => 'required|exists:categories,id',
+//            'company_id' => 'required|exists:companies,id',
+//        ]);
         $vacancy->update($request->all());
+        //dd($vacancy);
 
         return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy updated!');
     }

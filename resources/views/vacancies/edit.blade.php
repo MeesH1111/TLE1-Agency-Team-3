@@ -1,7 +1,7 @@
 <x-base-layout>
     {{--    Zet hier de title van je pagina neer--}}
     <x-slot:title>
-        Test
+        Vacature aanpassen
     </x-slot:title>
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
@@ -13,6 +13,10 @@
         @method('PUT')
 
         @include('vacancies._form', ['vacancy' => $vacancy, 'categories' => $categories, 'companies' => $companies])
+        <div>
+            <label for="company_id" class="form-label"></label>
+            <input type="hidden" id="company_id" name="company_id" value="2">
+        </div>
 
         <button type="submit" class="btn">Vacature aanpassen</button>
     </form>
