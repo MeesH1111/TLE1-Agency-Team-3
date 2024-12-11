@@ -9,9 +9,11 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
+        $locatie = "Rotterdam";
+
         // Hier kun je handmatig een IP-adres instellen voor de demo
         $manualIp = '185.156.172.142'; // Vervang dit door je gewenste IP
-        $useManualIp = true; // Zet op false om de normale methode te gebruiken
+        $useManualIp =true; // Zet op false om de normale methode te gebruiken
 
         if ($useManualIp) {
             $ip = $manualIp;
@@ -30,6 +32,7 @@ class HomeController extends Controller
 
 
         if ($ip === '185.156.172.142') {
+            $locatie = "Amsterdam";
             $partnerImages = [
                 ['path' => 'images/bbrood.png', 'alt' => 'Logo van bbrood', 'id' => 5],  //id nog aanpassen dit is een tijdelijke oplossing
                 ['path' => 'images/duurzamemode.png', 'alt' => 'Logo van de duurzamemode', 'id' => 6],
@@ -38,6 +41,6 @@ class HomeController extends Controller
             ];
         }
 
-        return view('home', compact('ip', 'partnerImages'));
+        return view('home', compact('ip', 'partnerImages', 'locatie'));
     }
 }

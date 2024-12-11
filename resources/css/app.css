@@ -200,7 +200,7 @@ body {
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #d8608f;
+    background-color: #D03E76;
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -415,6 +415,22 @@ body {
 }
 
 
+.partner-logos img {
+    width: 150px; /* Uniforme breedte voor alle logo's */
+    height: auto; /* Zorgt ervoor dat de proporties behouden blijven */
+    object-fit: contain; /* Logo's netjes binnen het frame */
+    border-radius: 5px; /* Afgeronde hoeken voor de logo's */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Soepele overgang */
+}
+
+.partner-logos img:hover {
+    transform: scale(1.05); /* Maak het logo iets groter */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Verhoog schaduwintensiteit */
+    cursor: pointer; /* Verander de muis in een handje */
+}
+
+
 @media (max-width: 768px) {
     .partner-logos {
         flex-direction: column; /* Stapel logo's onder elkaar op kleine schermen */
@@ -430,4 +446,10 @@ body {
     .succesverhaal img {
         margin: 20px 0; /* Ruimte boven en onder de afbeelding */
     }
+
+    .partner-logos img {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Meer opvallende schaduw */
+        border: 2px solid #d8608f; /* Voeg een gekleurde rand toe */
+    }
 }
+

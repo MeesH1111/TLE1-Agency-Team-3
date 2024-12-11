@@ -25,8 +25,9 @@
         </section>
 
         <section class="partners">
-            <h2>Onze lokale bedrijven voor jou!</h2>
-            <p>Jouw IP-adres: {{ $ip }}</p>
+            <h2>Bekijk hier bedrijven uit jouw buurt.</h2>
+            <p>Jouw regio: {{$locatie}}</p>
+{{--            <p>Jouw IP-adres: {{ $ip }}</p>--}}
             <div class="partner-logos">
                 @foreach ($partnerImages as $image)
                     <a href="{{ route('companies.show', ['company' => $image['id']]) }}">
