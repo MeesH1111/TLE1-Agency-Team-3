@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Vacancy;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -65,10 +66,16 @@ class VacanciesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show($id, $company = null)
     {
         $vacancy = Vacancy::findOrFail($id);
-        return view('vacancies.show', compact('vacancy'));
+
+        if ($company) {
+            $companyId = Company::findOrFail($company);
+        } else {
+            $companyId = null;
+        }
+        return view('vacancies.show', compact('vacancy', 'companyId'));
     }
 
     /**

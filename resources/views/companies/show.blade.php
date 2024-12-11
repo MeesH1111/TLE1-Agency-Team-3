@@ -26,7 +26,8 @@
                     <p>{{ $vacature->hours }} Uur per week</p>
                     <p>{{ $vacature->location }}</p>
 
-                    <a href="{{route('vacancies.show', $vacature->id)}}" class="btn"
+                    <a href="{{route('vacancies.show', ['id' => $vacature->id, 'company' => $company->id])}}"
+                       class="btn"
                        aria-label="Zie meer over deze vacature">
                         Zie meer!
                     </a>
