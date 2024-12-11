@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Vacancy;
 use App\Models\Category;
 use App\Models\WaitList;
@@ -69,13 +70,19 @@ class VacanciesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show($id, $company = null)
     {
         $vacancy = Vacancy::findOrFail($id);
         $category = Category::where('id', $vacancy->category_id)->first();
+        if ($company) {
+            $companyId = Company::findOrFail($company);
+        } else {
+            $companyId = null;
+        }
         $waitingCount = WaitList::where('vacancy_id', $id)->count();
+        return view('vacancies.show', compact('vacancy', 'waitingCount', 'companyId', 'category'));        $category = Category::where('id', $vacancy->category_id)->first();
 
-        return view('vacancies.show', compact('vacancy', 'waitingCount', 'category'));
+
     }
 
     /**
