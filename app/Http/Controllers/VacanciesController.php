@@ -80,7 +80,8 @@ class VacanciesController extends Controller
             $companyId = null;
         }
         $waitingCount = WaitList::where('vacancy_id', $id)->count();
-        return view('vacancies.show', compact('vacancy', 'waitingCount', 'companyId', 'category'));        $category = Category::where('id', $vacancy->category_id)->first();
+        return view('vacancies.show', compact('vacancy', 'waitingCount', 'companyId', 'category'));
+        $category = Category::where('id', $vacancy->category_id)->first();
 
 
     }
