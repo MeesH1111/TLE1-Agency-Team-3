@@ -24,19 +24,20 @@
             </div>
         </section>
 
-
-
         <section class="partners">
-            <h2>Onze lokale bedrijven voor jou!</h2>
+            <h2>Bekijk hier bedrijven uit jouw buurt.</h2>
+            <p>Jouw regio: {{$locatie}}</p>
+{{--            <p>Jouw IP-adres: {{ $ip }}</p>--}}
             <div class="partner-logos">
-                <img src="images/fitshelogo.png" alt="Logo van bedrijf fitshe">
-                <img src="images/krekerij.jpg" alt="Logo van bedrijf krekerij">
-                <img src="images/svh.png" alt="Logo van bedrijf SVH">
-                <img src="images/toettoetfood.png" alt="Logo van bedrijf toet toet food">
+                @foreach ($partnerImages as $image)
+                    <a href="{{ route('bedrijven.next', ['company' => $image['id'], 'offset' => 0]) }}">
+                        <img src="{{ asset($image['path']) }}" alt="{{ $image['alt'] }}">
+                    </a>
+                @endforeach
             </div>
+
         </section>
 
-        <!-- succesverhaal -->
         <section class="succesverhaal">
             <h2>Van doorzetter naar inspiratie</h2>
             <p>Na een lange zoektocht naar werk vond Nico, door Open Hiring, een kans bij SVH.</p>
@@ -45,4 +46,3 @@
         </section>
     </div>
 </x-base-layout>
-
