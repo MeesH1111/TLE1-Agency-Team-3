@@ -432,6 +432,56 @@ body {
     border-radius: 8px; /* Ronde hoeken zoals in wireframe */
 }
 
+.sollicitatie-succes-h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: -2em;
+}
+
+.sollicitatie-succes-p {
+    display: flex;
+    text-align: center;
+    margin-top: 0.5em;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+#sollicitatie-succes-btn {
+    margin-left: 7.5em;
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+
+.sollicitatie-succes-img {
+    scale: 0.5;
+}
+
+#sollicitatie-inlog-btn {
+    display: flex;
+    justify-content: center;
+    max-width: 30vw;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+
+.sollicitatie-login-register-p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#sollicitatie-login-register-btn {
+    display: flex;
+    justify-content: center;
+    max-width: 48vw;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
 
 .partner-logos img {
     width: 150px; /* Uniforme breedte voor alle logo's */
