@@ -14,6 +14,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/categorieen', [CategoryController::class, 'index'])->name('categories.index');
 
+Route::get('/bedrijven/details/{company}', [CompaniesController::class, 'show'])->name('companies.show');
+Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
+Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
