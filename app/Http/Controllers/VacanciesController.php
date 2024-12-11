@@ -31,7 +31,7 @@ class VacanciesController extends Controller
         $search = $request->search;
         $category = $request->category;
         $categoryModel = Category::where('id', $category)->first();
-        $vacancies = Vacancy::whereAny(['role', 'location', 'type', 'salary', 'hours'], 'LIKE', "%$search%")->where('category_id', $request->category)->get();
+        $vacancies = Vacancy::whereAny(['role', 'location', 'type', 'salary', 'hours'], 'LIKE', "%$search%")->where('category_id', $request->category)->withCount('waitLists')->get();
 
         return view('vacancies.index', compact('vacancies', 'category', 'categoryModel'));
     }
