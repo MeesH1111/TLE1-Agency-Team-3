@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Company extends Model
 {
-    
+
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
@@ -17,6 +17,6 @@ class Company extends Model
 
     public function vacancies(): HasMany
     {
-        return $this->hasMany(Vacancy::class);
+        return $this->hasMany(Vacancy::class, 'company_id');
     }
 }

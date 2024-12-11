@@ -16,7 +16,7 @@ class Vacancy extends Model
 
     public function company(): BelongsTo
     {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(Company::class, 'company_id');
     }
 
     public function applications(): HasMany
@@ -26,7 +26,12 @@ class Vacancy extends Model
 
     public function categories(): BelongsTo
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function waitLists(): HasMany
+    {
+        return $this->hasMany(WaitList::class, 'vacancy_id');
     }
 
 }

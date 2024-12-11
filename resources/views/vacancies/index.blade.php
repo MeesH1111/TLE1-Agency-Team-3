@@ -32,9 +32,10 @@
                 @foreach ($vacancies as $vacancy)
                     <ul id="vacancy-ul">
                         <li id="function">Functie: <span class="functionSpan">{{ $vacancy->role}}</span></li>
-                        <li>Locatie: {{ $vacancy->company->name}}</li>
+                        <li>Locatie: {{ $vacancy->location}}</li>
                         <li id="wage">Salaris: €{{ $vacancy->salary}} per maand</li>
                         <li>Aantal uren per week: {{ $vacancy->hours}}</li>
+                        <li>Wachtlijst: {{ $vacancy->wait_lists_count }}</li>
                         <a class="ulA{{$categoryModel->color}}"
                            href="{{route('vacancies.show', ['id' => $vacancy->id])}}">Zie Meer !</a>
                     </ul>

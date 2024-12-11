@@ -200,7 +200,7 @@ body {
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #d8608f;
+    background-color: #aa0160;
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -290,7 +290,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     background: #ffffff; /* Witte achtergrond voor het centrale gedeelte */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
     border-radius: 10px; /* Ronde hoeken */
     padding: 20px;
 }
@@ -314,7 +314,7 @@ body {
     color: #fff;
     background-color: #c61b94; /* Knalkleur zoals in het plaatje */
     border-radius: 8px; /* Afgeronde hoeken */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
     transition: background-color 0.3s ease;
 }
 
@@ -396,7 +396,7 @@ body {
     height: auto; /* Zorgt ervoor dat de proporties behouden blijven */
     object-fit: contain; /* Logo's netjes binnen het frame */
     border-radius: 5px; /* Optioneel: afgeronde hoeken voor de logo's */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
 }
 
 /* Succesverhaal sectie */
@@ -432,6 +432,72 @@ body {
     border-radius: 8px; /* Ronde hoeken zoals in wireframe */
 }
 
+.sollicitatie-succes-h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: -2em;
+}
+
+.sollicitatie-succes-p {
+    display: flex;
+    text-align: center;
+    margin-top: 0.5em;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+#sollicitatie-succes-btn {
+    margin-left: 7.5em;
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+
+.sollicitatie-succes-img {
+    scale: 0.5;
+}
+
+#sollicitatie-inlog-btn {
+    display: flex;
+    justify-content: center;
+    max-width: 30vw;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+
+.sollicitatie-login-register-p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#sollicitatie-login-register-btn {
+    display: flex;
+    justify-content: center;
+    max-width: 48vw;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.partner-logos img {
+    width: 150px; /* Uniforme breedte voor alle logo's */
+    height: auto; /* Zorgt ervoor dat de proporties behouden blijven */
+    object-fit: contain; /* Logo's netjes binnen het frame */
+    border-radius: 5px; /* Afgeronde hoeken voor de logo's */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Soepele overgang */
+}
+
+.partner-logos img:hover {
+    transform: scale(1.05); /* Maak het logo iets groter */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Verhoog schaduwintensiteit */
+    cursor: pointer; /* Verander de muis in een handje */
+}
+
 
 @media (max-width: 768px) {
     .partner-logos {
@@ -448,6 +514,10 @@ body {
     .succesverhaal img {
         margin: 20px 0; /* Ruimte boven en onder de afbeelding */
     }
-}
 
+    .partner-logos img {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Meer opvallende schaduw */
+        border: 2px solid #d8608f; /* Voeg een gekleurde rand toe */
+    }
+}
 

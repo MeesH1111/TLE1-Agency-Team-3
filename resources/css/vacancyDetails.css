@@ -1,45 +1,59 @@
-main {
-    background-image: url('/img/Base-Template (1).jpg');
-    background-size: cover; /* Ensures the image covers the entire element */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center; /* Centers the image */
-}
-
 /* Header */
-.vacancy-header {
-    color: black;
-    text-align: center;
-    padding: 10px;
+.vacancy-comp-tit {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-self: center;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1.7rem 2rem 0 2rem;
+    background: #f5fefd;
+    max-width: 70vw;
+    border-radius: 0 0 1rem 1rem;
+    border-bottom: black .5rem solid;
 }
 
-.vacancy-header img {
-    width: 80px;
-    height: auto;
+#vacancy-tit {
+    display: flex;
+    color: #f5fefd;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .2rem .65rem .5rem .65rem;
+    max-width: 70vw;
+    border-radius: 0 0 1rem 1rem;
 }
 
-.vacancy-header h1 {
-    font-size: 18px;
-    margin: 0;
+.vacancy-header-img {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    max-height: 20vh;
 }
+
 
 .vacancy-divider-main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: #f3f4f6;
+    max-width: 96vw;
+    min-width: 96vw;
+    border-radius: 1rem;
+    justify-self: center;
 }
 
 /* Vacature Informatie */
 .vacancy-info {
-    margin: 20px;
+    margin: 2rem 1rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1rem;
+    background-color: #2b392b;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: .5rem;
 }
 
 .vacancy-info div {
@@ -49,9 +63,9 @@ main {
 }
 
 .vacancy-info p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 0;
-    color: #333;
+    color: #F5FEFD;
 }
 
 .bold-p {
@@ -61,9 +75,19 @@ main {
 
 /* Beschrijving */
 .vacancy-description {
-    margin: 20px;
-    font-size: 14px;
-    color: #555;
+    margin: 2rem 2rem 2rem 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #BFC6AC;
+    padding: 1rem 1.5rem 1rem 1rem;
+    border-radius: .5rem;
+    max-height: 26vh;
+}
+
+.vacancy-description p {
+    font-size: 1rem;
+    margin: 0;
+    color: #000000;
 }
 
 /* Knoppen */
@@ -85,6 +109,18 @@ main {
     transition: background-color 0.3s ease;
 }
 
+.apply {
+    text-decoration: none;
+    padding: 5px 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #aa0160;
+    transition: background-color 0.3s ease;
+}
+
 .vacancy-buttons a:hover {
     background-color: #c41d59;
 }
@@ -95,4 +131,44 @@ main {
 
 .vacancy-buttons a.back:hover {
     background-color: #636363;
+}
+
+.red {
+    background-color: #A63A3A;
+}
+
+.purple {
+    background-color: #AF4BA8;
+}
+
+.blue {
+    background-color: #49759C;
+}
+
+.green {
+    background-color: #4E7E47;
+}
+
+.orange {
+    background-color: #9B6D3B;
+}
+
+.blue1 {
+    background-color: #4F7282;
+}
+
+.yellow {
+    background-color: #8D7325;
+}
+
+.blue2 {
+    background-color: #547B87;
+}
+
+.red1 {
+    background-color: #8C4343;
+}
+
+.grey {
+    background-color: #757575;
 }

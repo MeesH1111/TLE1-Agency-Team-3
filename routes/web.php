@@ -7,10 +7,16 @@ use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\WaitListController;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/categorieen', [CategoryController::class, 'index'])->name('categories.index');
 
+Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
+Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -22,9 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
 Route::get('/test', function () {
     return view('test');
@@ -47,11 +50,14 @@ Route::get('/search', [VacanciesController::class, 'search'])->name('vacancies.s
 Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->name('vacancies.edit');
 Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update');
 Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
-Route::get('/vacature/details/{id}', [VacanciesController::class, 'show'])->name('vacancies.show');
+Route::get('/vacature/details/{id}/{company?}', [VacanciesController::class, 'show'])->name('vacancies.show');
 
-Route::get('/bedrijven/details/{company}', [CompaniesController::class, 'show'])->name('companies.show');
-Route::get('/bedrijven/create', [CompaniesController::class, 'create'])->name('companies.create');
+
+Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
 Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
+Route::get('/bedrijven/details/{company}/{offset?}', [CompaniesController::class, 'show'])
+    ->name('bedrijven.next');
+
 
 Route::get('/werknemer', function () {
     return view('werknemer-uitleg');
@@ -63,6 +69,9 @@ Route::get('/werkgever', function () {
 
 Route::post('/wachtlijst/opslaan', [WaitListController::class, 'store'])->name('waitlist.store');
 Route::get('/wachtlijst', [WaitListController::class, 'index'])->name('waitlist.index');
+Route::get('/wachtlijst/succes', [waitListController::class, 'succes'])->name('waitlist.succes');
+Route::get('/wachtlijst/login-vereist', [waitListController::class, 'login'])->name('waitlist.login');
+Route::get('/wachtlijst/al-gesolliciteerd', [waitListController::class, 'alreadyregistered'])->name('waitlist.alreadyregistered');
 Route::get('/test', function () {
     return view('test');
 });
