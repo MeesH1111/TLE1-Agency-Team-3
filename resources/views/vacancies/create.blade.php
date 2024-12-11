@@ -13,7 +13,18 @@
         @csrf
         @include('vacancies._form', ['vacancy' => null, 'categories' => $categories, 'companies' => $companies])
 
-        <button type="submit" class="vacancy-btn">Naar preview</button>
+        <div>
+            <label for="category_id" class="form-label">Bedrijf</label>
+            <select name="category_id" id="category_id" class="form-select" required>
+                @foreach($companies as $company)
+                    <option value="{{$company->id}}" {{old('category_id', $vacancy->category_id ?? '') == $company->id ? 'selected' : ''}}>
+                        {{$company->name}}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <button type="submit" class="btn">Naar preview</button>
     </form>
 
 </x-base-layout>

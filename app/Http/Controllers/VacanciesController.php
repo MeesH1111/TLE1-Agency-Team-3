@@ -61,26 +61,28 @@ class VacanciesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'salary' => 'required',
-            'hours' => 'required',
-            'location' => 'required',
-            'type' => 'required',
-            'requirements' => 'required',
-            'description' => 'required',
-            'category_id' => 'required',
-            'company_id' => 'required',
-        ]);
+//        $request->validate([
+//            'title' => 'required',
+//            'salary' => 'required',
+//            'hours' => 'required',
+//            'location' => 'required',
+//            'type' => 'required',
+//            'requirements' => 'required',
+//            'description' => 'required',
+//            'category_id' => 'required',
+//            'company_id' => 'required',
+//        ]);
 
-        $vacancy = new Vacancy($request->all());
-//        $vacancy->role = $request->input('role');
-//        $vacancy->salary = $request->input('salary');
-//        $vacancy->hours = $request->input('hours');
-//        $vacancy->location = $request->input('location');
-//        $vacancy->type = $request->input('type');
-//        $vacancy->requirements = $request->input('requirements');
-//        $vacancy->description = $request->input('description');
+        $vacancy = new Vacancy;
+        $vacancy->role = $request->input('role');
+        $vacancy->salary = $request->input('salary');
+        $vacancy->hours = $request->input('hours');
+        $vacancy->location = $request->input('location');
+        $vacancy->type = $request->input('type');
+        $vacancy->requirements = $request->input('requirements');
+        $vacancy->description = $request->input('description');
+        $vacancy->category_id = $request->input('category_id');
+        $vacancy->company_id = $request->input('company_id');
         $vacancy->save();
 
         return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy created!');

@@ -40,7 +40,7 @@ Route::get('/success-tanja', function () {
 
 
 //Route::resource('/bedrijven', CompaniesController::class);
-Route::get('/vacatures/{category?}', [VacanciesController::class, 'index'])->name('vacancies.index');
+Route::get('/vacatures/overzicht/{category?}', [VacanciesController::class, 'index'])->name('vacancies.index');
 Route::get('/vacatures/create', [VacanciesController::class, 'create'])->name('vacancies.create');
 Route::post('/vacatures', [VacanciesController::class, 'store'])->name('vacancies.store');
 Route::get('/search', [VacanciesController::class, 'search'])->name('vacancies.search');

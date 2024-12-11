@@ -14,7 +14,7 @@
 
         @include('vacancies._form', ['vacancy' => $vacancy, 'categories' => $categories, 'companies' => $companies])
 
-        <button type="submit" class="vacancy-btn">Vacature aanpassen</button>
+        <button type="submit" class="btn">Vacature aanpassen</button>
     </form>
 
 
