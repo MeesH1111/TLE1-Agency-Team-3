@@ -129,11 +129,30 @@ input[type="file"] {
     height: 8rem;
 }
 
-.show-main {
-
+.vacature-card {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 1.5rem 2rem 1.5rem 2rem;
+    min-width: 40vw;
+    background-color: #2E342A;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 1rem;
+    color: white;
 }
 
-.show-main article {
+.vacatures-article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    margin: 0 1rem 1rem 1rem;
+    padding: 0 1rem;
+}
+
+.bedrijfs-article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,16 +167,30 @@ input[type="file"] {
     margin-bottom: 1rem;
 }
 
-.show-main article div {
-    height: auto;
-    width: 90vw;
-}
-
 .show-main p {
     font-size: 1rem;
 }
 
+.previousarrow {
+    border: solid #D03E76;
+    border-width: 0 0.1em 0.1em 0;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    transform: rotate(135deg);
+}
 
-
-
-
+.frontarrow {
+    border: solid #D03E76;
+    border-width: 0 0.1em 0.1em 0;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    transform: rotate(315deg);
+}

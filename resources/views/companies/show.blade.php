@@ -16,12 +16,34 @@
     </header>
 
     <main class="show-main">
-        <article>
+        <article class="vacatures-article">
+            <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset - 1]) }}"
+               class="previousarrow"></a>
+            @if($vacature)
+                <div class="vacature-card">
+                    <p>{{ $vacature->role }}</p>
+                    <p>€{{ $vacature->salary }}</p>
+                    <p>{{ $vacature->hours }} Uur</p>
+                    <p>{{ $vacature->location }}</p>
+
+                    <a href="{{route('vacancies.show', $vacature->id)}}" class="btn">
+                        Zie meer!
+                    </a>
+                </div>
+            @else
+                Geen vacatures
+            @endif
+            <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset + 1]) }}"
+               class="frontarrow"></a>
+        </article>
+
+
+        <article class="bedrijfs-article">
             <h2>Over ons</h2>
             <p>{{$company->description}}</p>
         </article>
 
-        <article>
+        <article class="bedrijfs-article">
             <h2>Contact</h2>
             <p>{{$company->contact}}</p>
         </article>

@@ -48,6 +48,9 @@ Route::get('/vacature/details/{id}', [VacanciesController::class, 'show'])->name
 Route::get('/bedrijven/details/{company}', [CompaniesController::class, 'show'])->name('companies.show');
 Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
 Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
+Route::get('/bedrijven/details/{company}/{offset?}', [CompaniesController::class, 'show'])
+    ->name('bedrijven.next');
+
 
 Route::get('/werknemer', function () {
     return view('werknemer-uitleg');

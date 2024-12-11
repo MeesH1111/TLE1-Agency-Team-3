@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
@@ -66,11 +67,15 @@ class CompaniesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id, $offset = 0)
     {
         $company = Company::findOrFail($id);
+        $vacature = Vacancy::where('company_id', $id)
+            ->skip($offset)
+            ->take(1)
+            ->first();
 
-        return view('companies.show', compact('company'));
+        return view('companies.show', compact('company', 'vacature', 'offset'));
     }
 
     /**
