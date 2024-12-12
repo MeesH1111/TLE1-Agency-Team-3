@@ -39,7 +39,12 @@
                 <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset + 1]) }}"
                    class="frontarrow" aria-label="Volgende vacature tonen"></a>
             </div>
-            <a class="btn" href="{{route('vacancies.create')}}">Aanmaken</a>
+            @auth
+                @if(Auth::user()->id == $company->user_id)
+                    <a class="btn" href="{{route('vacancies.create')}}">Aanmaken</a>
+                @endif
+            @endauth
+
         </article>
 
 
