@@ -20,7 +20,7 @@
     <form method="get" action="{{route('vacancies.search')}}">
         @csrf
         <label for="category"></label>
-        <input type="hidden" name="category" id="category" value="{{$category}}">
+        <input type="hidden" name="category" id="category" value="{{ $category}}">
 
         <label for="search"></label>
         <input type="text" name="search" id="search" class="groen" placeholder="Zoek specifiek"
@@ -30,6 +30,7 @@
         @if($vacancies->isNotEmpty())
             <div id="vacancy-list">
                 @foreach ($vacancies as $vacancy)
+
                     <ul id="vacancy-ul">
                         <li id="function">Functie: <span class="functionSpan">{{ $vacancy->role}}</span></li>
                         <li>Locatie: {{ $vacancy->location}}</li>
