@@ -5,7 +5,7 @@
     </x-slot:title>
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
-        @vite('resources/css/categories.css', 'resources/js/app.js')
+        @vite(['resources/css/categories.css', 'resources/js/app.js'])
     </x-slot>
     <h1 id="categoryTitle">Vacatures</h1>
     <h2 id="categoryUnderTitle">Filter op categorieën</h2>
