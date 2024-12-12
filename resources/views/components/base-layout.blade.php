@@ -26,8 +26,12 @@
     </button>
     <div class="nav-options" id="nav-options">
         <a href="/" aria-label="Home">Home</a>
-        <a href="over-ons" aria-label="Over-ons">Over Ons</a>
-        <a href="profile" aria-label="Profiel pagina">Profile</a>
+        @guest
+            <a href="{{route('login')}}" aria-label="inloggen">Inloggen</a>
+        @endguest
+        @auth
+            <a href="{{route('companies.create')}}" aria-label="Bedrijfspagina aanmaken">Bedrijf aanmaken</a>
+        @endauth
     </div>
 </nav>
 

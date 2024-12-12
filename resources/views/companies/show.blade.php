@@ -17,26 +17,34 @@
 
     <main class="show-main">
         <article class="vacatures-article">
-            <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset - 1]) }}"
-               class="previousarrow" aria-label="Vorige vacature tonen"></a>
-            @if($vacature)
-                <div class="vacature-card">
-                    <p>{{ $vacature->role }}</p>
-                    <p>€{{ $vacature->salary }}</p>
-                    <p>{{ $vacature->hours }} Uur per week</p>
-                    <p>{{ $vacature->location }}</p>
+            <div class="vacatures-div">
+                <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset - 1]) }}"
+                   class="previousarrow" aria-label="Vorige vacature tonen"></a>
+                @if($vacature)
+                    <div class="vacature-card">
+                        <p>{{ $vacature->role }}</p>
+                        <p>€{{ $vacature->salary }}</p>
+                        <p>{{ $vacature->hours }} Uur per week</p>
+                        <p>{{ $vacature->location }}</p>
 
-                    <a href="{{route('vacancies.show', ['id' => $vacature->id, 'company' => $company->id])}}"
-                       class="btn"
-                       aria-label="Zie meer over deze vacature">
-                        Zie meer!
-                    </a>
-                </div>
-            @else
-                Geen vacatures
-            @endif
-            <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset + 1]) }}"
-               class="frontarrow" aria-label="Volgende vacature tonen"></a>
+                        <a href="{{route('vacancies.show', ['id' => $vacature->id, 'company' => $company->id])}}"
+                           class="btn"
+                           aria-label="Zie meer over deze vacature">
+                            Zie meer!
+                        </a>
+                    </div>
+                @else
+                    Geen vacatures
+                @endif
+                <a href="{{ route('bedrijven.next', ['company' => $company->id, 'offset' => $offset + 1]) }}"
+                   class="frontarrow" aria-label="Volgende vacature tonen"></a>
+            </div>
+            @auth
+                @if(Auth::user()->id == $company->user_id)
+                    <a class="btn" href="{{route('vacancies.create')}}">Aanmaken</a>
+                @endif
+            @endauth
+
         </article>
 
 
