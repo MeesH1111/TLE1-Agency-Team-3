@@ -5,8 +5,7 @@
     </x-slot:title>
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
-        @vite('resources/css/app.css')
-        @vite('resources/css/vacancy.css')
+        @vite(['resources/css/app.css', 'resources/css/vacancy.css'])
     </x-slot>
 
     <body class="vacancy-style">
