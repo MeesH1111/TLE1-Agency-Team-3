@@ -19,8 +19,16 @@ class HomeController extends Controller
             $ip = $manualIp;
         } else {
             $response = Http::get('https://ipapi.co/json/');
-            $data = $response->json();
-            $ip = $data['ip'] ?? 'Onbekend';
+
+            if ($response->successful()) {
+                $data = $response->json();
+                $ip = $data['ip'] ?? 'Onbekend';
+            } elseif ($response->status() === 429) {
+                $ip = 'Te vaak IP requests';
+            } else {
+                $ip = 'Onbekend';
+            }
+
         }
 
         $partnerImages = [
