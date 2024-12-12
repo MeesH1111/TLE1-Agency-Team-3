@@ -19,7 +19,7 @@
             <div class="choice">
                 <section class="introductie">
                     <a href="{{ route('categories.index') }}" class="btn">Ik zoek werk</a>
-                    <a href="#" class="btn">Ik ben werkgever</a>
+                    <a href="{{ route('werkgever-uitleg')  }}" class="btn">Ik ben werkgever</a>
                 </section>
             </div>
         </section>

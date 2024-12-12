@@ -28,7 +28,6 @@ class HomeController extends Controller
             } else {
                 $ip = 'Onbekend';
             }
-
         }
 
         $partnerImages = [
