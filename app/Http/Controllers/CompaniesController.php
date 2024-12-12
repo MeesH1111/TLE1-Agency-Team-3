@@ -45,7 +45,7 @@ class CompaniesController extends Controller
 
         // Create a new Company instance
         $company = new Company;
-        $company->user_id = 1;
+        $company->user_id = \Auth::user()->id;;
         $company->name = $request->title;
         $company->location = $request->location;
         $company->contact = $request->contact;
@@ -69,7 +69,7 @@ class CompaniesController extends Controller
      */
     public function show(string $id, $offset)
     {
-        
+
         $totalVacatures = Vacancy::where('company_id', $id)->count();
 
         if ($totalVacatures > 0) {
