@@ -521,3 +521,15 @@ body {
     }
 }
 
+.meer-weter-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #757575;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+

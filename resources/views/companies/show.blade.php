@@ -41,7 +41,7 @@
             </div>
             @auth
                 @if(Auth::user()->id == $company->user_id)
-                    <a class="btn" href="{{route('vacancies.create')}}">Aanmaken</a>
+                    <a class="btn" href="{{route('vacancies.create', ['companyId' => $company->id])}}">Aanmaken</a>
                 @endif
             @endauth
 

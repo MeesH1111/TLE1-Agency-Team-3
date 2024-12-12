@@ -68,7 +68,7 @@
         </div>
 
         <div class="create-form-div">
-            <a href="#">Terug</a>
+            <a href="{{route('home')}}">Terug</a>
             <button class="aanmaak-button" type="submit">Aanmaken</button>
         </div>
 

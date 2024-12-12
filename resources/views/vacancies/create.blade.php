@@ -14,7 +14,7 @@
 
         <div class="form-div">
             <label for="company_id" class="form-label"></label>
-            <input type="hidden" id="company_id" name="company_id" value="2">
+            <input type="hidden" id="company_id" name="company_id" value="{{$company}}">
         </div>
 
         <div class="form-div-btn">

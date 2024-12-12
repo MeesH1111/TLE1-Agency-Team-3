@@ -61,7 +61,7 @@ class CompaniesController extends Controller
         $company->save();
 
         // Redirect or return response
-        return redirect()->route('home');
+        return redirect()->route('bedrijven.next', ['company' => $company->id, 'offset' => 0]);
     }
 
     /**
