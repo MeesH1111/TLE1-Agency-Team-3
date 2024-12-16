@@ -57,5 +57,7 @@
             <h2>Contact</h2>
             <p>{{$company->contact}}</p>
         </article>
+
+        <a href="{{route('companies.edit', ['company' => $company->id])}}">Bewerken</a>
     </main>
 </x-base-layout>

@@ -54,6 +54,8 @@ Route::get('/vacature/details/{id}/{company?}', [VacanciesController::class, 'sh
 
 Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
 Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
+Route::put('/bedrijven/update/{company}', [CompaniesController::class, 'update'])->name('companies.update');
+Route::get('/bedrijven/{company}/edit', [CompaniesController::class, 'edit'])->name('companies.edit');
 Route::get('/bedrijven/details/{company}/{offset?}', [CompaniesController::class, 'show'])
     ->name('bedrijven.next');
 
