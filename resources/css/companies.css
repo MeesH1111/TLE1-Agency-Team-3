@@ -58,7 +58,7 @@ header {
 }
 
 .aanmaak-button {
-    background-color: #D03E76;
+    background-color: #aa0160;
     padding: 0.3rem 1rem;
     width: 30vw;
     border-radius: 5px;
@@ -200,4 +200,10 @@ input[type="file"] {
     margin-top: 1em;
     margin-bottom: 1em;
     transform: rotate(315deg);
+}
+
+.aanpas-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
