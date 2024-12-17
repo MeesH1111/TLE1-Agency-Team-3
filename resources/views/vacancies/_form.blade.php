@@ -32,9 +32,11 @@
     <label for="location" id="location" class="form-label">Adres</label>
     <div class="form-error">
         <input type="text" id="location" name="location" placeholder="Vul hier de adres in..." class="form-input" value="{{old('location', $vacancy->location ?? '')}}" required>
+
         @error('location')
         <span class="error-message">{{$message}}</span>
         @enderror
+
     </div>
 </div>
 
@@ -58,9 +60,9 @@
 <div class="form-div-select">
     <label for="category_id" class="form-label">Categorie</label>
     <div class="form-error">
-        <select name="category_id" id="category_id" class="form-select" required>
+        <select name="category_id" id="category_id" class="form-select" required aria-label="Drop-down menu lijst van categorieën">
             @foreach($categories as $category)
-                <option value="{{$category->id}}" {{old('category_id', $vacancy->category_id ?? '') == $category->id ? 'selected' : ''}}>
+                <option value="{{$category->id}}" {{old('category_id', $vacancy->category_id ?? '') == $category->id ? 'selected' : ''}} aria-label="{{$category->naam}} categorie">
                     {{$category->name}}
                 </option>
             @endforeach

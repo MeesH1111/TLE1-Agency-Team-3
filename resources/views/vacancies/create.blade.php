@@ -8,6 +8,7 @@
         @vite('resources/css/vacanciesCreate.css')
     </x-slot>
 
+
     <form action="{{route('vacancies.store')}}" method="POST" class="vacancies-form">
         @csrf
         @include('vacancies._form', ['vacancy' => null, 'categories' => $categories])
