@@ -51,11 +51,9 @@ class VacanciesController extends Controller
     public function create($companyId)
     {
         $categories = Category::all();
-        $companies = Company::all();
         $company = $companyId;
-        //dd($companies);
 
-        return view('vacancies.create', compact('categories', 'companies', 'company'));
+        return view('vacancies.create', compact('categories', 'company'));
     }
 
     /**
@@ -96,20 +94,19 @@ class VacanciesController extends Controller
         $vacancy->company_id = $request->company_id;
         $vacancy->save();
 
-
-        return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy created!');
-
+        return redirect()->route('bedrijven.next', ['company' => $vacancy->company_id, 'offset' => 0])->with('success', 'Vacancy created!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show($id, $company = null)
     {
-        $companyId = null;
+        $companyId = $company;
         $vacancy = Vacancy::findOrFail($id);
         $category = Category::find($vacancy->category_id);
         $waitingCount = WaitList::where('vacancy_id', $id)->count();
+
         return view('vacancies.show', compact('vacancy', 'category', 'waitingCount', 'companyId'));
     }
 

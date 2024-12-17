@@ -10,7 +10,7 @@
 
     <form action="{{route('vacancies.store')}}" method="POST" class="vacancies-form">
         @csrf
-        @include('vacancies._form', ['vacancy' => null, 'categories' => $categories, 'companies' => $companies])
+        @include('vacancies._form', ['vacancy' => null, 'categories' => $categories])
 
         <div class="form-div">
             <label for="company_id" class="form-label"></label>
@@ -18,8 +18,8 @@
         </div>
 
         <div class="form-div-btn">
-            <a href="#">Terug</a>
-            <button type="submit" class="btn" aria-label="Knop voor naar de preview van uw vacature.">Aanmaken
+            <a href="{{route('bedrijven.next', ['company' => $company, 'offset' => 0])}}">Terug</a>
+            <button type="submit" class="btn" aria-label="Knop voor aanmaken vacature.">Aanmaken
             </button>
         </div>
     </form>
