@@ -34,7 +34,6 @@
 
         <!-- Contact knop -->
         <section class="contact-button">
-            <a href="/contact" class="btn" aria-label="Knop om naar contact te gaan">Contact</a>
             <a href="{{ route('categories.index') }}" class="btn" aria-label="knop om naar de categorieën van vacatures te gaan">Zoek vacatures</a>
         </section>
     </div>
