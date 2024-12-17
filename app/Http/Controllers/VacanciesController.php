@@ -73,8 +73,8 @@ class VacanciesController extends Controller
             'company_id' => 'required|exists:companies,id',
         ], [
             'role.required' => 'Vul de baan titel in.',
-            'salary.required' => 'Vul de salaris in.',
-            'hours.required' => 'Vul het aantal uren per week in.',
+            'salary.required' => 'Vul het salaris in, alleen in nummers.',
+            'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',
             'location.required' => 'Vul het adres in.',
             'type.required' => 'Kies het baan type uit het drop-down menu.',
             'requirements.required' => 'Vul de benodigdheden in. Als er geen zijn, vul dan "niks" in.',
@@ -140,8 +140,8 @@ class VacanciesController extends Controller
             'company_id' => 'required|exists:companies,id',
         ], [
             'role.required' => 'Vul de baan titel in.',
-            'salary.required' => 'Vul de salaris in.',
-            'hours.required' => 'Vul het aantal uren per week in.',
+            'salary.required' => 'Vul het salaris in, alleen in nummers.',
+            'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',
             'location.required' => 'Vul het adres in.',
             'type.required' => 'Kies het baan type uit het drop-down menu.',
             'requirements.required' => 'Vul de benodigdheden in. Als er geen zijn, vul dan "niks" in.',
