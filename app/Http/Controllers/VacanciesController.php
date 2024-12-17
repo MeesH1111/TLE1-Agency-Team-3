@@ -19,6 +19,7 @@ class VacanciesController extends Controller
         $categoryModel = Category::find($category);
         $vacancies = Vacancy::where('category_id', $category)->withCount('waitLists')->get();
         $waitlist = WaitList::where('vacancy_id')->count();
+        
         if (!$categoryModel) {
             abort(404, 'Category not found');
         }
