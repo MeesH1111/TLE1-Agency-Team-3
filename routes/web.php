@@ -14,8 +14,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/categorieen', [CategoryController::class, 'index'])->name('categories.index');
 
-Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
-Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
+Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create')->middleware('auth');
+Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -43,19 +43,19 @@ Route::get('/success-tanja', function () {
 
 //Route::resource('/bedrijven', CompaniesController::class);
 Route::get('/vacatures/overzicht/{category?}', [VacanciesController::class, 'index'])->name('vacancies.index');
-Route::get('/vacatures/create/{companyId}', [VacanciesController::class, 'create'])->name('vacancies.create');
-Route::post('/vacatures', [VacanciesController::class, 'store'])->name('vacancies.store');
-Route::get('/search', [VacanciesController::class, 'search'])->name('vacancies.search');
-Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->name('vacancies.edit');
-Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update');
-Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy');
+Route::get('/vacatures/create/{companyId}', [VacanciesController::class, 'create'])->name('vacancies.create')->middleware('auth');
+Route::post('/vacatures', [VacanciesController::class, 'store'])->name('vacancies.store')->middleware('auth');
+Route::get('/search', [VacanciesController::class, 'search'])->name('vacancies.search')->middleware('auth');
+Route::get('/vacatures/{vacancy}/edit', [VacanciesController::class, 'edit'])->name('vacancies.edit')->middleware('auth');
+Route::put('/vacatures/{vacancy}', [VacanciesController::class, 'update'])->name('vacancies.update')->middleware('auth');
+Route::delete('/vacatures/{vacancy}', [VacanciesController::class, 'destroy'])->name('vacancies.destroy')->middleware('auth');
 Route::get('/vacature/details/{id}/{company?}', [VacanciesController::class, 'show'])->name('vacancies.show');
 
 
-Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create');
-Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store');
-Route::put('/bedrijven/update/{company}', [CompaniesController::class, 'update'])->name('companies.update');
-Route::get('/bedrijven/{company}/edit', [CompaniesController::class, 'edit'])->name('companies.edit');
+Route::get('/bedrijven/maken', [CompaniesController::class, 'create'])->name('companies.create')->middleware('auth');
+Route::post('/bedrijven/store', [CompaniesController::class, 'store'])->name('companies.store')->middleware('auth');
+Route::put('/bedrijven/update/{company}', [CompaniesController::class, 'update'])->name('companies.update')->middleware('auth');
+Route::get('/bedrijven/{company}/edit', [CompaniesController::class, 'edit'])->name('companies.edit')->middleware('auth');
 Route::get('/bedrijven/details/{company}/{offset?}', [CompaniesController::class, 'show'])
     ->name('bedrijven.next');
 
@@ -68,11 +68,11 @@ Route::get('/werkgever', function () {
     return view('werkgever-uitleg');
 })->name('werkgever-uitleg');
 
-Route::post('/wachtlijst/opslaan', [WaitListController::class, 'store'])->name('waitlist.store');
-Route::get('/wachtlijst', [WaitListController::class, 'index'])->name('waitlist.index');
-Route::get('/wachtlijst/succes', [waitListController::class, 'succes'])->name('waitlist.succes');
+Route::post('/wachtlijst/opslaan', [WaitListController::class, 'store'])->name('waitlist.store')->middleware('auth');
+Route::get('/wachtlijst', [WaitListController::class, 'index'])->name('waitlist.index')->middleware('auth');
+Route::get('/wachtlijst/succes', [waitListController::class, 'succes'])->name('waitlist.succes')->middleware('auth');
 Route::get('/wachtlijst/login-vereist', [waitListController::class, 'login'])->name('waitlist.login');
-Route::get('/wachtlijst/al-gesolliciteerd', [waitListController::class, 'alreadyregistered'])->name('waitlist.alreadyregistered');
+Route::get('/wachtlijst/al-gesolliciteerd', [waitListController::class, 'alreadyregistered'])->name('waitlist.alreadyregistered')->middleware('auth');
 Route::get('/test', function () {
     return view('test');
 });

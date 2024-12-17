@@ -8,6 +8,8 @@
     </x-slot>
 
     <div class="container">
+        <button id="toon-partners-btn" class="btn">Klik hier om bedrijven dichtbij mij te zien. Open Hiring mag mijn locatie weten.</button>
+
         <section class="introductie">
             <h1>Een baan zonder sollicitatiegesprek</h1>
             <div class="stappen">
@@ -24,10 +26,10 @@
             </div>
         </section>
 
-        <section class="partners">
+        <!-- Verstopte partners-sectie -->
+        <section class="partners hidden" id="partners-section">
             <h2>Bekijk hier bedrijven uit jouw buurt.</h2>
             <p>Jouw regio: {{$locatie}}</p>
-            <p>(alleen voor demo) Jouw IP-adres: {{ $ip }}</p>
             <div class="partner-logos">
                 @foreach ($partnerImages as $image)
                     <a href="{{ route('bedrijven.next', ['company' => $image['id'], 'offset' => 0]) }}">
@@ -35,7 +37,6 @@
                     </a>
                 @endforeach
             </div>
-
         </section>
 
         <section class="succesverhaal">
@@ -45,4 +46,13 @@
             <a href="success-nico" class="btn">Bekijk het verhaal</a>
         </section>
     </div>
+
+    <script>
+        document.getElementById('toon-partners-btn').addEventListener('click', function () {
+            const partnersSection = document.getElementById('partners-section');
+            partnersSection.classList.remove('hidden');
+            this.style.display = 'none'; // Verberg de knop na klikken
+        });
+    </script>
+
 </x-base-layout>

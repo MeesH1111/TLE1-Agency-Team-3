@@ -6,7 +6,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
-
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->

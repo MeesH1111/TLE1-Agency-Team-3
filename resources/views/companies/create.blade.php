@@ -29,7 +29,8 @@
         <div class="create-form-div">
             <label for="location">Locatie:</label>
             <div class="error-div">
-                <input type="text" id="location" name="location" placeholder="Locatie bedrijf...">
+                <input type="text" id="location" name="location" placeholder="Locatie bedrijf..."
+                       value="{{old('location')}}">
                 @error('location')
                 <span class="error-popup">{{ $message }}</span>
                 @enderror
@@ -39,7 +40,8 @@
         <div class="create-form-div">
             <label for="contact">Contact:</label>
             <div class="error-div">
-                <input type="text" id="contact" name="contact" placeholder="Telefoonnummer...">
+                <input type="text" id="contact" name="contact" placeholder="Telefoonnummer..."
+                       value="{{old('contact')}}">
                 @error('contact')
                 <span class="error-popup">{{ $message }}</span>
                 @enderror
@@ -60,7 +62,7 @@
             <label for="description">Beschrijving:</label>
             <div class="error-div">
             <textarea type="text" id="description" name="description"
-                      placeholder="Beschrijf hier het bedrijf..."></textarea>
+                      placeholder="Beschrijf hier het bedrijf...">{{old('description')}}</textarea>
                 @error('description')
                 <span class="error-popup">{{ $message }}</span>
                 @enderror

@@ -52,11 +52,9 @@ class VacanciesController extends Controller
     public function create($companyId)
     {
         $categories = Category::all();
-        $companies = Company::all();
         $company = $companyId;
-        //dd($companies);
 
-        return view('vacancies.create', compact('categories', 'companies', 'company'));
+        return view('vacancies.create', compact('categories', 'company'));
     }
 
     /**
@@ -76,10 +74,10 @@ class VacanciesController extends Controller
             'company_id' => 'required|exists:companies,id',
         ], [
             'role.required' => 'Vul de baan titel in.',
-            'salary.required' => 'Vul de salaris in',
-            'hours.required' => 'vul het aantal uren in.',
+            'salary.required' => 'Vul het salaris in, alleen in nummers.',
+            'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',
             'location.required' => 'Vul het adres in.',
-            'type.required' => 'Kies het baan type.',
+            'type.required' => 'Kies het baan type uit het drop-down menu.',
             'requirements.required' => 'Vul de benodigdheden in. Als er geen zijn, vul dan "niks" in.',
             'description.required' => 'Vul de beschrijving van de baan in.',
             'category_id.required' => 'Kies het bijbehorende categorie.',
@@ -97,20 +95,19 @@ class VacanciesController extends Controller
         $vacancy->company_id = $request->company_id;
         $vacancy->save();
 
-
-        return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy created!');
-
+        return redirect()->route('bedrijven.next', ['company' => $vacancy->company_id, 'offset' => 0])->with('success', 'Vacancy created!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show($id, $company = null)
     {
-        $companyId = null;
+        $companyId = $company;
         $vacancy = Vacancy::findOrFail($id);
         $category = Category::find($vacancy->category_id);
         $waitingCount = WaitList::where('vacancy_id', $id)->count();
+
         return view('vacancies.show', compact('vacancy', 'category', 'waitingCount', 'companyId'));
     }
 
@@ -144,10 +141,10 @@ class VacanciesController extends Controller
             'company_id' => 'required|exists:companies,id',
         ], [
             'role.required' => 'Vul de baan titel in.',
-            'salary.required' => 'Vul de salaris in',
-            'hours.required' => 'vul het aantal uren in.',
+            'salary.required' => 'Vul het salaris in, alleen in nummers.',
+            'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',
             'location.required' => 'Vul het adres in.',
-            'type.required' => 'Kies het baan type.',
+            'type.required' => 'Kies het baan type uit het drop-down menu.',
             'requirements.required' => 'Vul de benodigdheden in. Als er geen zijn, vul dan "niks" in.',
             'description.required' => 'Vul de beschrijving van de baan in.',
             'category_id.required' => 'Kies het bijbehorende categorie.',

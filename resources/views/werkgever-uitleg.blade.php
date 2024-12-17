@@ -23,26 +23,12 @@
         </div>
 
         <div class="containerinfo">
-            <h2 class="title">Registreer je bedrijf</h2>
-            <img class="uitlegimg" src="/images/werknemeruitlegimage2.png" alt="tekening van twee mensen die een bedrijf registreren">
-
-            <p class="werknemertekst">
-                Open Hiring zorgt ervoor dat uw bedrijf makkelijker aan werknemers kan komen door het proces van sollicitatie heel erg te versimpellen.
-                Toekomstige werknemers kunnen met één simpele klik op een knop solliciteren op een vacature. Er wordt dan automatisch een uitnodiging naar die persoon gestuurd.
-            </p>
-            <p class="werknemertekst">
-                Registratie van uw account is erg simpel. Bij het maken van uw bedrijfspagina wordt gevraagd om uw KvK nummer. Hierdoor weten wij dat u een echt bedrijf bent.
-            </p>
-            <p class="werknemertekst">
-                Als uw account is geregistreerd kunt u uw bedrijfspagina aanmaken. Deze kunt u dan geheel zelf inrichten.
-            </p>
-        </div>
-
-        <div class="containerinfo">
             <h2 class="title">Plaats vacatures</h2>
             <p class="werknemertekst">
-                Vanaf de bedrijfspagina kan je nieuwe vacatures aanmaken. Er moet dan een formulier ingevuld worden met alle gegevens van de vacature.
-                Daarna krijg je een preview van hoe de vacature er uit komt te zien en kan je dat goedkeuren of nog veranderen. Staat de vacature online? dan kunnen werkzoekende solliciteren.
+                Vanaf de bedrijfspagina kan je nieuwe vacatures aanmaken. Er moet dan een formulier ingevuld worden met
+                alle gegevens van de vacature.
+                Daarna krijg je een preview van hoe de vacature er uit komt te zien en kan je dat goedkeuren of nog
+                veranderen. Staat de vacature online? dan kunnen werkzoekende solliciteren.
             </p>
             <p class="werknemertekst">
 
@@ -52,8 +38,33 @@
                 aanmaken</a>
         </div>
 
+        <div class="containerinfo">
+            <h2 class="title">Registreer je bedrijf</h2>
+            <img class="uitlegimg" src="/images/werknemeruitlegimage2.png"
+                 alt="tekening van twee mensen die een bedrijf registreren">
+
+            <p class="werknemertekst">
+                Open Hiring zorgt ervoor dat uw bedrijf makkelijker aan werknemers kan komen door het proces van
+                sollicitatie heel erg te versimpellen.
+                Toekomstige werknemers kunnen met één simpele klik op een knop solliciteren op een vacature. Er wordt
+                dan automatisch een uitnodiging naar die persoon gestuurd.
+            </p>
+            <p class="werknemertekst">
+                Registratie van uw account is erg simpel. Bij het maken van uw bedrijfspagina wordt gevraagd om uw KvK
+                nummer. Hierdoor weten wij dat u een echt bedrijf bent.
+            </p>
+            <p class="werknemertekst">
+                Als uw account is geregistreerd kunt u uw bedrijfspagina aanmaken. Deze kunt u dan geheel zelf
+                inrichten.
+            </p>
+
+            <a class="btn" id="uitlegbtn" href="{{route('companies.create')}}" aria-label="Bedrijfspagina aanmaken">Bedrijf
+                aanmaken</a>
+        </div>
+
         <div class="storycointaner2">
-            <p><i>"Dankzij Open Hiring kan ik focussen op groei, terwijl gemotiveerde mensen de kans krijgen om direct aan de slag te gaan." – Tanja, ondernemer</i></p>
+            <p><i>"Dankzij Open Hiring kan ik focussen op groei, terwijl gemotiveerde mensen de kans krijgen om direct
+                    aan de slag te gaan." – Tanja, ondernemer</i></p>
             <div class="storyinfo">
                 <p class="storyp">
                     Tanja, eigenaresse van een duurzame bakkerij, liep vast door het tijdrovende sollicitatieproces

@@ -8,6 +8,11 @@
         @vite('resources/css/companies.css')
     </x-slot>
     <header class="show-header">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <img src="{{ asset('storage/' . $company->image) }}" alt="{{$company->name}} Logo" class="header-img">
         <div>
             <h1>{{ $company->name }}</h1>

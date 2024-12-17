@@ -31,6 +31,14 @@
         @endguest
         @auth
             <a href="{{route('companies.create')}}" aria-label="Bedrijfspagina aanmaken">Bedrijf aanmaken</a>
+            <form method="POST" action="{{route('logout')}}">
+                <input type="hidden" name="_token" value="a7pr9nxta3qpKh9sGwsWyKuBpXNUjjXm5rri2arZ" autocomplete="off">
+                @csrf
+                <a href="{{route('logout')}}" onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                    Uitloggen
+                </a>
+            </form>
         @endauth
     </div>
 </nav>
