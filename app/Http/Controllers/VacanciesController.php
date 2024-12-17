@@ -19,7 +19,7 @@ class VacanciesController extends Controller
         $categoryModel = Category::find($category);
         $vacancies = Vacancy::where('category_id', $category)->withCount('waitLists')->get();
         $waitlist = WaitList::where('vacancy_id')->count();
-        
+
         if (!$categoryModel) {
             abort(404, 'Category not found');
         }
@@ -63,6 +63,7 @@ class VacanciesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'role' => 'required|string|max:255',
             'salary' => 'required|numeric|min:0',
             'hours' => 'required|numeric|min:0',
@@ -73,6 +74,7 @@ class VacanciesController extends Controller
             'category_id' => 'required|exists:categories,id',
             'company_id' => 'required|exists:companies,id',
         ], [
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'role.required' => 'Vul de baan titel in.',
             'salary.required' => 'Vul het salaris in, alleen in nummers.',
             'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',
@@ -130,6 +132,7 @@ class VacanciesController extends Controller
     {
         $vacancy = Vacancy::findOrfail($id);
         $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'role' => 'required|string|max:255',
             'salary' => 'required|numeric|min:0',
             'hours' => 'required|numeric|min:0',
@@ -140,6 +143,7 @@ class VacanciesController extends Controller
             'category_id' => 'required|exists:categories,id',
             'company_id' => 'required|exists:companies,id',
         ], [
+            'image.required' => 'Kies een foto bestand om te uploaden.',
             'role.required' => 'Vul de baan titel in.',
             'salary.required' => 'Vul het salaris in, alleen in nummers.',
             'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',

@@ -1,4 +1,15 @@
 <div class="form-div-input">
+    <label for="photo">Bedrijfslogo</label>
+    <div class="form-error">
+        <input type="file" id="photo" name="photo" placeholder="Kies een foto bestand..." class="form-input" value="{{old('image',$vacancy->photo ?? '')}}"
+        aria-label="Kies een foto bestand om te uploaden">
+        @error('image')
+        <span class="error-message">{{$message}}</span>
+        @enderror
+    </div>
+</div>
+
+<div class="form-div-input">
     <label for="role" class="form-label">Vacature titel</label>
     <div class="form-error">
         <input type="text" id="role" name="role" placeholder="Vul hier de baan titel..." class="form-input" value="{{old('role', $vacancy->role ?? '')}}"

@@ -40,7 +40,7 @@ class CompaniesController extends Controller
             'title.required' => 'Vul een bedrijfsnaam in',
             'location.required' => 'Vul een geldige locatie in',
             'image' => 'Upload een geldige afbeelding',
-            'contact' => 'Vul een contact adress in',
+            'contact' => 'Vul een contact adres in',
         ]);;
 
         // Create a new Company instance
@@ -113,7 +113,7 @@ class CompaniesController extends Controller
             'title.required' => 'Vul een bedrijfsnaam in',
             'location.required' => 'Vul een geldige locatie in',
             'image' => 'Upload een geldige afbeelding',
-            'contact' => 'Vul een contact adress in',
+            'contact' => 'Vul een contact adres in',
         ]);;
 
         // Create a new Company instance
