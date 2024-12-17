@@ -24,7 +24,7 @@
             </div>
         </section>
 
-        <section class="partners">
+        <section class="partners hidden" id="partners-section">
             <h2>Bekijk hier bedrijven uit jouw buurt.</h2>
             <p>Jouw regio: {{$locatie}}</p>
             <p>(alleen voor demo) Jouw IP-adres: {{ $ip }}</p>
@@ -35,8 +35,9 @@
                     </a>
                 @endforeach
             </div>
-
         </section>
+
+        <button id="toon-partners-btn" class="btn">Ik wil bedrijven dichtbij zien, dus mogen ze weten waar ik ben.</button>
 
         <section class="succesverhaal">
             <h2>Van doorzetter naar inspiratie</h2>
@@ -46,3 +47,13 @@
         </section>
     </div>
 </x-base-layout>
+
+
+<script>
+    document.getElementById('toon-partners-btn').addEventListener('click', function () {
+        const partnersSection = document.getElementById('partners-section');
+        partnersSection.classList.remove('hidden');
+        this.style.display = 'none';
+    });
+</script>
+
