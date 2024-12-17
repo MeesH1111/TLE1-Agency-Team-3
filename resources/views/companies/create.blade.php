@@ -62,7 +62,7 @@
             <label for="description">Beschrijving:</label>
             <div class="error-div">
             <textarea type="text" id="description" name="description"
-                      placeholder="Beschrijf hier het bedrijf..." value="{{old('description')}}"></textarea>
+                      placeholder="Beschrijf hier het bedrijf...">{{old('description')}}</textarea>
                 @error('description')
                 <span class="error-popup">{{ $message }}</span>
                 @enderror
