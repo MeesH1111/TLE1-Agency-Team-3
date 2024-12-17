@@ -8,7 +8,7 @@
     </x-slot>
 
     <div class="container">
-        <button id="toon-partners-btn" class="btn">Ik wil bedrijven die dichtbij mij zijn zien, dus mag Open Hiring weten waar ik ben.</button>
+        <button id="toon-partners-btn" class="btn">Klik hier om bedrijven dichtbij mij te zien. Open Hiring mag mijn locatie weten.</button>
 
         <section class="introductie">
             <h1>Een baan zonder sollicitatiegesprek</h1>
