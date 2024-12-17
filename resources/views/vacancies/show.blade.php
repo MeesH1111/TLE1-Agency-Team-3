@@ -56,7 +56,12 @@
             @csrf
             <label for="vacancyId"></label>
             <input type="hidden" id="vacancyId" name="vacancyId" value="{{$vacancy->id}}">
-            <button type="submit" class="apply" aria-label="Reageer op deze vacature">Reageer</button>
+            @if($companyId && \Auth::user()->id == $bedrijf->user_id)
+                <a href="{{route('vacancies.edit', $vacancy->id)}}" class="btn">Edit</a>
+            @else
+                <button type="submit" class="apply" aria-label="Reageer op deze vacature">Reageer</button>
+            @endif
+
         </form>
 
     </div>

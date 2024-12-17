@@ -105,9 +105,10 @@ class VacanciesController extends Controller
         $companyId = $company;
         $vacancy = Vacancy::findOrFail($id);
         $category = Category::find($vacancy->category_id);
+        $bedrijf = Company::find($companyId);
         $waitingCount = WaitList::where('vacancy_id', $id)->count();
 
-        return view('vacancies.show', compact('vacancy', 'category', 'waitingCount', 'companyId'));
+        return view('vacancies.show', compact('vacancy', 'category', 'waitingCount', 'companyId', 'bedrijf'));
     }
 
     /**

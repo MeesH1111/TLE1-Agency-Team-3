@@ -13,7 +13,7 @@ class HomeController extends Controller
 
         // Hier kun je handmatig een IP-adres instellen voor de demo
         $manualIp = '185.156.172.142'; // Vervang dit door je gewenste IP
-        $useManualIp = true; // Zet op false om de normale methode te gebruiken
+        $useManualIp = false; // Zet op false om de normale methode te gebruiken
 
         if ($useManualIp) {
             $ip = $manualIp;
