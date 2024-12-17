@@ -37,7 +37,7 @@
             </div>
         </section>
 
-        <button id="toon-partners-btn" class="btn">Ik wil bedrijven dichtbij zien, dus mogen ze weten waar ik ben.</button>
+        <button id="toon-partners-btn" class="btn">Ik wil bedrijven die dichtbij mij zijn zien, dus mag Open Hiring weten waar ik ben.</button>
 
         <section class="succesverhaal">
             <h2>Van doorzetter naar inspiratie</h2>
