@@ -99,7 +99,6 @@ class VacanciesController extends Controller
         $vacancy->type = $request->input('type');
         $vacancy->requirements = $request->input('requirements');
         $vacancy->description = $request->input('description');
-        $vacancy->user_id = auth()->user()->id;
         $vacancy->category_id = $request->input('category_id');
         $vacancy->company_id = $request->company_id;
 
