@@ -53,6 +53,11 @@ class VacanciesController extends Controller
     {
         $categories = Category::all();
         $company = $companyId;
+        $bedrijf = Company::find($company);
+
+        if (\Gate::denies('create-vacature', $bedrijf)) {
+            abort(403, 'Je bent niet gemachtigd om een vacature aan te maken voor dit bedrijf.');
+        }
 
         return view('vacancies.create', compact('categories', 'company'));
     }
@@ -122,7 +127,7 @@ class VacanciesController extends Controller
         $companies = Company::all();
 
         if (\Gate::denies('access-vacature', $vacancy)) {
-            abort(403, 'Je hebt geen toegang tot deze vacature.');
+            abort(403, 'Je hebt geen toegang om deze vacature te bewerken.');
         }
 
         return view('vacancies.edit', compact('vacancy', 'categories', 'companies'));
