@@ -95,7 +95,7 @@ class CompaniesController extends Controller
         $company = Company::find($id);
 
         if (\Gate::denies('edit-company', $company)) {
-            abort(403, 'Dit is niet jou bedrijf');
+            abort(403, 'Dit is niet jouw bedrijf');
         }
 
         return view('companies.edit', compact('company'));

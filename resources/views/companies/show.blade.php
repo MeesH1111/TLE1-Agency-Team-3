@@ -62,9 +62,15 @@
             <h2>Contact</h2>
             <p>{{$company->contact}}</p>
         </article>
-        <div class="aanpas-div">
-            <a class="aanmaak-button" href="{{route('companies.edit', ['company' => $company->id])}}">Bewerken</a>
-        </div>
+        @auth
+            @if(Auth::user()->id == $company->user_id)
+                <div class="aanpas-div">
+                    <a class="aanmaak-button"
+                       href="{{route('companies.edit', ['company' => $company->id])}}">Bewerken</a>
+                </div>
+            @endif
+        @endauth
+
     </main>
 
 </x-base-layout>
