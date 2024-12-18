@@ -63,7 +63,7 @@ class VacanciesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'role' => 'required|string|max:255',
             'salary' => 'required|numeric|min:0',
             'hours' => 'required|numeric|min:0',
@@ -74,7 +74,7 @@ class VacanciesController extends Controller
             'category_id' => 'required|exists:categories,id',
             'company_id' => 'required|exists:companies,id',
         ], [
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'Kies een foto bestand om te uploaden.',
             'role.required' => 'Vul de baan titel in.',
             'salary.required' => 'Vul het salaris in, alleen in nummers.',
             'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',
@@ -93,8 +93,15 @@ class VacanciesController extends Controller
         $vacancy->type = $request->input('type');
         $vacancy->requirements = $request->input('requirements');
         $vacancy->description = $request->input('description');
+        $vacancy->user_id = auth()->user()->id;
         $vacancy->category_id = $request->input('category_id');
         $vacancy->company_id = $request->company_id;
+
+
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->store('vacancies', 'public');
+            $vacancy->photo = $path;
+        }
         $vacancy->save();
 
         return redirect()->route('bedrijven.next', ['company' => $vacancy->company_id, 'offset' => 0])->with('success', 'Vacancy created!');

@@ -1,9 +1,9 @@
 <div class="form-div-input">
     <label for="photo">Bedrijfslogo</label>
     <div class="form-error">
-        <input type="file" id="photo" name="photo" placeholder="Kies een foto bestand..." class="form-input" value="{{old('image',$vacancy->photo ?? '')}}"
+        <input type="file" id="photo" name="photo" class="form-input"
         aria-label="Kies een foto bestand om te uploaden">
-        @error('image')
+        @error('photo')
         <span class="error-message">{{$message}}</span>
         @enderror
     </div>
@@ -58,9 +58,9 @@
     <label for="type" id="type" class="form-label">Baan type</label>
     <div class="form-error">
         <select name="type" id="type"  class="form-select">
-            <option value="full_time" {{old('type', $vacancy->type ?? '') == 'full_time' ? 'selected' : ''}}>Full time</option>
-            <option value="part_time" {{old('type', $vacancy->type ?? '') == 'part_time' ? 'selected' : ''}}>Part time</option>
-            <option value="side_job" {{old('type', $vacancy->type ?? '') == 'side_job' ? 'selected' : ''}}>Bij baan</option>
+            <option value="full-time" {{old('type', $vacancy->type ?? '') == 'full-time' ? 'selected' : ''}}>Full time</option>
+            <option value="part-time" {{old('type', $vacancy->type ?? '') == 'part-time' ? 'selected' : ''}}>Part time</option>
+            <option value="side-job" {{old('type', $vacancy->type ?? '') == 'side-job' ? 'selected' : ''}}>Bij baan</option>
         </select>
 
         @error('type')

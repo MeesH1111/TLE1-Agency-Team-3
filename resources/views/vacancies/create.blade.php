@@ -9,7 +9,7 @@
     </x-slot>
 
 
-    <form action="{{route('vacancies.store')}}" method="POST" class="vacancies-form">
+    <form action="{{route('vacancies.store')}}" method="POST" class="vacancies-form" enctype="multipart/form-data">
         @csrf
         @include('vacancies._form', ['vacancy' => null, 'categories' => $categories])
 
