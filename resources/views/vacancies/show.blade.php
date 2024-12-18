@@ -5,8 +5,7 @@
     </x-slot:title>
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
-        @vite('resources/css/app.css')
-        @vite('resources/css/vacancyDetails.css')
+        @vite(['resources/css/app.css', 'resources/css/vacancyDetails.css'])
     </x-slot>
 
     <h1 class="vacancy-comp-tit">{{ $vacancy->company->name }}</h1>

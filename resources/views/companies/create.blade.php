@@ -5,8 +5,7 @@
     </x-slot:title>
     {{--    Link hier naar de css pagina die je wilt gebruiken--}}
     <x-slot name="css">
-        @vite('resources/css/companies.css')
-        @vite('resources/js/companies.js')
+        @vite(['resources/css/companies.css', 'resources/js/companies.js'])
     </x-slot>
     <header>
         <h1>Bedrijf aanmaken</h1>
