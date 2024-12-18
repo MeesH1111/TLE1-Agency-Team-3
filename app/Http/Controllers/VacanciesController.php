@@ -6,6 +6,7 @@ use App\Models\Company;
 use App\Models\Vacancy;
 use App\Models\Category;
 use App\Models\WaitList;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 
 class VacanciesController extends Controller
@@ -119,6 +120,10 @@ class VacanciesController extends Controller
         $vacancy = Vacancy::findOrFail($id);
         $categories = Category::all();
         $companies = Company::all();
+
+        if (\Gate::denies('access-vacature', $vacancy)) {
+            abort(403, 'Je hebt geen toegang tot deze vacature.');
+        }
 
         return view('vacancies.edit', compact('vacancy', 'categories', 'companies'));
     }

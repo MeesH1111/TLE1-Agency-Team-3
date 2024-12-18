@@ -27,8 +27,8 @@ class AppServiceProvider extends ServiceProvider
             return $user->id === $company->user_id;
         });
 
-//        Gate::define('edit-vacancy', function (User $user, Vacancy $vacancy) {
-//            return $user->id === $company->user_id;
-//        });
+        Gate::define('access-vacature', function ($user, $vacature) {
+            return $user->id === $vacature->company->user_id;
+        });
     }
 }
