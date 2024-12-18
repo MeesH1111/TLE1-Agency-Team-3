@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacanciesController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompaniesController;
-use App\Http\Controllers\WaitListController;
+use App\Http\Controllers\WaitlistControlleraaa;
 use App\Models\WaitList;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -68,11 +68,11 @@ Route::get('/werkgever', function () {
     return view('werkgever-uitleg');
 })->name('werkgever-uitleg');
 
-Route::post('/wachtlijst/opslaan', [WaitListController::class, 'store'])->name('waitlist.store')->middleware('auth');
-Route::get('/wachtlijst', [WaitListController::class, 'index'])->name('waitlist.index')->middleware('auth');
-Route::get('/wachtlijst/succes', [waitListController::class, 'succes'])->name('waitlist.succes')->middleware('auth');
-Route::get('/wachtlijst/login-vereist', [waitListController::class, 'login'])->name('waitlist.login');
-Route::get('/wachtlijst/al-gesolliciteerd', [waitListController::class, 'alreadyregistered'])->name('waitlist.alreadyregistered')->middleware('auth');
+Route::post('/wachtlijst/opslaan', [WaitlistControlleraaa::class, 'store'])->name('waitlist.store')->middleware('auth');
+Route::get('/wachtlijst', [WaitlistControlleraaa::class, 'index'])->name('waitlist.index')->middleware('auth');
+Route::get('/wachtlijst/succes', [WaitlistControlleraaa::class, 'succes'])->name('waitlist.succes')->middleware('auth');
+Route::get('/wachtlijst/login-vereist', [WaitlistControlleraaa::class, 'login'])->name('waitlist.login');
+Route::get('/wachtlijst/al-gesolliciteerd', [WaitlistControlleraaa::class, 'alreadyregistered'])->name('waitlist.alreadyregistered')->middleware('auth');
 Route::get('/test', function () {
     return view('test');
 });

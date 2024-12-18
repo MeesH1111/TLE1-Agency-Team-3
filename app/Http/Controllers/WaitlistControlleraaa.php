@@ -6,7 +6,7 @@ use App\Models\Waitlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class WaitlistController extends Controller
+class WaitlistControlleraaa extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,11 +35,11 @@ class WaitlistController extends Controller
 
         $waitlistItems = $request->vacancyId;
         $userId = Auth::id();
-        $allWaitlistItemsPerUser  = Waitlist::where('user_id', $userId)
+        $allWaitlistItemsPerUser = Waitlist::where('user_id', $userId)
             ->where('vacancy_id', $waitlistItems)
             ->get();
 
-        if (count($allWaitlistItemsPerUser ) === 0) {
+        if (count($allWaitlistItemsPerUser) === 0) {
             $waitlistItem = new Waitlist();
             $waitlistItem->vacancy_id = $waitlistItems;
             $waitlistItem->user_id = $userId;
