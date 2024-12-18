@@ -11,9 +11,10 @@
 
     <h1 class="vacancy-comp-tit">{{ $vacancy->company->name }}</h1>
     <h2 id="vacancy-tit" class="{{ $category->color }}">Vacature</h2>
-
-    <img src="{{ asset('storage/' . $vacancy->company->image) }}" alt="{{$vacancy->company->name}} Logo"
-         class="vacancy-header-img">
+    <div id="vacancy-image">
+        <img src="{{ asset('storage/' . $vacancy->company->image) }}" alt="{{$vacancy->company->name}} Logo"
+             class="vacancy-header-img">
+    </div>
 
 
     <div class="vacancy-divider-main">

@@ -14,6 +14,13 @@
     border-bottom: black .5rem solid;
 }
 
+#vacancy-image {
+    border-radius: 5rem;
+    margin: 2vh 0;
+    background-color: #F5FEFD;
+    border-bottom: #E2ECC8 .1rem solid;
+}
+
 #vacancy-tit {
     display: flex;
     color: #f5fefd;
@@ -106,6 +113,7 @@
     text-align: center;
     color: white;
     background-color: #aa0160;
+    border-bottom: #7C1A51 .15rem solid;
     transition: background-color 0.3s ease;
 }
 
@@ -118,6 +126,7 @@
     text-align: center;
     color: white;
     background-color: #aa0160;
+    border-bottom: #7C1A51 .15rem solid;
     transition: background-color 0.3s ease;
 }
 

@@ -87,9 +87,10 @@ h1 {
 }
 
 .login-button {
-    background-color: #a5007d; /* Magenta */
+    background-color: #AA0160; /* Magenta */
     color: #fff;
     border: none;
+    border-bottom: #7C1A51 .2rem solid;
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;

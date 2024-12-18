@@ -60,13 +60,13 @@
                     <p>Er is nog geen afbeelding geüpload.</p>
                 @endif
 
-                <!-- Inputveld voor nieuwe afbeelding -->
-                <input type="file" id="image" name="image" class="custom-file-input">
-
                 <!-- Validatie error tonen -->
                 @error('image')
                 <span class="error-popup">{{ $message }}</span>
                 @enderror
+
+                <!-- Inputveld voor nieuwe afbeelding -->
+                <input type="file" id="image" name="image" class="custom-file-input">
             </div>
         </div>
 

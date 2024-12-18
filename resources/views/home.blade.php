@@ -8,6 +8,8 @@
     </x-slot>
 
     <div class="container">
+        <button id="toon-partners-btn" class="btn">Klik hier om bedrijven dichtbij mij te zien. Open Hiring mag mijn locatie weten.</button>
+
         <section class="introductie">
             <h1>Een baan zonder sollicitatiegesprek</h1>
             <div class="stappen">
@@ -24,6 +26,7 @@
             </div>
         </section>
 
+        <!-- Verstopte partners-sectie -->
         <section class="partners hidden" id="partners-section">
             <h2>Bekijk hier bedrijven uit jouw buurt.</h2>
             <p>Jouw regio: {{$locatie}}</p>
@@ -36,8 +39,6 @@
             </div>
         </section>
 
-        <button id="toon-partners-btn" class="btn">Ik wil bedrijven die dichtbij mij zijn zien, dus mag Open Hiring weten waar ik ben.</button>
-
         <section class="succesverhaal">
             <h2>Van doorzetter naar inspiratie</h2>
             <p>Na een lange zoektocht naar werk vond Nico, door Open Hiring, een kans bij SVH.</p>
@@ -45,14 +46,13 @@
             <a href="success-nico" class="btn">Bekijk het verhaal</a>
         </section>
     </div>
+
+    <script>
+        document.getElementById('toon-partners-btn').addEventListener('click', function () {
+            const partnersSection = document.getElementById('partners-section');
+            partnersSection.classList.remove('hidden');
+            this.style.display = 'none'; // Verberg de knop na klikken
+        });
+    </script>
+
 </x-base-layout>
-
-
-<script>
-    document.getElementById('toon-partners-btn').addEventListener('click', function () {
-        const partnersSection = document.getElementById('partners-section');
-        partnersSection.classList.remove('hidden');
-        this.style.display = 'none';
-    });
-</script>
-

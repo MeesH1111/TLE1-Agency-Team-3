@@ -202,6 +202,7 @@ body {
     padding: 12px 24px;
     background-color: #aa0160;
     color: white;
+    border-bottom: #7C1A51 .15rem solid;
     text-decoration: none;
     border-radius: 6px;
     margin-top: 20px;
@@ -314,7 +315,7 @@ body {
     color: #fff;
     background-color: #c61b94; /* Knalkleur zoals in het plaatje */
     border-radius: 8px; /* Afgeronde hoeken */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Lichte schaduw */
+    border-bottom: #7C1A51 .15rem solid; /* Donkere rand onderaan */
     transition: background-color 0.3s ease;
 }
 
@@ -450,37 +451,41 @@ body {
 }
 
 #sollicitatie-succes-btn {
-    margin-left: 7.5em;
-    margin-top: 3em;
-    margin-bottom: 4em;
+    display: flex;
+    justify-content: center;
+    max-width: 44vw;
+    min-width: 44vw;
+    justify-self: center;
 }
 
 .sollicitatie-succes-img {
-    scale: 0.5;
+    scale: 0.3;
+    margin-top: -15vh;
+    margin-bottom: -15vh;
 }
 
 #sollicitatie-inlog-btn {
     display: flex;
     justify-content: center;
     max-width: 30vw;
-    margin: 0 auto;
-    margin-top: 3em;
-    margin-bottom: 4em;
+    margin-top: -.3rem;
+    margin-bottom: 1.9rem;
+    justify-self: center;
 }
 
 .sollicitatie-login-register-p {
     display: flex;
     text-align: center;
     justify-content: center;
+
 }
 
 #sollicitatie-login-register-btn {
     display: flex;
     justify-content: center;
     max-width: 48vw;
-    margin: 0 auto;
-    margin-bottom: 2em;
-    margin-top: 2em;
+
+    justify-self: center;
 }
 
 .partner-logos img {
@@ -526,6 +531,7 @@ body {
     padding: 12px 24px;
     background-color: #757575;
     color: white;
+    border-bottom: #7C1A51 .15rem solid;
     text-decoration: none;
     border-radius: 6px;
     margin-top: 20px;
