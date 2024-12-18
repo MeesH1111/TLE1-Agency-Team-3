@@ -20,8 +20,9 @@
         </div>
 
         <div class="form-div-btn">
-
-            <button type="submit" class="btn" aria-label="Knop voor het aanpassen van uw vacature.">Vacature aanpassen</button>
+            <a href="{{route('vacancies.show', $vacancy->id)}}" class="back">Terug</a>
+            <button type="submit" class="btn" aria-label="Knop voor het aanpassen van uw vacature.">Vacature aanpassen
+            </button>
         </div>
     </form>
 

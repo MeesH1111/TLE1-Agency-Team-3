@@ -11,9 +11,10 @@
 
     <h1 class="vacancy-comp-tit">{{ $vacancy->company->name }}</h1>
     <h2 id="vacancy-tit" class="{{ $category->color }}">Vacature</h2>
-
-    <img src="{{ asset('storage/' . $vacancy->company->image) }}" alt="{{$vacancy->company->name}} Logo"
-         class="vacancy-header-img">
+    <div id="vacancy-image">
+        <img src="{{ asset('storage/' . $vacancy->company->image) }}" alt="{{$vacancy->company->name}} Logo"
+             class="vacancy-header-img">
+    </div>
 
 
     <div class="vacancy-divider-main">
@@ -56,7 +57,17 @@
             @csrf
             <label for="vacancyId"></label>
             <input type="hidden" id="vacancyId" name="vacancyId" value="{{$vacancy->id}}">
-            <button type="submit" class="apply" aria-label="Reageer op deze vacature">Reageer</button>
+            @auth
+                @if($companyId && \Auth::user()->id == $bedrijf->user_id)
+                    <a href="{{route('vacancies.edit', $vacancy->id)}}" class="btn">Edit</a>
+                @else
+                    <button type="submit" class="apply" aria-label="Reageer op deze vacature">Reageer</button>
+                @endif
+            @endauth
+            @guest
+                <button type="submit" class="apply" aria-label="Reageer op deze vacature">Reageer</button>
+            @endguest
+
         </form>
 
     </div>

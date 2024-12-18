@@ -18,6 +18,16 @@ header {
     align-items: center;
 }
 
+.create-form-div a {
+    width: 30vw;
+    background-color: #757575;
+    text-align: center;
+    border-radius: .5rem;
+    border-bottom: #7C1A51 .15rem solid;
+    color: white;
+    padding: 0.3rem 1rem;
+}
+
 .beschrijving-div {
     display: flex;
     flex-direction: column;
@@ -58,10 +68,11 @@ header {
 }
 
 .aanmaak-button {
-    background-color: #D03E76;
+    background-color: #aa0160;
     padding: 0.3rem 1rem;
     width: 30vw;
-    border-radius: 5px;
+    border-radius: .5rem;
+    border-bottom: #7C1A51 .15rem solid;
     color: white
 }
 
@@ -78,8 +89,24 @@ header {
     background-color: #636363;;
 }
 
-.button-div {
+#title {
+    width: 55vw;
+    border: #7C1A51 .1rem solid;
+}
 
+#location {
+    width: 55vw;
+    border: #7C1A51 .1rem solid;
+
+}
+
+#contact {
+    width: 55vw;
+    border: #7C1A51 .1rem solid;
+}
+
+#description {
+    border: #7C1A51 .1rem solid;
 }
 
 input[type="file"] {
@@ -115,6 +142,10 @@ input[type="file"] {
 .show-header p {
     font-size: 1.3rem;
     margin: 0;
+}
+
+#image {
+    width: 55vw;
 }
 
 .show-header div {
@@ -163,7 +194,7 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f3f4f6;
+    background-color: #dfdfdf;
     border-radius: 8px;
     margin: 1rem 1rem 3rem 1rem;
     padding: 0 1rem;
@@ -172,6 +203,7 @@ input[type="file"] {
 .show-main h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: #AA0160;
 }
 
 .show-main p {
@@ -200,4 +232,11 @@ input[type="file"] {
     margin-top: 1em;
     margin-bottom: 1em;
     transform: rotate(315deg);
+}
+
+.aanpas-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
 }

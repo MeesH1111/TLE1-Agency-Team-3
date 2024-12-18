@@ -8,6 +8,11 @@
         @vite('resources/css/companies.css')
     </x-slot>
     <header class="show-header">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <img src="{{ asset('storage/' . $company->image) }}" alt="{{$company->name}} Logo" class="header-img">
         <div>
             <h1>{{ $company->name }}</h1>
@@ -57,5 +62,15 @@
             <h2>Contact</h2>
             <p>{{$company->contact}}</p>
         </article>
+        @auth
+            @if(Auth::user()->id == $company->user_id)
+                <div class="aanpas-div">
+                    <a class="aanmaak-button"
+                       href="{{route('companies.edit', ['company' => $company->id])}}">Bewerken</a>
+                </div>
+            @endif
+        @endauth
+
     </main>
+
 </x-base-layout>

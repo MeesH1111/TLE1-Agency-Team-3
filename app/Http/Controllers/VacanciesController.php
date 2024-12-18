@@ -6,6 +6,7 @@ use App\Models\Company;
 use App\Models\Vacancy;
 use App\Models\Category;
 use App\Models\WaitList;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 
 class VacanciesController extends Controller
@@ -19,6 +20,7 @@ class VacanciesController extends Controller
         $categoryModel = Category::find($category);
         $vacancies = Vacancy::where('category_id', $category)->withCount('waitLists')->get();
         $waitlist = WaitList::where('vacancy_id')->count();
+
         if (!$categoryModel) {
             abort(404, 'Category not found');
         }
@@ -51,11 +53,14 @@ class VacanciesController extends Controller
     public function create($companyId)
     {
         $categories = Category::all();
-        $companies = Company::all();
         $company = $companyId;
-        //dd($companies);
+        $bedrijf = Company::find($company);
 
-        return view('vacancies.create', compact('categories', 'companies', 'company'));
+        if (\Gate::denies('create-vacature', $bedrijf)) {
+            abort(403, 'Je bent niet gemachtigd om een vacature aan te maken voor dit bedrijf.');
+        }
+
+        return view('vacancies.create', compact('categories', 'company'));
     }
 
     /**
@@ -64,6 +69,7 @@ class VacanciesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'role' => 'required|string|max:255',
             'salary' => 'required|numeric|min:0',
             'hours' => 'required|numeric|min:0',
@@ -74,11 +80,12 @@ class VacanciesController extends Controller
             'category_id' => 'required|exists:categories,id',
             'company_id' => 'required|exists:companies,id',
         ], [
+            'photo' => 'Kies een foto bestand om te uploaden.',
             'role.required' => 'Vul de baan titel in.',
-            'salary.required' => 'Vul de salaris in',
-            'hours.required' => 'vul het aantal uren in.',
+            'salary.required' => 'Vul het salaris in, alleen in nummers.',
+            'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',
             'location.required' => 'Vul het adres in.',
-            'type.required' => 'Kies het baan type.',
+            'type.required' => 'Kies het baan type uit het drop-down menu.',
             'requirements.required' => 'Vul de benodigdheden in. Als er geen zijn, vul dan "niks" in.',
             'description.required' => 'Vul de beschrijving van de baan in.',
             'category_id.required' => 'Kies het bijbehorende categorie.',
@@ -94,23 +101,29 @@ class VacanciesController extends Controller
         $vacancy->description = $request->input('description');
         $vacancy->category_id = $request->input('category_id');
         $vacancy->company_id = $request->company_id;
+
+
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->store('vacancies', 'public');
+            $vacancy->photo = $path;
+        }
         $vacancy->save();
 
-
-        return redirect()->route('vacancies.index', $vacancy->category_id)->with('success', 'Vacancy created!');
-
+        return redirect()->route('bedrijven.next', ['company' => $vacancy->company_id, 'offset' => 0])->with('success', 'Vacancy created!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show($id, $company = null)
     {
-        $companyId = null;
+        $companyId = $company;
         $vacancy = Vacancy::findOrFail($id);
         $category = Category::find($vacancy->category_id);
+        $bedrijf = Company::find($companyId);
         $waitingCount = WaitList::where('vacancy_id', $id)->count();
-        return view('vacancies.show', compact('vacancy', 'category', 'waitingCount', 'companyId'));
+
+        return view('vacancies.show', compact('vacancy', 'category', 'waitingCount', 'companyId', 'bedrijf'));
     }
 
     /**
@@ -122,6 +135,10 @@ class VacanciesController extends Controller
         $categories = Category::all();
         $companies = Company::all();
 
+        if (\Gate::denies('access-vacature', $vacancy)) {
+            abort(403, 'Je hebt geen toegang om deze vacature te bewerken.');
+        }
+
         return view('vacancies.edit', compact('vacancy', 'categories', 'companies'));
     }
 
@@ -132,6 +149,7 @@ class VacanciesController extends Controller
     {
         $vacancy = Vacancy::findOrfail($id);
         $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'role' => 'required|string|max:255',
             'salary' => 'required|numeric|min:0',
             'hours' => 'required|numeric|min:0',
@@ -142,11 +160,12 @@ class VacanciesController extends Controller
             'category_id' => 'required|exists:categories,id',
             'company_id' => 'required|exists:companies,id',
         ], [
+            'image.required' => 'Kies een foto bestand om te uploaden.',
             'role.required' => 'Vul de baan titel in.',
-            'salary.required' => 'Vul de salaris in',
-            'hours.required' => 'vul het aantal uren in.',
+            'salary.required' => 'Vul het salaris in, alleen in nummers.',
+            'hours.required' => 'Vul het aantal uren per week in, alleen in nummers.',
             'location.required' => 'Vul het adres in.',
-            'type.required' => 'Kies het baan type.',
+            'type.required' => 'Kies het baan type uit het drop-down menu.',
             'requirements.required' => 'Vul de benodigdheden in. Als er geen zijn, vul dan "niks" in.',
             'description.required' => 'Vul de beschrijving van de baan in.',
             'category_id.required' => 'Kies het bijbehorende categorie.',
