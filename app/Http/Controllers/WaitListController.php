@@ -6,7 +6,7 @@ use App\Models\Waitlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class WaitlistController extends Controller
+class WaitListController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -70,9 +70,9 @@ Route::get('/werkgever', function () {
 
 Route::post('/wachtlijst/opslaan', [WaitListController::class, 'store'])->name('waitlist.store')->middleware('auth');
 Route::get('/wachtlijst', [WaitListController::class, 'index'])->name('waitlist.index')->middleware('auth');
-Route::get('/wachtlijst/succes', [waitListController::class, 'succes'])->name('waitlist.succes')->middleware('auth');
-Route::get('/wachtlijst/login-vereist', [waitListController::class, 'login'])->name('waitlist.login');
-Route::get('/wachtlijst/al-gesolliciteerd', [waitListController::class, 'alreadyregistered'])->name('waitlist.alreadyregistered')->middleware('auth');
+Route::get('/wachtlijst/succes', [WaitListController::class, 'succes'])->name('waitlist.succes')->middleware('auth');
+Route::get('/wachtlijst/login-vereist', [WaitListController::class, 'login'])->name('waitlist.login');
+Route::get('/wachtlijst/al-gesolliciteerd', [WaitListController::class, 'alreadyregistered'])->name('waitlist.alreadyregistered')->middleware('auth');
 Route::get('/test', function () {
     return view('test');
 });
