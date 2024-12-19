@@ -35,12 +35,12 @@ class WaitlistController extends Controller
 
         $waitlistItems = $request->vacancyId;
         $userId = Auth::id();
-        $allWaitlistItemsPerUser  = Waitlist::where('user_id', $userId)
+        $allWaitlistItemsPerUser  = WaitList::where('user_id', $userId)
             ->where('vacancy_id', $waitlistItems)
             ->get();
 
         if (count($allWaitlistItemsPerUser ) === 0) {
-            $waitlistItem = new Waitlist();
+            $waitlistItem = new WaitList();
             $waitlistItem->vacancy_id = $waitlistItems;
             $waitlistItem->user_id = $userId;
             $waitlistItem->save();
@@ -54,7 +54,7 @@ class WaitlistController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Waitlist $waitlist)
+    public function show(WaitList $waitlist)
     {
         //
     }
@@ -62,7 +62,7 @@ class WaitlistController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Waitlist $waitlist)
+    public function edit(WaitList $waitlist)
     {
         //
     }
@@ -70,7 +70,7 @@ class WaitlistController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Waitlist $waitlist)
+    public function update(Request $request, WaitList $waitlist)
     {
         //
     }
@@ -78,7 +78,7 @@ class WaitlistController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Waitlist $waitlist)
+    public function destroy(WaitList $waitlist)
     {
         //
     }
