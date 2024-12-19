@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Waitlist;
+use App\Models\WaitList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
